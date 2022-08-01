@@ -53,6 +53,7 @@ const StyledPhoneMenu = styled.div`
     height: 100%;
     padding: 0.8rem;
     position: fixed;
+    z-index:1;
     /**
       if current ref is undefined means not rendered yet 
        or initial animation: disable hide animation

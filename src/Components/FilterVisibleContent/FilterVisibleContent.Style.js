@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { media } from 'Styles/MediaQuery';
-import colors from 'Styles/Colors';
 
 const StyledFilterDropDown = styled.div`
   ${media.phone`
@@ -15,27 +14,23 @@ const StyledFilterDropDown = styled.div`
     font-size: 1.1rem;
     font-weight: 600;
     :active {
-      background-color: ${colors.lightBlue};
+      background-color: #ADD8E6;
     }
-    :not(:active) {
-      background-color: ${colors.white};
-    }
+  
  `}
-  ${media.desktop`
-  height:3rem;
   ${(props) =>
     props.showBorder
       ? {
           border: 'solid',
           'border-color': 'transparent',
-          'border-width': '0.1rem',
           // eslint-disable-next-line sort-keys
           'border-bottom-color': 'rgba(0,0,0,0.1)',
+          'border-width': '0.1rem',
+          'margin-bottom': '1rem',
         }
-      : ''}};
-  /* border:solid 0.1rem;
-  border-color:transparent;
-  border-bottom-color: rgba(0,0,0,0.2); */
+      : ''};
+  ${media.desktop`
+  height:3rem;
   `}
 `;
 export default StyledFilterDropDown;

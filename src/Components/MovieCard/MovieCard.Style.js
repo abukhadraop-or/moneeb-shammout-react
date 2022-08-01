@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { media } from 'Styles/MediaQuery';
-import colors from 'Styles/Colors';
 
 const DesktopDots = styled.div`
   ${media.phone`
@@ -162,24 +161,10 @@ const RightContainer = styled.div`
     width:10rem;
   `}
 `;
-const ToolTip = styled.span`
-  visibility: hidden;
-  width: 10.5rem;
-  background-color: ${colors.black};
-  color: ${colors.white};
-  text-align: center;
-  padding: 0.4rem 0;
-  border: 0.1rem solid white;
 
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-  left: 2.5%;
-  top: 50%;
-`;
 const StyledMovieCard = styled.div`
   ${media.phone`
-    height: 8rem;
+    height: 9rem;
     border-radius:0.8rem;
     width: 95%;
     display: flex;
@@ -188,6 +173,9 @@ const StyledMovieCard = styled.div`
     border: 0.1rem solid #e3e3e3;
     box-shadow:0 0.1rem 0.5rem rgb(0 0 0 / 10%);
     margin-bottom: 1rem;
+    /* .toolTip{
+      display:none;
+    } */
   `}
 
   ${media.desktop`
@@ -219,5 +207,4 @@ export {
   DesktopPercentage,
   DesktopDots,
   OverFlowContainer,
-  ToolTip,
 };

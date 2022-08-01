@@ -16,8 +16,8 @@ function CountryDropDown() {
       <ReactFlagsSelect
         selected={selected}
         onSelect={(code) => setSelected(code)}
-        searchable
-        fullWidth={false}
+        fullWidth
+        alignOptions="left"
         className="countryMenu"
         optionsSize={14}
         selectedSize={16}

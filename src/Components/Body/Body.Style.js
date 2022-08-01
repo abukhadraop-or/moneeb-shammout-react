@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import { media } from 'Styles/MediaQuery';
-import colors from 'Styles/Colors';
 
 const DesktopFiltersContainer = styled.div`
   ${media.desktop`
@@ -30,17 +29,13 @@ const DesktopMoviesContainer = styled.div`
     flex-wrap: wrap;
   `}
 `;
-const InfoPopUp = styled.div`
-  width: 20rem;
-  height: 2rem;
-  font-size: 1rem;
-  display: flex;
-  box-sizing: border-box;
-  background-color: ${colors.darkBlue};
-  color: ${colors.white};
-  align-items: center;
-  justify-content: center;
-  border-radius: 1rem;
+const FilterWrapper = styled.div`
+  border: solid;
+  border-color: transparent;
+  border-width: 0.1rem;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 `;
 const StyledBody = styled.div`
   width: 100%;
@@ -64,5 +59,5 @@ export {
   StyledBody,
   DesktopMoviesContainer,
   DesktopFiltersContainer,
-  InfoPopUp,
+  FilterWrapper,
 };

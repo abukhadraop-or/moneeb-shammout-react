@@ -9,7 +9,7 @@ const Label = styled.label`
   cursor: pointer;
   font-size: 1.2rem;
   user-select: none;
-  font-weight: ${(props) => (props.checked ? '600' : '300')};
+  font-weight: 400;
 `;
 
 const StyledCheckBox = styled.span`
@@ -40,6 +40,7 @@ const StyledCheckBox = styled.span`
     props.checked
       ? {
           'background-color': `${colors.lightBlue}`,
+          'border-radius': '0.3rem',
         }
       : {
           'background-color': `${colors.white}`,

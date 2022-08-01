@@ -6,6 +6,7 @@ import Image from 'Components/Image/Image';
 import Icon from 'Components/Icon/Icon';
 import Button from 'Components/Button/Button';
 import ActionDropDown from 'Components/ActionDropDown/ActionDropDown';
+import ToolTip from 'Components/ToolTip/ToolTip';
 
 import {
   DesktopDots,
@@ -15,7 +16,6 @@ import {
   RightContainer,
   StyledMovieCard,
   MovieDropDownMenu,
-  ToolTip,
 } from './MovieCard.Style';
 
 /**
@@ -58,7 +58,7 @@ function MovieCard({ title, description, date, imageURL, percentageRate }) {
       </MovieDropDownMenu>
       <StyledMovieCard blur={blur}>
         <PosterContainer>
-          <ToolTip className="toolTip">{title}</ToolTip>
+          <ToolTip className="toolTip" theme="movies" text={title} />
           <DesktopDots>
             <Icon
               iconName="Hidots"

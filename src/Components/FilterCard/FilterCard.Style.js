@@ -21,10 +21,14 @@ const StyledFilterCard = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     overflow: hidden;
+    -webkit-tap-highlight-color:transparent;
+    -moz-tap-highlight-color:transparent;
+    -o-tap-highlight-color:transparent;
+    tap-highlight-color:transparent;
+
   `}
   ${media.desktop`
    width:calc(16rem + 1vw);
-
   `}
 `;
 export default StyledFilterCard;

@@ -9,15 +9,15 @@ import { StyledRadioButton, Label } from './RadioButton.Style';
  * @param {boolean} props.checked   Check state for radio button.
  * @param {string} props.id   Unique identifier.
  * @param {string} props.label   Label for radio button.
- * @param {Function} props.onChangeHandler Handle  radio button click change.
+ * @param {Function} props.onChange Handle  radio button click change.
  * @return {JSX}  RadioButton component.
  */
 
-function RadioButton({ checked, id, label, onChangeHandler }) {
+function RadioButton({ checked, id, label, onChange }) {
   return (
     <Label
       htmlFor="radio"
-      onClick={() => onChangeHandler(id)}
+      onClick={() => onChange(id)}
       checked={checked}
       id={id}
     >
@@ -32,7 +32,7 @@ RadioButton.propTypes = {
   checked: PropTypes.bool.isRequired,
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  onChangeHandler: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default RadioButton;

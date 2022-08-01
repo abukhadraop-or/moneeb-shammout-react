@@ -10,6 +10,7 @@ import CheckBox from 'Components/CheckBox/CheckBox';
 import MovieCard from 'Components/MovieCard/MovieCard';
 import CountryDropDown from 'Components/CountryDropDown/CountryDropDown';
 import Button from 'Components/Button/Button';
+import ToolTip from 'Components/ToolTip/ToolTip';
 
 import {
   availabilitiesList,
@@ -20,8 +21,8 @@ import {
 import {
   DesktopFiltersContainer,
   DesktopMoviesContainer,
-  InfoPopUp,
   StyledBody,
+  FilterWrapper,
 } from './Body.Style';
 
 /**
@@ -38,6 +39,7 @@ function Body() {
   });
   const [showAvailability, setShowAvailability] = useState(false);
   const [showReleaseDates, setShowReleaseDates] = useState(false);
+  const [showCountryDrop, setShowCountryDrop] = useState(false);
   const [showSearchButton, setShowSearchButton] = useState(false);
   const [searchQuery, setSearchQuery] = useState('popularity.desc');
   const [moviePage, setMoviePage] = useState(1);
@@ -137,6 +139,7 @@ function Body() {
 
   const toggleReleaseDates = () => {
     setShowReleaseDates((prevState) => !prevState);
+    setShowCountryDrop(() => false);
   };
 
   /**
@@ -153,6 +156,14 @@ function Body() {
     const day = date.getDay();
     const newDay = day < 10 ? `0${day}` : day;
     return `${month} ${newDay}, ${date.getFullYear()}`;
+  };
+
+  /**
+   *  Show or hide country drop down.
+   */
+
+  const toggleCountryDrop = () => {
+    setShowCountryDrop((prevState) => !prevState);
   };
 
   return (
@@ -176,7 +187,11 @@ function Body() {
           onClick={(event) => infoIconClickHandler(event)}
         >
           {showInfo && (
-            <InfoPopUp>Log In To Filter Items You&apos;ve Watched</InfoPopUp>
+            <ToolTip
+              className="toolTip"
+              theme="filters"
+              text="Log In To Filter Items You've Watched"
+            />
           )}
           <Title title="Show Me" theme="light">
             <Icon
@@ -188,34 +203,39 @@ function Body() {
           </Title>
 
           <br />
-          {filtersList.map((label) => (
-            <RadioButton
-              label={label}
-              id={label}
-              key={label}
-              onChangeHandler={filtersChangeHandler}
-              checked={radioBtnState[label]}
-            />
-          ))}
+          <FilterWrapper>
+            {filtersList.map((label) => (
+              <RadioButton
+                label={label}
+                id={label}
+                key={label}
+                onChange={filtersChangeHandler}
+                checked={radioBtnState[label]}
+              />
+            ))}
+          </FilterWrapper>
 
           <Title title="Availabilities" theme="light" />
-
-          {availabilitiesList.map((item) => (
-            <CheckBox
-              label={item}
-              onCheckHandler={
-                availabilitiesList[0] === item ? toggleAvailability : null
-              }
-              itemVisibility={
-                availabilitiesList[0] === item ? true : showAvailability
-              }
-              key={item}
-            />
-          ))}
+          <br />
+          <FilterWrapper>
+            {availabilitiesList.map((item) => (
+              <CheckBox
+                label={item}
+                onCheck={
+                  availabilitiesList[0] === item ? toggleAvailability : null
+                }
+                itemVisibility={
+                  availabilitiesList[0] === item ? true : showAvailability
+                }
+                key={item}
+              />
+            ))}
+          </FilterWrapper>
           <Title title="Release Dates" theme="light" />
+          <br />
           <CheckBox
             label={releaseList[0]}
-            onCheckHandler={toggleReleaseDates}
+            onCheck={toggleReleaseDates}
             itemVisibility
             key={releaseList[0]}
           />
@@ -223,18 +243,17 @@ function Body() {
             label={releaseList[1]}
             itemVisibility={showReleaseDates}
             key={releaseList[1]}
+            onCheck={toggleCountryDrop}
           />
-          {releaseList.slice(1).map((item) => (
+          {showCountryDrop && <CountryDropDown />}
+          {releaseList.slice(2).map((item) => (
             <CheckBox
               label={item}
-              onCheckHandler={
-                releaseList[0] === item ? toggleReleaseDates : null
-              }
+              onCheck={releaseList[0] === item ? toggleReleaseDates : null}
               itemVisibility={releaseList[0] === item ? true : showReleaseDates}
               key={item}
             />
           ))}
-          <CountryDropDown />
         </FilterCard>
         <FilterCard title="Where To Watch" />
         <Button
