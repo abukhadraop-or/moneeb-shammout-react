@@ -7,6 +7,7 @@ const theme = {
   blue: colors.lightBlue,
   grey: colors.grey,
   lightGrey: colors.lightGrey,
+  none: 'transparent',
   transparent: 'transparent',
   white: colors.white,
 };

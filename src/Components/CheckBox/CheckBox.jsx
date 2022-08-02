@@ -17,7 +17,13 @@ function CheckBox({ checked, itemVisibility, label, onCheck }) {
   const [checkState, setCheckState] = useState(checked);
   const toggleCheckBox = () => {
     setCheckState((prevState) => !prevState);
-    if (onCheck) onCheck();
+    if (onCheck && label === 'Search all Countries?') {
+      onCheck(checkState);
+      return;
+    }
+    if (onCheck) {
+      onCheck();
+    }
   };
   return (
     itemVisibility && (

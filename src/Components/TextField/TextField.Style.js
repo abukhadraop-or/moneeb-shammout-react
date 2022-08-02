@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { media } from 'Styles/MediaQuery';
 
-import colors from 'Styles/Colors';
-
 const StyledTextField = styled.input`
   ${media.phone`
     font-size: 1rem;
@@ -13,8 +11,7 @@ const StyledTextField = styled.input`
     display: flex;
     color: grey;
     ::placeholder {
-      color: ${colors.lightGrey};
-      font-style: italic;
+      color: grey;
     }
   `}
 `;

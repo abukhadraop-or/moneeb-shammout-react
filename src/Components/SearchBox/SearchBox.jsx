@@ -30,7 +30,11 @@ function SearchBox({ leftIcon, placeHolder, rightIcon }) {
     <StyledSearchBox>
       <>
         <Icon iconName={leftIcon} color="black" />
-        <TextField placeHolder={placeHolder} ref={searchFieldController} />
+        <TextField
+          placeHolder={placeHolder}
+          ref={searchFieldController}
+          theme="search"
+        />
         <Icon
           iconName={rightIcon}
           onClick={onClickRightIconHandler}

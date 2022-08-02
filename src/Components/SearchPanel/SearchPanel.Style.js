@@ -6,6 +6,8 @@ import colors from 'Styles/Colors';
 const StyledSearchPanel = styled.div`
   ${media.phone`
     display: block;
+    z-index: 1;
+
     font-size: 1rem;
     width: 100%;
     color: grey;
@@ -18,7 +20,6 @@ const StyledSearchPanel = styled.div`
   ${media.desktop`
     width: 100%;
     bottom: 51%;
-    z-index: 1;
     justify-content:center;
     justify-items:center;
     align-items:center;

@@ -14,6 +14,7 @@ import {
 import { AiOutlineClose } from 'react-icons/ai';
 import { CgMathPercent } from 'react-icons/cg';
 import { BiPlusMedical } from 'react-icons/bi';
+import { IoMdCalendar } from 'react-icons/io';
 // import { TiChevronRight } from 'react-icons/ti';
 
 import StyledIcon from './Icon.Style';
@@ -29,6 +30,7 @@ const icons = {
   HiSearch: <HiSearch />,
   HiUser: <HiUser />,
   Hidots: <HiDotsCircleHorizontal />,
+  calendar: <IoMdCalendar />,
   percent: <CgMathPercent />,
 };
 
@@ -68,6 +70,7 @@ Icon.propTypes = {
     'white',
     'lightGrey',
     'transparent',
+    'none',
   ]),
   hoverEffect: PropTypes.bool,
   iconName: PropTypes.string.isRequired,

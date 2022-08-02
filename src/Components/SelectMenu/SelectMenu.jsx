@@ -8,12 +8,12 @@ import { StyledSelectMenu, Option, OptionContainer } from './SelectMenuStyle';
 /**
  *  Create SelectMenu component.
  * @param {object} props Component variables.
+ * @param {function} props.onChange Reflects changes on the parent components.
  * @param {Array} props.optionsList List of option to be displayed
- * @param {function} props.selectMenuChangeHandler Reflects changes on the parent components.
  * @return {JSX}  SelectMenu component.
  */
 
-function SelectMenu({ optionsList, selectMenuChangeHandler }) {
+function SelectMenu({ onChange, optionsList }) {
   const [selectTitle, setSelectTitle] = useState(optionsList[0]);
   const [showMenu, setShowMenu] = useState(false);
 
@@ -35,7 +35,7 @@ function SelectMenu({ optionsList, selectMenuChangeHandler }) {
     const optionID = event.currentTarget.id;
     if (optionID === selectTitle) return;
     setSelectTitle(optionID);
-    selectMenuChangeHandler(optionID, true);
+    onChange(optionID, true);
   };
 
   return (
@@ -60,12 +60,12 @@ function SelectMenu({ optionsList, selectMenuChangeHandler }) {
 }
 
 SelectMenu.propTypes = {
+  onChange: PropTypes.func,
   optionsList: PropTypes.arrayOf(PropTypes.string).isRequired,
-  selectMenuChangeHandler: PropTypes.func,
 };
 
 SelectMenu.defaultProps = {
-  selectMenuChangeHandler: null,
+  onChange: null,
 };
 
 export default SelectMenu;
