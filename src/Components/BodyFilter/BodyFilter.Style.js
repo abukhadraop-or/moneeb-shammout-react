@@ -8,4 +8,19 @@ const FilterWrapper = styled.div`
   padding-bottom: 1rem;
   margin-bottom: 1rem;
 `;
-export default FilterWrapper;
+
+const ToolTipWrapper = styled.div`
+  position: absolute;
+  top: 71%;
+  left: 28%;
+  width: 100%;
+`;
+
+const FlexRowContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+`;
+
+export { FilterWrapper, FlexRowContainer, ToolTipWrapper };

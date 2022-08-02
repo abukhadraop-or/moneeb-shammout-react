@@ -45,6 +45,7 @@ const OptionContainer = styled.div`
   border-color: transparent;
   margin-top: 1rem;
   background-color: white;
+  z-index: 99;
   ${media.desktop`
   width: 13rem;
     height: auto;
@@ -63,10 +64,7 @@ const StyledSelectMenu = styled.ul`
     padding-bottom: 2rem;
     margin: 0rem 1rem 0 1rem;
     color: ${colors.black};
-    &:focus,:active,:hover{
-      background-color: ${colors.mediumGrey};
-    }
-    background-color: transparent;
+    background-color: ${colors.mediumGrey};
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -3 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='10 9 12 12 14 9'%3e%3c/polyline%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right 0.1rem center;

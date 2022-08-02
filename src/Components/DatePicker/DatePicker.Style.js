@@ -12,30 +12,36 @@ const IconWrapper = styled.div`
   height: 1.8rem;
   font-size: 1.5rem;
   transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  position: absolute;
-  z-index: 10;
+  position: relative;
+  z-index: 0;
   * {
     align-content: center;
     justify-content: center;
   }
   padding-top: 0.3rem;
-  left: 85%;
+  left: 100%;
   margin-top: -2rem;
   border-bottom-right-radius: 0.4rem;
   border-top-right-radius: 0.4rem;
+  ${media.desktop`
+    left:110%;
+    `}
 `;
 const StyledDatePicker = styled.div`
   ${media.phone`
   width:20rem;
   height:3rem;
-  display: block !important;
+  outline:none; 
+  
 .wrapper{
+  
 }
         .popper{
           z-index:1;
 
         }
         .datePicker{
+          
           // input
           margin: 0;
           padding: 0.375rem 0.75rem;
@@ -61,30 +67,23 @@ const StyledDatePicker = styled.div`
           }
         }
         .calender{
-          padding:0;
+          margin-left:-1.5rem;
+          *{
+            
+            padding-right:0.5rem;
+
+            :focus{
+              background-color:${colors.lightBlue};
+            }
+       
+          }
+         
+        
+          
         }
-  /* width: 100%;
-    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
-    -moz-padding-start: calc(0.75rem - 3px);
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    appearance: none; */
- 
-    /* font-size: 1rem;
-    width: 80%;
-    height: 80%;
-    border: none;
-    outline: none;
-    display: flex;
-    color: grey;
-    ::placeholder {
-      color: grey;
-    } */
   `}
+  ${media.desktop`
+    width:12rem;
+    `}
 `;
 export { StyledDatePicker, Label, IconWrapper };

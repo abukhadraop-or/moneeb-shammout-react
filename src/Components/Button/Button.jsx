@@ -50,6 +50,7 @@ Button.propTypes = {
     'smallWhite',
     'loadMore',
     'footerDrops',
+    'whiteRounded',
   ]),
 };
 Button.defaultProps = {

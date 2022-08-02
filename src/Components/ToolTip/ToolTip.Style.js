@@ -21,17 +21,20 @@ const StyledToolTip = styled.span`
   ${(props) =>
     props.theme === 'filters'
       ? {
+          '-webkit-box-orient': 'horizontal',
+          '-webkit-line-clamp': '1',
           'background-color': colors.darkBlue,
           'border-radius': '0.3rem',
           color: colors.white,
+          display: '-webkit-box',
           'font-size': '0.95rem',
-          left: '0%',
+          height: '1.1rem',
+          left: '31%',
+          'min-width': '16rem',
           padding: '0.4rem 0',
           position: 'absolute',
-          top: '28%',
+          top: '10.5%',
           visibility: 'visible',
-          width: '16rem',
-          'z-index': '1',
         }
       : ''};
   ::after {

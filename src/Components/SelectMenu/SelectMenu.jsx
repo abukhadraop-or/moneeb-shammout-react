@@ -28,14 +28,15 @@ function SelectMenu({ onChange, optionsList }) {
   /**
    *   Handles select menu option click.
    * @param {Object} event  The  Event object.
-   * @return  {null}
    */
 
   const optionClickHandler = (event) => {
     const optionID = event.currentTarget.id;
     if (optionID === selectTitle) return;
     setSelectTitle(optionID);
-    onChange(optionID, true);
+    if (onChange) {
+      onChange(optionID, true);
+    }
   };
 
   return (

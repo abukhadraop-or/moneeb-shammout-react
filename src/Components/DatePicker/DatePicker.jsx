@@ -1,7 +1,8 @@
 import { React, useState } from 'react';
 import PropTypes from 'prop-types';
-import 'react-datepicker/dist/react-datepicker.css';
 import DatePickerPackage from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
 import Icon from 'Components/Icon/Icon';
 
 import { StyledDatePicker, Label, IconWrapper } from './DatePicker.Style';
@@ -26,29 +27,31 @@ function DatePicker({ initialDate, label }) {
   return (
     <StyledDatePicker>
       <Label>{label}</Label>
-      <DatePickerPackage
-        selected={date}
-        onChange={(newDate) => onChangeHandler(newDate)}
-        dateFormat="M/dd/yyyy"
-        showFourColumnMonthYearPicker
-        wrapperClassName="wrapper"
-        popperClassName="popper"
-        className="datePicker"
-        calendarClassName="calender"
-        name="datePicker"
-        open={showPicker}
-        onCalendarClose={iconOnClick}
-        onClickOutside={iconOnClick}
-      />
-      <IconWrapper onClick={iconOnClick}>
-        <Icon color="black" iconName="calendar" />
-      </IconWrapper>
+      <div>
+        <DatePickerPackage
+          selected={date}
+          onChange={(newDate) => onChangeHandler(newDate)}
+          dateFormat="M/dd/yyyy"
+          showFourColumnMonthYearPicker
+          wrapperClassName="wrapper"
+          popperClassName="popper"
+          className="datePicker"
+          calendarClassName="calender"
+          name="datePicker"
+          open={showPicker}
+          onCalendarClose={iconOnClick}
+          onSelect={iconOnClick}
+        />
+        <IconWrapper onClick={iconOnClick}>
+          <Icon color="black" iconName="calendar" />
+        </IconWrapper>
+      </div>
     </StyledDatePicker>
   );
 }
 
 DatePicker.propTypes = {
-  initialDate: PropTypes.objectOf(PropTypes.Date),
+  initialDate: PropTypes.instanceOf(Date),
   label: PropTypes.string,
 };
 DatePicker.defaultProps = {

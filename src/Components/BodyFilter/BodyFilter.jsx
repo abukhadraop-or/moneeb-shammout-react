@@ -9,13 +9,23 @@ import CheckBox from 'Components/CheckBox/CheckBox';
 import CountryDropDown from 'Components/CountryDropDown/CountryDropDown';
 import ToolTip from 'Components/ToolTip/ToolTip';
 import DatePicker from 'Components/DatePicker/DatePicker';
+import Button from 'Components/Button/Button';
+import SelectMenu from 'Components/SelectMenu/SelectMenu';
+import Slider from 'Components/Slider/Slider';
 
 import {
   availabilitiesList,
   filtersList,
   releaseList,
+  genresList,
+  languagesList,
 } from 'Constants/Content';
-import FilterWrapper from './BodyFilter.Style';
+// import SelectMenu from 'Components/SelectMenu/SelectMenu';
+import {
+  FilterWrapper,
+  FlexRowContainer,
+  ToolTipWrapper,
+} from './BodyFilter.Style';
 /**
  * Create Body Filter part.
  * @return {JSX}  BodyFilter component.
@@ -31,6 +41,7 @@ function BodyFilter() {
   const [showAvailability, setShowAvailability] = useState(false);
   const [showReleaseDates, setShowReleaseDates] = useState(false);
   const [showCountryDrop, setShowCountryDrop] = useState(false);
+  const [languageInfo, setLanguageInfo] = useState(false);
 
   /**
    * Show or hide question mark info on click.
@@ -89,10 +100,27 @@ function BodyFilter() {
     setShowCountryDrop(() => show);
   };
 
+  /**
+   *  Show or hide language pop up.
+   * @param {object}  event Event object.
+   */
+
+  const showLanguageInf = (event) => {
+    if (event.currentTarget.id === 'icon') {
+      event.stopPropagation();
+      setLanguageInfo((prevState) => !prevState);
+    } else {
+      setLanguageInfo(false);
+    }
+  };
+
   return (
     <FilterCard
       title="Filters"
-      onClick={(event) => infoIconClickHandler(event)}
+      onClick={(event) => {
+        infoIconClickHandler(event);
+        showLanguageInf(event);
+      }}
     >
       {showInfo && (
         <ToolTip
@@ -101,6 +129,7 @@ function BodyFilter() {
           text="Log In To Filter Items You've Watched"
         />
       )}
+
       <Title title="Show Me" theme="light">
         <Icon
           id="icon"
@@ -163,8 +192,49 @@ function BodyFilter() {
           key={item}
         />
       ))}
-      <DatePicker label="from" />
-      <DatePicker initialDate={new Date('2/11/2023')} label="to" />
+
+      <FilterWrapper>
+        <DatePicker label="from" />
+        <DatePicker initialDate={new Date('2/11/2023')} label="to" />
+      </FilterWrapper>
+
+      <FilterWrapper>
+        <Title theme="light" title="Genres" />
+        <FlexRowContainer>
+          {genresList.map((item) => (
+            <Button text={item} theme="whiteRounded" key={item} />
+          ))}
+        </FlexRowContainer>
+      </FilterWrapper>
+
+      <FilterWrapper>
+        <Title theme="light" title="Certification" />
+      </FilterWrapper>
+
+      <FilterWrapper>
+        {languageInfo && (
+          <ToolTipWrapper>
+            <ToolTip
+              className=""
+              theme="filters"
+              text="Filter items based on their original language"
+            />
+          </ToolTipWrapper>
+        )}
+        <Title title="Language" theme="light">
+          <Icon
+            id="icon"
+            color="grey"
+            iconName="HiQuestion"
+            onClick={showLanguageInf}
+          />
+        </Title>
+        <br />
+        <SelectMenu optionsList={languagesList} onChange={null} />
+      </FilterWrapper>
+      <FilterWrapper>
+        <Slider className="slider" onChange={() => {}} index={4} tag={4} />
+      </FilterWrapper>
     </FilterCard>
   );
 }

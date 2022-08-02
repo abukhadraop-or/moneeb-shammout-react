@@ -8,11 +8,13 @@ const bigWhite = css`
   width: 9rem;
   height: 2.5rem;
 `;
+
 const bigWhiteFooter = css`
   ${bigWhite};
   font-weight: 700;
   font-size: 1.2rem;
 `;
+
 const bigWhiteBlue = css`
   font-size: 1.2rem;
   font-weight: 700;
@@ -31,6 +33,7 @@ const bigWhiteBlue = css`
 
     `}
 `;
+
 const smallFade = css`
   ${bigWhite}
   font-size: 1rem;
@@ -38,25 +41,30 @@ const smallFade = css`
   padding-left: 0.5rem;
   padding-bottom: 0.7rem;
 `;
+
 const smallWhite = css`
   font-size: 1rem;
   font-weight: 400;
   padding-left: 0.5rem;
   padding-bottom: 0.7rem;
 `;
+
 const footerDrops = css`
   ${smallWhite}
   font-size:1.1rem;
   padding-bottom: 0rem;
 `;
+
 const smallDesktopWhite = css`
   ${smallWhite};
   font-weight: 600;
 `;
+
 const smallBlack = css`
   ${smallWhite};
   color: black;
 `;
+
 const navDrops = css`
   ${smallBlack};
   width: 100%;
@@ -66,6 +74,7 @@ const navDrops = css`
     background-color: rgba(0, 0, 0, 0.03);
   }
 `;
+
 const smallDarkGrey = css`
   font-size: 0.8rem;
   color: rgba(0, 0, 0, 0.6);
@@ -76,6 +85,7 @@ const smallDarkGrey = css`
   text-indent: -6rem;
   display: block !important;
 `;
+
 const movieDropDown = css`
   ${smallDarkGrey};
   display: inline;
@@ -87,6 +97,7 @@ const movieDropDown = css`
   justify-items: left !important;
   align-items: left !important;
 `;
+
 const bigBlue = css`
   font-size: 1.2rem;
   background-color: ${(props) =>
@@ -108,6 +119,7 @@ const bigBlue = css`
   
   `} */
 `;
+
 const loadMore = css`
   ${bigBlue};
 
@@ -123,6 +135,7 @@ const loadMore = css`
   }
   `}
 `;
+
 const language = css`
   border: 0.1rem solid;
   border-color: white;
@@ -136,6 +149,25 @@ const language = css`
     background-color: white;
   }
 `;
+
+const whiteRounded = css`
+  display: flex;
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 0.3rem 0.9rem;
+  margin: 0.4rem;
+  justify-content: center;
+  margin-left: 0.3rem;
+  color: black;
+  border: solid 0.1rem rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  cursor: pointer;
+  :hover {
+    background-color: ${colors.lightBlue};
+    color: white;
+  }
+`;
+
 const themes = {
   bigBlue,
   bigWhite,
@@ -151,7 +183,9 @@ const themes = {
   smallDesktopWhite,
   smallFade,
   smallWhite,
+  whiteRounded,
 };
+
 const StyledButton = styled.button`
   ${media.phone`
     display: flex;

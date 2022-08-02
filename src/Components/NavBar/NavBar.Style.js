@@ -6,7 +6,7 @@ const Header = styled.header`
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 100;
   ${media.phone`
     background-color: ${colors.darkBlue};
     height: 4rem;

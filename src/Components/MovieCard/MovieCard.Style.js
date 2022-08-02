@@ -94,9 +94,9 @@ const OverFlowContainer = styled.div`
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    display: -webkit-box;
     line-height: 1rem; /* fallback */
     max-height: 2rem; /* fallback */
+    display: -webkit-box;
     -webkit-line-clamp: 2; /* number of lines to show */
     -webkit-box-orient: vertical;
  `}
