@@ -6,7 +6,7 @@ import { predictionsList } from 'constants';
 import StyledSearchPanel from './search-panel.style';
 
 /**
- *  Search Panel Component.
+ * Search Panel Component.
  *
  * @return {Element}
  */
@@ -20,7 +20,6 @@ function SearchPanel() {
       />
       <TrendingDiv />
 
-      {/* if its the last give it a bottom border */}
       {predictionsList.map((pred) =>
         predictionsList.length - 1 === predictionsList.indexOf(pred) ? (
           <SearchPredictions key={pred} prediction={pred} bottomBorder />

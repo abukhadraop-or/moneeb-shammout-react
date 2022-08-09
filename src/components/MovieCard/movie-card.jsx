@@ -28,8 +28,7 @@ import {
  *
  * @return {Element}
  */
-
-function MovieCard({ title, description, date, imageURL, percentageRate }) {
+function MovieCard({ date, description, imageURL, percentageRate, title }) {
   const [blur, setBlur] = useState(false);
 
   /**
@@ -72,7 +71,6 @@ function MovieCard({ title, description, date, imageURL, percentageRate }) {
               hoverEffect
             />
           </DesktopDots>
-          {/* not working its blurs */}
 
           <DesktopPercentage percentage={percentageRate}>
             &nbsp;{`${percentageRate * 10}`}

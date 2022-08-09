@@ -6,7 +6,7 @@ import { urls } from 'constants';
 import StyledLogoContainer from './logo-container.style';
 
 /**
- * Logo Container with Logo inside.
+ * Logo Container .
  *
  * @param {Object} props   Component props.
  * @param {String} props.logoType Phone or mobile.

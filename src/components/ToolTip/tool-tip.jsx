@@ -10,7 +10,7 @@ import StyledToolTip from './tool-tip.style';
  * @param {string} props.text   Tool tip text.
  * @param {string} props.theme   Tool tip theme.
  *
- * @return {Element}  .
+ * @return {Element}
  */
 function ToolTip({ className, text, theme }) {
   return (

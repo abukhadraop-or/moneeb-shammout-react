@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import Icon from 'components/Icon/icon';
 import TextField from 'components/TextField/text-field';
-import StyledSearchBox from './search-box.style';
+import { StyledSearchBox, TextBoxWrapper } from './search-box.style';
 
 /**
  * TextField component depending on the theme chosen.
@@ -28,11 +28,13 @@ function SearchBox({ leftIcon, placeHolder, rightIcon }) {
     <StyledSearchBox>
       <>
         <Icon iconName={leftIcon} color="black" />
-        <TextField
-          placeHolder={placeHolder}
-          ref={searchFieldController}
-          theme="search"
-        />
+        <TextBoxWrapper>
+          <TextField
+            placeHolder={placeHolder}
+            ref={searchFieldController}
+            theme="search"
+          />
+        </TextBoxWrapper>
         <Icon
           iconName={rightIcon}
           onClick={rightIconClickHandler}

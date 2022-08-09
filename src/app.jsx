@@ -7,7 +7,7 @@ import GlobalStyle from './styles/global.style';
 /**
  * Root component.
  *
- * @return {Element}  react APP
+ * @return {Element}
  */
 function App() {
   return (

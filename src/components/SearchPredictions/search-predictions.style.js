@@ -2,15 +2,15 @@ import styled from 'styled-components';
 import { media } from 'styles/media-query';
 
 const SearchPrediction = styled.div`
-  display: flex;
-  font-size: 1rem;
-  width: 100%;
-  height: 2rem;
-  padding-left: 1rem;
+  border-top: 0.1rem solid rgb(227, 227, 227);
   box-sizing: border-box;
   color: black;
+  display: flex;
+  font-size: 1rem;
   font-weight: 400;
-  border-top: 0.1rem solid rgb(227, 227, 227);
+  height: 2rem;
+  padding-left: 1rem;
+  width: 100%;
 
   ${(props) =>
     props.bottomBorder
@@ -18,9 +18,7 @@ const SearchPrediction = styled.div`
       : ''};
 
   ${media.desktop`
-
     padding-left:10rem;
-
  `}
 `;
 

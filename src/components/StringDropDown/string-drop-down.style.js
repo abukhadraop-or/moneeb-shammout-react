@@ -23,6 +23,7 @@ const StyledStringDropDown = styled.div`
             width: '10rem',
           }
         : ''};
+
     ${(props) =>
       props.dropType === 'footerDrops'
         ? {
@@ -33,4 +34,5 @@ const StyledStringDropDown = styled.div`
         : ''};
   `}
 `;
+
 export default StyledStringDropDown;

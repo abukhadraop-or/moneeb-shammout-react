@@ -8,23 +8,23 @@ import { sortMap } from 'constants';
 /**
  * Body sort part.
  *
- * @param {Function} onSort  Sort handler passed from Body.
+ * @param {Function} onChange  Sort change handler passed from Body.
  *
  * @return {Element}
  */
-function SortPanel({ onSort }) {
+function SortPanel({ onChange }) {
   return (
     <FilterCard title="Sort">
       <Title title="Sort Results By" theme="light" />
       <br />
-      <SelectMenu options={Object.keys(sortMap)} onChange={onSort} />
+      <SelectMenu options={Object.keys(sortMap)} onChange={onChange} />
       <br />
     </FilterCard>
   );
 }
 
 SortPanel.propTypes = {
-  onSort: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default SortPanel;

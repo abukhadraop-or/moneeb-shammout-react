@@ -1,6 +1,6 @@
 import { urls } from 'constants';
 /**
- *  Fetch movies API.
+ * Fetch movies API.
  *
  * @param {number} pageNumber Page number.
  * @param {string} sortType Sort by query.

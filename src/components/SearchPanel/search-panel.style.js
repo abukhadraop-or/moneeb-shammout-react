@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { media } from 'styles/media-query';
 import colors from 'styles/colors';
 
-// TODO:fix css
 const StyledSearchPanel = styled.div`
   display: block;
   z-index: 1;
@@ -11,13 +10,13 @@ const StyledSearchPanel = styled.div`
   color: grey;
   position: fixed;
   background-color: ${colors.white};
-  bottom: 42%;
+  bottom: 21.6rem;
   padding-bottom: 0;
   margin-bottom: 2.5rem;
 
   ${media.desktop`
     width: 100%;
-    bottom: 51%;
+    bottom: 31rem;
     justify-content:center;
     justify-items:center;
     align-items:center;

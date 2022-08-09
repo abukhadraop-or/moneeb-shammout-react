@@ -12,7 +12,7 @@ import StyledDesktopMenu from './desktop-menu.style';
 /**
  * Navbar drop downs for desktop only.
  *
- * @return {Element} DesktopMenu component.
+ * @return {Element}
  */
 function DesktopMenu() {
   const [showState, setShowState] = useState({
@@ -23,7 +23,7 @@ function DesktopMenu() {
   });
 
   /**
-   *  Handles  hover event on the button to display drop down.
+   * Handles  hover event on the button to display drop down.
    *
    * @param {string } category  Category name to show.
    */

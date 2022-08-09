@@ -7,7 +7,6 @@ import StyledCountryDropDown from './country-drop-down.style';
  *
  * @return {Element} CountryDropDown component.
  */
-
 function CountryDropDown() {
   const [selected, setSelected] = useState('');
 
@@ -27,4 +26,5 @@ function CountryDropDown() {
     </StyledCountryDropDown>
   );
 }
+
 export default CountryDropDown;

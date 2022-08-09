@@ -23,21 +23,21 @@ const DesktopLogo = styled.div`
 `;
 
 const StyledFooter = styled.footer`
-  width: 100%;
-  height: auto;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding-left: 1rem;
-  min-height: 100%;
+  height: auto;
   margin: 0 auto -9.6rem;
-  box-sizing: border-box;
+  min-height: 100%;
+  padding-left: 1rem;
+  width: 100%;
   background-color: ${colors.darkBlue};
 
   ${media.desktop`
-    {flex-direction: row;
+    flex-direction: row;
     justify-content: center;
     padding:5rem 0rem 3.5rem 6rem;  
-  }
+  
   `}
 `;
 

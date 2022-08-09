@@ -12,7 +12,6 @@ import StyledSSearchPredictions from './search-predictions.style';
  *
  * @return {Element}
  */
-
 function SearchPrediction({ prediction, bottomBorder }) {
   return (
     <StyledSSearchPredictions bottomBorder={bottomBorder}>

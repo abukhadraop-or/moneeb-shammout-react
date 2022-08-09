@@ -2,16 +2,14 @@ import styled from 'styled-components';
 import { media } from 'styles/media-query';
 import colors from 'styles/colors';
 
-// TODO:fix css
 const Option = styled.div`
-  width: 95%;
-  height: auto;
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
+  background-color: ${colors.white};
+  box-sizing: border-box;
   font-size: 0.9rem;
   font-weight: 400;
-  box-sizing: border-box;
-  background-color: ${colors.white};
+  height: auto;
+  padding: 0.5rem 0;
+  width: 100%;
 
   ${(props) =>
     props.selected === props.content
@@ -34,26 +32,25 @@ const Option = styled.div`
   }
 `;
 const OptionContainer = styled.div`
-  width: calc(78% + 1vw);
-  max-height: 10rem;
-  overflow-y: scroll;
-  overflow-x: visible;
-  box-sizing: border-box;
-  position: absolute;
-  white-space: nowrap;
-  border: solid;
-  border-radius: 0.25rem;
-  border-color: transparent;
-  margin-top: 1rem;
   background-color: white;
+  border: solid;
+  border-color: transparent;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  margin-top: 1rem;
+  max-height: 10rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  white-space: nowrap;
+  width: 100%;
+  position: sticky;
   z-index: 99;
   ${media.desktop`
-  width: 13rem;
-    height: auto;
+    width: 15rem;
   `}
 `;
 
-const StyledSelectMenu = styled.ul`
+const StyledSelectMenu = styled.div`
   display: block;
   cursor: pointer;
   width: inherit;
@@ -62,7 +59,7 @@ const StyledSelectMenu = styled.ul`
   border-color: transparent;
   padding-left: 0.2rem;
   padding-bottom: 2rem;
-  margin: 0rem 1rem 0 1rem;
+  margin: 0rem 1rem;
   color: ${colors.black};
   background-color: ${colors.mediumGrey};
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -3 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='10 9 12 12 14 9'%3e%3c/polyline%3e%3c/svg%3e");
@@ -70,9 +67,7 @@ const StyledSelectMenu = styled.ul`
   background-position: right 0.1rem center;
 
   ${media.desktop`
-  background-color: ${colors.mediumGrey};
-
-    width: 80%;
+    width:15rem;
   `}
 `;
 

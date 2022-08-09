@@ -2,37 +2,37 @@ import styled from 'styled-components';
 import colors from 'styles/colors';
 
 const Label = styled.label`
-  display: block;
-  position: relative;
-  padding-left: 2rem;
   cursor: pointer;
+  display: block;
   font-size: 1rem;
   font-weight: 400;
   margin-bottom: 0.2rem;
+  padding-left: 2rem;
+  position: relative;
 `;
-// TODO:remove percent
+
 const StyledCheckBox = styled.span`
-  width: 1rem;
   height: 1rem;
+  left: 1.5rem;
   position: absolute;
   top: 0;
-  left: 5%;
-  background-color: #eee;
+  width: 1rem;
+
+  // For displaying the check mark
   ::after {
-    // For displaying the check mark
-    content: '';
-    position: absolute;
-    display: block;
-    justify-content: center;
-    left: 0.3rem;
-    top: 0.2rem;
-    width: 0.1rem;
-    height: 0.3rem;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
     border: solid white;
     border-width: 0 0.2rem 0.2rem 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+    content: '';
+    display: block;
+    height: 0.3rem;
+    justify-content: center;
+    left: 0.3rem;
+    position: absolute;
+    top: 0.2rem;
+    width: 0.1rem;
   }
 
   ${(props) =>

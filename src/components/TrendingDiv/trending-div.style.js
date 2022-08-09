@@ -17,7 +17,7 @@ const StyledTrendingDiv = styled.div`
   color: ${colors.black};
 
   ${media.desktop`
-  padding-left:10rem;
+   padding-left:10rem;
   `}
 `;
 export default StyledTrendingDiv;

@@ -1,33 +1,25 @@
 import styled from 'styled-components';
 import { media } from 'styles/media-query';
 
-// TODO:fix style
 const StyledFilterCard = styled.div`
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 0.4rem;
+  border: 0.1rem solid #e3e3e3;
+  box-shadow: 0 0.1rem 0.5rem rgb(0 0 0 / 10%);
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  height: auto;
-  border-radius: 0.2rem;
-  text-indent: 1rem;
-  margin-bottom: 0.2rem;
-  border: 0.1rem solid #e3e3e3;
-  box-shadow: 0 0.1rem 0.5rem rgb(0 0 0 / 10%);
-  min-width: 16rem;
-  width: calc(16rem+1vw);
-  margin-right: 1rem;
-  justify-content: center;
-  justify-items: center;
-  border-radius: 0.4rem;
   flex-wrap: wrap;
+  height: auto;
   justify-content: space-between;
-  overflow: hidden;
-  -webkit-tap-highlight-color: transparent;
-  -moz-tap-highlight-color: transparent;
-  -o-tap-highlight-color: transparent;
-  -tap-highlight-color: transparent;
+  justify-items: center;
+  margin-bottom: 0.2rem;
+  margin-right: 1rem;
+  min-width: 16rem;
+  text-indent: 1rem;
 
   ${media.desktop`
-    width:calc(16rem + 1vw);
+    width:17rem;
   `}
 `;
 export default StyledFilterCard;

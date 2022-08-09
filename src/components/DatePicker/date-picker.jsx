@@ -6,7 +6,7 @@ import Icon from 'components/Icon/icon';
 import { StyledDatePicker, Label, IconWrapper } from './date-picker.style';
 
 /**
- *  DatePicker input.
+ * Date picker input.
  *
  * @param {Object} props Component props.
  * @param {Date} props.initialDate Initial date displayed.
@@ -19,7 +19,7 @@ function DatePicker({ initialDate, label }) {
   const [showPicker, setShowPicker] = useState(false);
 
   /**
-   * Set the new date
+   * Set the new date.
    *
    * @param {Date} newDate Change state to this date.
    */
@@ -29,7 +29,6 @@ function DatePicker({ initialDate, label }) {
 
   /**
    * Render date picker on click.
-   *
    */
   const iconOnClick = () => {
     setShowPicker((prevState) => !prevState);

@@ -11,7 +11,7 @@ import {
 import { StyledFooter, DesktopLogo, DesktopLeftSide } from './footer.style';
 
 /**
- * footer component.
+ * Footer component.
  *
  * @return {Element}
  */

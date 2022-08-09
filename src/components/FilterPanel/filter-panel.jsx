@@ -5,7 +5,6 @@ import Icon from 'components/Icon/icon';
 import RadioButton from 'components/RadioButton/radio-button';
 import CheckBox from 'components/CheckBox/check-box';
 import CountryDropDown from 'components/CountryDropDown/country-drop-down';
-import ToolTip from 'components/ToolTip/tool-tip';
 import DatePicker from 'components/DatePicker/date-picker';
 import Button from 'components/Button/button';
 import SelectMenu from 'components/SelectMenu/select-menu';
@@ -17,11 +16,7 @@ import {
   genresList,
   languagesList,
 } from 'constants';
-import {
-  FilterWrapper,
-  FlexRowContainer,
-  ToolTipWrapper,
-} from './filter-panel.style';
+import { FilterWrapper, FlexRowContainer } from './filter-panel.style';
 
 /**
  * Body filter part.
@@ -29,7 +24,6 @@ import {
  * @return {Element}
  */
 function FilterPanel() {
-  const [showInfo, setShowInfo] = useState(false);
   const [radioBtnState, setRadioBtnState] = useState({
     [filtersList[0]]: false,
     [filtersList[1]]: false,
@@ -38,21 +32,6 @@ function FilterPanel() {
   const [showAvailability, setShowAvailability] = useState(false);
   const [showReleaseDates, setShowReleaseDates] = useState(false);
   const [showCountryDrop, setShowCountryDrop] = useState(false);
-  const [languageInfo, setLanguageInfo] = useState(false);
-
-  /**
-   * Show or hide question mark info on click.
-   *
-   * @param {Object}  event Event object.
-   */
-  const infoIconClickHandler = (event) => {
-    if (event.currentTarget.id === 'icon') {
-      event.stopPropagation();
-      setShowInfo((prevState) => !prevState);
-    } else {
-      setShowInfo(false);
-    }
-  };
 
   /**
    * Check or uncheck radio button.
@@ -83,7 +62,7 @@ function FilterPanel() {
    */
   const toggleReleaseDates = () => {
     setShowReleaseDates((prevState) => !prevState);
-    setShowCountryDrop(() => false);
+    setShowCountryDrop(false);
   };
 
   /**
@@ -92,46 +71,13 @@ function FilterPanel() {
    * @param {boolean} show Show or hide country drop.
    */
   const toggleCountryDrop = (show) => {
-    setShowCountryDrop(() => show);
-  };
-
-  /**
-   * Show or hide language pop up.
-   *
-   * @param {Object}  event Event object.
-   */
-  const showLanguageInf = (event) => {
-    if (event.currentTarget.id === 'icon') {
-      event.stopPropagation();
-      setLanguageInfo((prevState) => !prevState);
-    } else {
-      setLanguageInfo(false);
-    }
+    setShowCountryDrop(show);
   };
 
   return (
-    <FilterCard
-      title="Filters"
-      onClick={(event) => {
-        infoIconClickHandler(event);
-        showLanguageInf(event);
-      }}
-    >
-      {showInfo && (
-        <ToolTip
-          className="toolTip"
-          theme="filters"
-          text="Log In To Filter Items You've Watched"
-        />
-      )}
-
+    <FilterCard title="Filters">
       <Title title="Show Me" theme="light">
-        <Icon
-          id="icon"
-          color="grey"
-          iconName="HiQuestion"
-          onClick={(event) => infoIconClickHandler(event)}
-        />
+        <Icon id="icon" color="grey" iconName="HiQuestion" />
       </Title>
 
       <br />
@@ -207,22 +153,8 @@ function FilterPanel() {
       </FilterWrapper>
 
       <FilterWrapper>
-        {languageInfo && (
-          <ToolTipWrapper>
-            <ToolTip
-              className=""
-              theme="filters"
-              text="Filter items based on their original language"
-            />
-          </ToolTipWrapper>
-        )}
         <Title title="Language" theme="light">
-          <Icon
-            id="icon"
-            color="grey"
-            iconName="HiQuestion"
-            onClick={showLanguageInf}
-          />
+          <Icon id="icon" color="grey" iconName="HiQuestion" />
         </Title>
         <br />
         <SelectMenu options={languagesList} onChange={null} />

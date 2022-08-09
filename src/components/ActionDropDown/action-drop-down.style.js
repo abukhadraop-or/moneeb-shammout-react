@@ -4,19 +4,17 @@ import colors from 'styles/colors';
 
 const StyledActionDropDown = styled.div`
   background-color: ${colors.white};
-  /* bottom: 82.5%;
-  left: 51.5%; */
-  z-index: 1;
-  display: block;
-  flex-direction: column;
-  position: fixed;
-  width: 12rem;
-  height: 6rem;
-  border: solid 0.01rem rgba(33, 37, 41, 0.15);
-  justify-content: space-between;
   border-radius: 0.3rem;
+  border: solid 0.01rem rgba(33, 37, 41, 0.15);
+  bottom: 43.5rem;
+  height: 5.5rem;
+  left: 14.3rem;
+  overflow: hidden;
+  position: fixed;
+  width: 10.5rem;
+  z-index: 101;
 
-  > * {
+  > {
     :first-child {
       border-bottom: solid 0.001rem rgba(33, 37, 41, 0.15);
     }
@@ -33,17 +31,17 @@ const StyledActionDropDown = styled.div`
   }
 
   ${media.desktop`
-    position:absolute;
-    bottom:3rem;
-    left:2rem;
     background-color: white;
-    border: 0.1rem solid #e3e3e3;
     border-radius: 0.5rem;
+    border: 0.1rem solid #e3e3e3;
+    bottom:3rem;
     box-shadow: 0 0.1rem 0.5rem rgb(0 0 0 / 10%);
-    cursor: pointer;
     color:black;
-    width: 10rem;
+    cursor: pointer;
     height:6rem;
+    left:2rem;
+    position:absolute;
+    width: 14rem;
     
   `}
 `;

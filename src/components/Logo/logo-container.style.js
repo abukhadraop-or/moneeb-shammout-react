@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { media } from 'styles/media-query';
 
 const LogoContainer = styled.div`
-  width: 3rem;
-  height: 4.6rem;
   display: flex;
+  height: 4.6rem;
+  width: 3rem;
 
   ${media.desktop`
     display: flex;
@@ -16,6 +16,7 @@ const LogoContainer = styled.div`
             width: '10rem',
           }
         : null};
+        
     ${(props) =>
       props.theme === 'desktopNav'
         ? {

@@ -3,44 +3,44 @@ import { media } from 'styles/media-query';
 
 const DesktopFiltersContainer = styled.div`
   ${media.desktop`
-
-    flex: 0 1 auto;
-    position:relative;
-    display: flex;
-    flex-direction: column;
     padding-left: 10rem;
-    width: 18rem;
     padding-top: 1rem;
+    position:relative;
+    width: 18rem;
   `}
 `;
+
 const DesktopMoviesContainer = styled.div`
+  padding-right: 1.3rem;
+
   ${media.desktop`
-    flex:0.95;
-    position:relative;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    box-sizing: border-box;
+    flex-wrap: wrap;
+    flex:0.95;
     height: auto;
     margin-left:-1rem;
+    padding-right: 0;
     padding-top: 3.5rem;  
-    flex-wrap: wrap;
+    position:relative;
   `}
 `;
 
 const StyledBody = styled.div`
-  width: 100%;
-  height: auto;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
+  height: auto;
   padding-left: 1.3rem;
   padding-top: 1.2rem;
+  width: 100%;
 
   ${media.desktop`
+    align-content: flex-start;
+    align-items: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
-    align-content: flex-start;
     padding-left:6rem;
   `};
 `;

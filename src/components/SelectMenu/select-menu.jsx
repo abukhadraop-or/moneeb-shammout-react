@@ -4,7 +4,7 @@ import Title from 'components/Title/title';
 import { StyledSelectMenu, Option, OptionContainer } from './select-menu.style';
 
 /**
- * SelectMenu component.
+ * Select menu component.
  *
  * @param {Object} props Component props.
  * @param {Function} props.onChange Reflects changes on the parent components.
@@ -29,23 +29,23 @@ function SelectMenu({ onChange, options }) {
    * @param {Object} event  The  Event object.
    */
   const optionClickHandler = (event) => {
-    const optionID = event.currentTarget.id;
+    const optionId = event.currentTarget.id;
 
-    if (optionID === selectTitle) {
+    if (optionId === selectTitle) {
       return;
     }
 
-    setSelectTitle(optionID);
+    setSelectTitle(optionId);
 
     if (onChange) {
-      onChange(optionID);
+      onChange(optionId);
     }
   };
 
   return (
     <StyledSelectMenu onClick={selectClickHandler}>
       <Title title={selectTitle} theme="selectTitle" />
-      <OptionContainer>
+      <OptionContainer className="options-container">
         {showMenu &&
           options.map((option) => (
             <Option

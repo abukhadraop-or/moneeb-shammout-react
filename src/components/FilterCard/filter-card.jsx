@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
 import FilterVisibleContent from 'components/FilterVisibleContent/filter-visible-content';
 import StyledFilterCard from './filter-card.style';
 
@@ -8,31 +7,30 @@ import StyledFilterCard from './filter-card.style';
  * FilterCard component.
  *
  * @param {Object} props   Component props.
- *
- * @param {array<element>} props.children  Children elements.
- * @param {function} props.onClick  Handel click event.
- * @param {String} props.title  Title text.
+ * @param {Array<Element>} props.children  Children elements.
+ * @param {Function} props.onClick  Handel click event.
+ * @param {string} props.title  Title text.
  *
  * @return {Element}
  */
 function FilterCard({ children, onClick, title }) {
-  const [showCard, setShowCard] = useState(false);
+  const [expandCard, setExpandCard] = useState(false);
 
   /**
    *  Expand or minimize filter card.
    */
   const filterClickHandler = () => {
-    setShowCard((prevSate) => !prevSate);
+    setExpandCard((prevSate) => !prevSate);
   };
 
   return (
     <StyledFilterCard onClick={onClick}>
       <FilterVisibleContent
         title={title}
-        showHiddenContentHandler={filterClickHandler}
-        showBorder={showCard}
+        onClick={filterClickHandler}
+        showBorder={expandCard}
       />
-      {showCard && children}
+      {expandCard && children}
     </StyledFilterCard>
   );
 }

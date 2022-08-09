@@ -116,7 +116,6 @@ function NavBar() {
           </RightIconsWrapper>
         </DesktopNavBar>
       </Header>
-
       {showUserUtilities && (
         <UserUtilities>
           <Button key="sign's in" text="Login" theme="smallDarkGrey" />

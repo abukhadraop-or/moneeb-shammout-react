@@ -8,30 +8,30 @@ import StyledFilterVisibleContent from './filter-visible-content.style';
  *
  * @param {Object} props   Component props.
  * @param {boolean} props.showBorder   Shows bottom border.
- * @param {Function} showHiddenContentHandler  External on click handler.
+ * @param {Function} onClick  External on click handler.
  * @param {string} title  Title text.
  *
- * @return {Element}  Filter visible component.
+ * @return {Element}
  */
-function FilterDropDown({ showBorder, showHiddenContentHandler, title }) {
-  const [FilterDown, setFilterDown] = useState(false);
+function FilterDropDown({ showBorder, onClick, title }) {
+  const [arrowDown, setArrowDown] = useState(false);
 
   /**
    * Toggle filter arrows along with an external handler.
    */
-  const toggleFilterClickHandler = () => {
-    setFilterDown((prevState) => !prevState);
-    showHiddenContentHandler();
+  const filterClickHandler = () => {
+    setArrowDown((prevState) => !prevState);
+    onClick();
   };
 
   return (
     <StyledFilterVisibleContent
-      onClick={toggleFilterClickHandler}
+      onClick={filterClickHandler}
       showBorder={showBorder}
     >
       {title}
       <Icon
-        iconName={FilterDown ? 'HiChevronDown' : 'HiChevronRight'}
+        iconName={arrowDown ? 'HiChevronDown' : 'HiChevronRight'}
         color="black"
       />
     </StyledFilterVisibleContent>
@@ -39,8 +39,8 @@ function FilterDropDown({ showBorder, showHiddenContentHandler, title }) {
 }
 
 FilterDropDown.propTypes = {
+  onClick: PropTypes.func.isRequired,
   showBorder: PropTypes.bool,
-  showHiddenContentHandler: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
 };
 

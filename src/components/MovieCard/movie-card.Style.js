@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { media } from 'styles/media-query';
-// TODO:fix style
+
 const DesktopDots = styled.div`
   display: none;
 
   ${media.desktop`
     display: block;
     position: absolute;
-    top: 5%;
     right: 0;
+    top: 0.5rem;
     width: 2rem;
   `}
 `;
@@ -19,6 +19,7 @@ const DesktopPercentage = styled.div`
   ${media.desktop`
   border-radius: 50%;
   border:solid 0.2rem;
+
   ${(props) =>
     props.percentage <= 5
       ? {
@@ -40,68 +41,61 @@ ${(props) =>
       }
     : null};
 
-    position: absolute;
+    align-content:center;
+    background-color:black;
+    bottom:-1rem;
+    color: white;
     display: flex;
     flex-direction:row;
-    bottom:-5%;
-    left: 6%;
-    background-color:black;
     font-size:1rem;
-    color: white;
-    width: 2rem;
-    height: 1.8rem;
-    align-content:center;
     font-weight: 700;
+    height: 1.8rem;
+    left: 0.7rem;
     padding: 0.2rem;
+    position: absolute;
+    width: 2rem;
     
-    *{
-      display:inline;
-    }
-
     .icon{
       font-size:0.7rem;
     }
 
   `}
 `;
+
 const MovieDropDownMenu = styled.div`
   display: none;
 
   ${media.desktop`
-    position: relative;
-    text-align:left !important;
-    align-items:left !important;
-    align-content:left !important;
-    justify-content:left !important;
-    justify-items:left !important;
-    align-items:left !important;
     display:block;
-    z-index:1;
-    top: 50%;
-    bottom:70%;
-    left: 10%;
     font-size: 1rem;
+    left: 1.5rem;
+    position: relative;
+    top: 14rem;
     width: 2rem;
+    z-index:1;
+
     .movieSignup{
       display:block;
-      position:absolute;
-      right:10%;
       margin-top:-1.2rem;
+      position:absolute;
+      right:1rem;
     }
+
  `}
 `;
+
 const OverFlowContainer = styled.div`
-  font-size: 0.8rem;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  display: -webkit-box;
+  font-size: 0.9rem;
   font-weight: 400;
-  word-break: break-word;
+  line-height: 1rem;
+  margin-right: 1rem;
+  max-height: 2rem;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 1rem; /* fallback */
-  max-height: 2rem; /* fallback */
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-  -webkit-box-orient: vertical;
-
+  word-break: break-word;
   ${media.desktop`
     display: none;
   `}
@@ -129,7 +123,7 @@ const PosterContainer = styled.div`
   }
 
   ${media.desktop`
-    height: 80%;
+    height: 18rem;
     width: 11.5rem;
 
     .poster{
@@ -148,7 +142,7 @@ const RightContainer = styled.div`
   align-items: flex-start;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 65%;
+  width: 100%;
 
   ${media.desktop`
     display:flex;
@@ -167,7 +161,7 @@ const RightContainer = styled.div`
 const StyledMovieCard = styled.div`
   height: 9rem;
   border-radius: 0.8rem;
-  width: 95%;
+  width: 100%;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -176,8 +170,8 @@ const StyledMovieCard = styled.div`
   margin-bottom: 1rem;
 
   ${media.desktop`
-  flex-wrap: wrap;
-  padding-bottom:1.3rem;
+    flex-wrap: wrap;
+    padding-bottom:1.3rem;
     margin: 1rem 0rem 1rem 2rem;
     height: 22.5rem;
     width: 11.5rem;

@@ -13,7 +13,7 @@ import StyledSlider from './slider.style';
  *
  * @return {Element}  Slider component.
  */
-function Slider({ onChange, index, tag }) {
+function Slider({ index, onChange, tag }) {
   return (
     <StyledSlider>
       <ReactSlider

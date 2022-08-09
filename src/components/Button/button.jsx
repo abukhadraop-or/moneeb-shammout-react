@@ -6,17 +6,16 @@ import StyledButton from './button.style';
  * Button component.
  *
  * @param {Object} props   Component props.
- * @param {boolean} props.disabled  Button state enabled or disabled.
  * @param {Element} props.children  Button Children.
- * @param {Function} props.onBlur onBlur event handler.
- * @param {Function} props.onClick OnClick event handler.
- * @param {Function} props.onHover OnHover event handler.
+ * @param {boolean} props.disabled  Button state enabled or disabled.
+ * @param {Function} props.onBlur Blur event handler.
+ * @param {Function} props.onClick Click event handler.
+ * @param {Function} props.onHover Hover event handler.
  * @param {string} props.text    Text inside the button.
  * @param {string} props.theme   Name of the theme.
  *
  * @return {Element}
  */
-
 function Button({ children, disabled, onBlur, onClick, onHover, text, theme }) {
   return (
     <StyledButton

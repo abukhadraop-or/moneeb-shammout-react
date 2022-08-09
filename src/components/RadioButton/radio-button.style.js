@@ -2,19 +2,19 @@ import styled from 'styled-components';
 import colors from 'styles/colors';
 
 const Label = styled.label`
+  cursor: pointer;
   display: flex;
   flex-direction: row;
-  position: relative;
-  cursor: pointer;
   font-size: 1rem;
-  padding: 0 0.5rem 0.5rem 0.5rem;
   font-weight: ${(props) => (props.checked ? '600' : '300')};
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  position: relative;
 `;
 
 const StyledRadioButton = styled.span`
-  display: flex;
   background-color: white;
   border-radius: 100%;
+  display: flex;
   margin-left: 0.5rem;
 
   ${(props) =>

@@ -1,7 +1,7 @@
 import styled, { keyframes, css } from 'styled-components';
 import { media } from 'styles/media-query';
 import colors from 'styles/colors';
-// TODO fix css
+
 const showKeyFrames = keyframes`
   
    0% {
@@ -12,12 +12,6 @@ const showKeyFrames = keyframes`
       opacity: 1;
       transform: translateX(0%);
     }
-`;
-const showAnimation = css`
-  animation-fill-mode: forwards;
-  animation: ${showKeyFrames} 1s ease;
-  display: block;
-  opacity: 1;
 `;
 
 const hideKeyframes = keyframes`
@@ -32,25 +26,29 @@ const hideKeyframes = keyframes`
       }
       
 `;
+
+const showAnimation = css`
+  animation-fill-mode: forwards;
+  animation: ${showKeyFrames} 1s ease;
+  display: block;
+  opacity: 1;
+`;
+
 const hideAnimation = (animate) => css`
   animation-fill-mode: forwards;
   animation: ${animate && hideKeyframes} 1s ease-out;
   display: none;
 `;
 const StyledPhoneMenu = styled.div`
-  flex-direction: column;
   background-color: ${colors.blue};
-  width: 85%;
+  flex-direction: column;
   height: 100%;
   padding: 0.8rem;
   position: fixed;
+  //couldn't do it without 85% and this menu isn't reusable
+  width: 85%;
   z-index: 100;
 
-  /**
-      if current ref is undefined means not rendered yet 
-       or initial animation: disable hide animation
-      else show all animations
-    */
   ${(props) =>
     `${typeof props.ref}` === 'undefined' ||
     props.ref.current.display === 'none'

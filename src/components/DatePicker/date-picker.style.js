@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { media } from 'styles/media-query';
 import colors from 'styles/colors';
 
-// TODO:fix style
 const Label = styled.div`
   position: absolute;
   color: grey;
@@ -10,25 +9,25 @@ const Label = styled.div`
 
 const IconWrapper = styled.div`
   background-color: #e4e7eb;
-  width: 2rem;
-  height: 1.8rem;
+  border-bottom-right-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+  bottom: 2.1rem;
   font-size: 1.5rem;
-  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  height: 1.8rem;
+  left: 20rem;
+  padding-top: 0.3rem;
   position: relative;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  width: 2rem;
   z-index: 0;
-  * {
+
+  & :first-child {
     align-content: center;
     justify-content: center;
   }
 
-  padding-top: 0.3rem;
-  left: 100%;
-  margin-top: -2rem;
-  border-bottom-right-radius: 0.4rem;
-  border-top-right-radius: 0.4rem;
-
   ${media.desktop`
-    left:110%;
+    left:12rem;
   `}
 `;
 const StyledDatePicker = styled.div`
@@ -42,32 +41,39 @@ const StyledDatePicker = styled.div`
 
   .datePicker {
     // input
-    margin: 0;
-    padding: 0.375rem 0.75rem;
-    width: 80%;
-    margin-left: 3.5rem;
-    height: calc(1.5em + 0.75rem);
-    border: 0;
-    outline: 0;
-    box-sizing: border-box;
-    box-shadow: none;
-    text-overflow: ellipsis;
-    border: 0.1rem solid rgba(0, 0, 0, 0.2);
+    align-items: center;
     border-radius: 0.4rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+    box-sizing: border-box;
     color: grey;
     display: flex;
     flex-flow: row nowrap;
-    align-items: center;
     flex: 0 1 auto;
+    height: 2rem;
+    margin-left: 3.5rem;
+    outline: 0;
     overflow: hidden;
+    padding: 0.375rem 0.75rem;
+    text-overflow: ellipsis;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    &:focus {
+    width: 15rem;
+
+    &:focus,
+    :active {
       border-color: ${colors.lightBlue};
     }
+
+    ${media.desktop`
+    
+     width:8rem;
+    `}
   }
 
   .calender {
     margin-left: -1.5rem;
+
+    //selecting all the calender days
     * {
       padding-right: 0.5rem;
 
@@ -79,6 +85,8 @@ const StyledDatePicker = styled.div`
 
   ${media.desktop`
     width:12rem;
+
     `}
 `;
+
 export { StyledDatePicker, Label, IconWrapper };

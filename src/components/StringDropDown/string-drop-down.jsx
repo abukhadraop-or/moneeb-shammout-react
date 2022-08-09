@@ -4,10 +4,10 @@ import Button from 'components/Button/button';
 import StyledStringDropDown from './string-drop-down.style';
 
 /**
- * StringDropDown component depending on the theme chosen.
+ * String drop down component depending on the theme chosen.
  *
  * @param {Object} props Component props.
- * @param {Array<string>} props.content    Items to be displayed inside.
+ * @param {Array<string>} props.content  Items to be displayed inside.
  * @param {string} props.dropType  Desktop themes.
  * @param {string} props.theme  Theme type of buttons.
  * @param {boolean} props.visibility   Show or hide menu.

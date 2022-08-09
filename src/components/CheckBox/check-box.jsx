@@ -11,9 +11,8 @@ import { StyledCheckBox, Label } from './check-box.style';
  * @param {string } props.label   Label text.
  * @param {Function } props.onCheck   Handel check event.
  *
- * @return {Element}  CheckBox component.
+ * @return {Element}
  */
-
 function CheckBox({ checked, itemVisibility, label, onCheck }) {
   const [checkState, setCheckState] = useState(checked);
 

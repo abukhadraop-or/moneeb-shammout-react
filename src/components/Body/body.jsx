@@ -4,8 +4,8 @@ import Title from 'components/Title/title';
 import FilterCard from 'components/FilterCard/filter-card';
 import MovieCard from 'components/MovieCard/movie-card';
 import Button from 'components/Button/button';
-import BodySort from 'components/SortPanel/sort-panel';
-import BodyFilter from 'components/FilterPanel/filter-panel';
+import SortPanel from 'components/SortPanel/sort-panel';
+import FilterPanel from 'components/FilterPanel/filter-panel';
 import convertDate from 'utilities/methods';
 import { sortMap, urls } from 'constants';
 import {
@@ -28,7 +28,7 @@ function Body() {
   /**
    * Shortcut for fetch movie service.
    *
-   * @param {Boolean} newPage  Add to the old movies or not.
+   * @param {boolean} newPage  Add to the old movies or not.
    */
   const fetchMoviesShortcut = async (newPage) => {
     const jsonData = await fetchMovies(page, sortType);
@@ -86,8 +86,8 @@ function Body() {
     <StyledBody>
       <DesktopFiltersContainer>
         <Title title="Popular Movies" theme="popularHeader" />
-        <BodySort onSort={sortFiltersClickHandler} />
-        <BodyFilter />
+        <SortPanel onChange={sortFiltersClickHandler} />
+        <FilterPanel />
         <FilterCard title="Where To Watch" />
         <Button
           theme="bigBlue"
@@ -96,6 +96,7 @@ function Body() {
           disabled={!searchButtonEnabled}
         />
       </DesktopFiltersContainer>
+
       <DesktopMoviesContainer>
         {movies.map((movie) => (
           <MovieCard

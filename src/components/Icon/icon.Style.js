@@ -7,7 +7,7 @@ const theme = {
   grey: colors.grey,
   lightGrey: colors.lightGrey,
   none: 'transparent',
-  transparent: 'transparent',
+  transparent: colors.white,
   white: colors.white,
 };
 
@@ -15,10 +15,10 @@ const StyledIcon = styled.i`
   font-size: 1.4rem;
   display: flex;
   color: ${(props) => theme[props.theme]};
+
   ${(props) =>
     props.theme === 'transparent'
       ? {
-          color: colors.white,
           'font-size': '1.5rem',
           opacity: 0.5,
         }
