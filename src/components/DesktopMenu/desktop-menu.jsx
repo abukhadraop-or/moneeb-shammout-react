@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Button from 'components/Button/button';
-import DropDownMenu from 'components/StringDropDown/StringDropDown';
+import DropDownMenu from 'components/StringDropDown/string-drop-down';
 import {
   moviesContent,
   tvContent,
   visibleContent,
   peopleContent,
-} from 'Constants/Content';
+} from 'constants';
 import StyledDesktopMenu from './desktop-menu.style';
 
 /**

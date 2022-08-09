@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { media } from 'Styles/MediaQuery';
+import { media } from 'styles/media-query';
 
 const StyledFilterDropDown = styled.div`
   display: flex;

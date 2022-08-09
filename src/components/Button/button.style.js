@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import { media } from 'Styles/MediaQuery';
-import colors from 'Styles/Colors';
+import { media } from 'styles/media-query';
+import colors from 'styles/colors';
 
 // TODO: remove css
 

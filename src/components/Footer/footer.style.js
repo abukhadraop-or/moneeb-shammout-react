@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { media } from 'Styles/MediaQuery';
-import colors from 'Styles/Colors';
+import { media } from 'styles/media-query';
+import colors from 'styles/colors';
 
 const DesktopLeftSide = styled.div`
   ${media.desktop`

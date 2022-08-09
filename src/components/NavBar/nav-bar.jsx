@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import LogoContainer from 'components/Logo/logo-container';
 import Icon from 'components/Icon/icon';
-import PhoneSideMenu from 'components/PhoneSideMenu/PhoneSideMenu';
+import PhoneSideMenu from 'components/PhoneSideMenu/phon-side-menu';
 import Button from 'components/Button/button';
-import SearchPanel from 'components/SearchPanel/SearchPanel';
+import SearchPanel from 'components/SearchPanel/search-panel';
 import DesktopMenu from 'components/DesktopMenu/desktop-menu';
-import DropDownMenu from 'components/StringDropDown/StringDropDown';
+import DropDownMenu from 'components/StringDropDown/string-drop-down';
 import UserUtilities from 'components/ActionDropDown/action-drop-down';
 import {
   Header,

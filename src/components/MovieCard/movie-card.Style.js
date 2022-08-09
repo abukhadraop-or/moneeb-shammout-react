@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { media } from 'Styles/MediaQuery';
+import { media } from 'styles/media-query';
 // TODO:fix style
 const DesktopDots = styled.div`
   display: none;

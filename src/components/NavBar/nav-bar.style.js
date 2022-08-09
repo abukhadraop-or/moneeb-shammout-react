@@ -1,46 +1,38 @@
 import styled from 'styled-components';
-import { media } from 'Styles/MediaQuery';
-import colors from 'Styles/Colors';
-// TODO reached here
+import { media } from 'styles/media-query';
+import colors from 'styles/colors';
+// TODO fix css
 const Header = styled.header`
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
-  ${media.phone`
-    background-color: ${colors.darkBlue};
-    height: 4rem;
-    width: 100%;
- `}
-  ${media.desktop`
-  
-  
-  `}
+  background-color: ${colors.darkBlue};
+  height: 4rem;
+  width: 100%;
 `;
 const StyledNavBar = styled.nav`
-  ${media.phone`
-    display: flex;
-    flex-direction: row;
-    height: 4rem;
-    align-items: center;
-    justify-content: space-between;
-    :first-child {
-      padding-left: 1.5rem;
-    }
-    overflow: hidden;
-  `}
+  display: flex;
+  flex-direction: row;
+  height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  :first-child {
+    padding-left: 1.5rem;
+  }
+  overflow: hidden;
+
   ${media.desktop`
     display: none;
   `}
 `;
 const RightIconsWrapper = styled.span`
-  ${media.phone`
-    display: flex;
-    flex-direction: row;
-    :last-child {
-      padding-right: 1.5rem;
-    }
- `}
+  display: flex;
+  flex-direction: row;
+  :last-child {
+    padding-right: 1.5rem;
+  }
+
   ${media.desktop`
     :last-child {
       padding-right: 0;
@@ -54,9 +46,8 @@ const RightIconsWrapper = styled.span`
 `;
 
 const DesktopNavBar = styled.nav`
-  ${media.phone`
-    display: none;
-  `}
+  display: none;
+
   ${media.desktop`
     display: flex;
     flex-direction: row;

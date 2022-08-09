@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-import Title from 'components/Title/Title';
+import Title from 'components/Title/title';
 import FilterCard from 'components/FilterCard/filter-card';
 import Icon from 'components/Icon/icon';
-import RadioButton from 'components/RadioButton/RadioButton';
+import RadioButton from 'components/RadioButton/radio-button';
 import CheckBox from 'components/CheckBox/check-box';
 import CountryDropDown from 'components/CountryDropDown/country-drop-down';
-import ToolTip from 'components/ToolTip/ToolTip';
+import ToolTip from 'components/ToolTip/tool-tip';
 import DatePicker from 'components/DatePicker/date-picker';
 import Button from 'components/Button/button';
-import SelectMenu from 'components/SelectMenu/SelectMenu';
-import Slider from 'components/Slider/Slider';
+import SelectMenu from 'components/SelectMenu/select-menu';
+import Slider from 'components/Slider/slider';
 import {
   availabilitiesList,
   filtersList,
   releaseList,
   genresList,
   languagesList,
-} from 'Constants/Content';
+} from 'constants';
 import {
   FilterWrapper,
   FlexRowContainer,
@@ -225,7 +225,7 @@ function FilterPanel() {
           />
         </Title>
         <br />
-        <SelectMenu optionsList={languagesList} onChange={null} />
+        <SelectMenu options={languagesList} onChange={null} />
       </FilterWrapper>
       <FilterWrapper>
         <Slider className="slider" onChange={() => {}} index={4} tag={4} />

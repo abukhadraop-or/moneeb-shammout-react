@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Title from 'components/Title/Title';
+import Title from 'components/Title/title';
 import Image from 'components/Image/image';
 import Icon from 'components/Icon/icon';
 import Button from 'components/Button/button';
 import ActionDropDown from 'components/ActionDropDown/action-drop-down';
-import ToolTip from 'components/ToolTip/ToolTip';
+import ToolTip from 'components/ToolTip/tool-tip';
 import {
   DesktopDots,
   DesktopPercentage,

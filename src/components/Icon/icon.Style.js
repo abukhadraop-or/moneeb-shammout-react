@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from 'Styles/Colors';
+import colors from 'styles/colors';
 
 const theme = {
   black: colors.black,

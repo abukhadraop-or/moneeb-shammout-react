@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'components/Image/image';
 import PhoneLogoPath from 'assets/images/logo.jpg';
-import { desktopLogo } from 'Constants/URL';
+import { urls } from 'constants';
 import StyledLogoContainer from './logo-container.style';
 
 /**
@@ -15,7 +15,7 @@ import StyledLogoContainer from './logo-container.style';
  * @return {Element}
  */
 function LogoContainer({ logoType, theme }) {
-  const logo = logoType === 'phone' ? PhoneLogoPath : desktopLogo;
+  const logo = logoType === 'phone' ? PhoneLogoPath : urls.desktopLogo;
   return (
     <StyledLogoContainer theme={theme}>
       <Image imagePath={logo} />

@@ -1,13 +1,13 @@
 import { React, useState, useEffect } from 'react';
-import fetchMovies from 'Service/Movies.Service';
-import Title from 'components/Title/Title';
+import fetchMovies from 'service/movies.service';
+import Title from 'components/Title/title';
 import FilterCard from 'components/FilterCard/filter-card';
 import MovieCard from 'components/MovieCard/movie-card';
 import Button from 'components/Button/button';
 import BodySort from 'components/SortPanel/sort-panel';
 import BodyFilter from 'components/FilterPanel/filter-panel';
 import convertDate from 'utilities/methods';
-import { sortMap } from 'Constants/Content';
+import { sortMap, urls } from 'constants';
 import {
   DesktopFiltersContainer,
   DesktopMoviesContainer,
@@ -37,7 +37,7 @@ function Body() {
       date: movie.release_date,
       description: movie.overview,
       id: movie.id,
-      imageURL: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+      imageURL: `${urls.moviesImage}${movie.poster_path}`,
       percentageRate: movie.vote_average,
       title: movie.original_title,
     }));

@@ -1,13 +1,13 @@
 import React from 'react';
 import Button from 'components/Button/button';
-import StringDropDown from 'components/StringDropDown/StringDropDown';
+import StringDropDown from 'components/StringDropDown/string-drop-down';
 import LogoContainer from 'components/Logo/logo-container';
 import {
   basicContent,
   LegalContent,
   communityContent,
   involvedContent,
-} from 'Constants/Content';
+} from 'constants';
 import { StyledFooter, DesktopLogo, DesktopLeftSide } from './footer.style';
 
 /**
