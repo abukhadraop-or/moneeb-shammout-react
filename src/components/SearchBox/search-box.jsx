@@ -18,7 +18,7 @@ function SearchBox({ leftIcon, placeHolder, rightIcon }) {
   const searchFieldController = useRef('');
 
   /**
-   *  Empty search text field.
+   * Empty search text field.
    */
   const rightIconClickHandler = () => {
     searchFieldController.current.value = '';

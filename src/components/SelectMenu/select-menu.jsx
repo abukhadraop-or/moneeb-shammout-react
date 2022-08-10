@@ -17,7 +17,7 @@ function SelectMenu({ onChange, options }) {
   const [showMenu, setShowMenu] = useState(false);
 
   /**
-   *   Handles select menu click show or hide.
+   * Handles select menu click show or hide.
    */
   const selectClickHandler = () => {
     setShowMenu((prevState) => !prevState);

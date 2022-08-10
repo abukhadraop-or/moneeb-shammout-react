@@ -18,14 +18,14 @@ function StringDropDown({ content, dropType, theme, visibility }) {
   const [visible, setVisible] = useState(false);
 
   /**
-   *  Hides menu when mouse out.
+   * Hides menu when mouse out.
    */
   const onBlurHandler = () => {
     setVisible(false);
   };
 
   /**
-   *  Shows menu when mouse over.
+   * Shows menu when mouse over.
    */
   const onHoverHandler = () => {
     setVisible(true);

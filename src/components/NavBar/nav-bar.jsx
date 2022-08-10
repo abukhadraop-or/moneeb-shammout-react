@@ -28,28 +28,28 @@ function NavBar() {
   const [showPlusDrop, setShowPlusDrop] = useState(false);
 
   /**
-   *  Show or hide side menu using state on click.
+   * Show or hide side menu using state on click.
    */
   const toggleSideMenu = () => {
     setShowMenu((prevState) => !prevState);
   };
 
   /**
-   *  show or hide user menu using state on click.
+   * Show or hide user menu using state on click.
    */
   const toggleUserUtilities = () => {
     setShowUserUtilities((prevState) => !prevState);
   };
 
   /**
-   *  Show or hide search menu using state on click.
+   * Show or hide search menu using state on click.
    */
   const searchIconClickHandler = () => {
     setShowSearch((prevState) => !prevState);
   };
 
   /**
-   *  Show or hide plus menu using state on click.
+   * Show or hide plus menu using state on click.
    */
   const plusClickHandler = () => {
     setShowPlusDrop((prevState) => !prevState);

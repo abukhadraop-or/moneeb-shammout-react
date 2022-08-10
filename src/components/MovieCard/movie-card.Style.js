@@ -97,7 +97,7 @@ const MovieDropDownMenu = styled.div`
 
 const OverFlowContainer = styled.div`
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-line-clamp: 2;
   display: -webkit-box;
   font-size: 0.9rem;
   font-weight: 400;

@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { media } from 'styles/media-query';
 
 const TextBoxWrapper = styled.div`
-  width: 80%;
-  height: 80%;
+  width: 81rem;
+  height: 1rem;
 `;
 
 const StyledSearchBox = styled.div`

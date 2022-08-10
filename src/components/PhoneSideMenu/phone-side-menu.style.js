@@ -39,6 +39,7 @@ const hideAnimation = (animate) => css`
   animation: ${animate && hideKeyframes} 1s ease-out;
   display: none;
 `;
+
 const StyledPhoneMenu = styled.div`
   background-color: ${colors.blue};
   flex-direction: column;

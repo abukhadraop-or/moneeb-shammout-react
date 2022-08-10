@@ -45,6 +45,7 @@ const OptionContainer = styled.div`
   width: 100%;
   position: sticky;
   z-index: 99;
+
   ${media.desktop`
     width: 15rem;
   `}

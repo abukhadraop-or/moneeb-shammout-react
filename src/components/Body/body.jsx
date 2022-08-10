@@ -50,7 +50,7 @@ function Body() {
     setMovies(movies.concat(newMovies));
   };
 
-  // Every time movie Page Change it fetches the new page.
+  // Every time movie page change it fetches the new page.
   useEffect(() => {
     fetchMoviesShortcut(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
