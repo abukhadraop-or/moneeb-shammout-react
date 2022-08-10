@@ -29,7 +29,7 @@ function PhoneSideMenu({ showMenu }) {
   /**
    * Show or hide drop downs using setShowState.
    *
-   * @param {String} menuName  Menu unique identifier.
+   * @param {string} menuName  Menu unique identifier.
    */
   const dropDownHandler = (menuName) => {
     setShowState((prevState) => {
@@ -41,24 +41,69 @@ function PhoneSideMenu({ showMenu }) {
   return (
     <StyledPhoneMenu showMenu={showMenu} ref={phoneMenu} id="phoneSideMenu">
       <Button
-        theme="bigWhite"
+        color="white"
+        fontSize="nearly-big"
+        fontWeight="medium-high"
+        className="dropButtons"
         onClick={() => dropDownHandler('movies')}
         text="Movies"
       />
-      <DropDownMenu visibility={showState.movies} content={moviesContent} />
+      <DropDownMenu
+        visibility={showState.movies}
+        content={moviesContent}
+        theme={{
+          className: 'sideDrops',
+          color: 'white',
+          fontSize: 'medium',
+          fontWeight: 'medium',
+        }}
+      />
       <Button
-        theme="bigWhite"
+        color="white"
+        fontSize="nearly-big"
+        fontWeight="medium-high"
+        className="dropButtons"
         onClick={() => dropDownHandler('tv')}
         text="TV Shows"
       />
-      <DropDownMenu visibility={showState.tv} content={tvContent} />
+      <DropDownMenu
+        visibility={showState.tv}
+        content={tvContent}
+        theme={{
+          className: 'sideDrops',
+          color: 'white',
+          fontSize: 'medium',
+          fontWeight: 'medium',
+        }}
+      />
       <Button
-        theme="bigWhite"
+        color="white"
+        fontSize="nearly-big"
+        fontWeight="medium-high"
+        className="dropButtons"
         onClick={() => dropDownHandler('people')}
         text="People"
       />
-      <DropDownMenu visibility={showState.people} content={peopleContent} />
-      <DropDownMenu visibility content={visibleContent} theme="smallFade" />
+      <DropDownMenu
+        visibility={showState.people}
+        content={peopleContent}
+        theme={{
+          className: 'sideDrops',
+          color: 'white',
+          fontSize: 'medium',
+          fontWeight: 'medium',
+        }}
+      />
+      <DropDownMenu
+        visibility
+        content={visibleContent}
+        theme={{
+          className: 'smallFade',
+          color: 'white',
+          fontSize: 'medium',
+          fontWeight: 'medium-high',
+        }}
+      />
     </StyledPhoneMenu>
   );
 }

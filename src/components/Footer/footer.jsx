@@ -22,42 +22,92 @@ function Footer() {
         <DesktopLogo>
           <LogoContainer logoType="phone" theme="desktopFooter" />
         </DesktopLogo>
-        <Button theme="bigWhiteBlue" text="JOIN THE COMMUNITY" />
+        <Button
+          color="boldBlue"
+          fontSize="medium-high"
+          fontWeight="bold"
+          className="joinCommunity"
+          text="JOIN THE COMMUNITY"
+        />
       </DesktopLeftSide>
       <div>
-        <Button theme="bigWhiteFooter" text="THE BASICS" />
+        <Button
+          color="white"
+          fontSize="medium-high"
+          fontWeight="bold"
+          className="footerTitles"
+          text="THE BASICS"
+        />
         <StringDropDown
           content={basicContent}
           visibility
           dropType="footerDrops"
-          theme="footerDrops"
+          theme={{
+            className: 'footerDrops',
+            color: 'white',
+            fontSize: 'medium-low',
+            fontWeight: 'medium',
+          }}
         />
       </div>
       <div>
-        <Button theme="bigWhiteFooter" text="GET INVOLVED" />
+        <Button
+          color="white"
+          fontSize="medium-high"
+          fontWeight="bold"
+          className="footerTitles"
+          text="GET INVOLVED"
+        />
         <StringDropDown
           content={involvedContent}
           visibility
           dropType="footerDrops"
-          theme="footerDrops"
+          theme={{
+            className: 'footerDrops',
+            color: 'white',
+            fontSize: 'medium-low',
+            fontWeight: 'medium',
+          }}
         />
       </div>
       <div>
-        <Button theme="bigWhiteFooter" text="COMMUNITY" />
+        <Button
+          color="white"
+          fontSize="medium-high"
+          fontWeight="bold"
+          className="footerTitles"
+          text="COMMUNITY"
+        />
         <StringDropDown
           content={communityContent}
           visibility
           dropType="footerDrops"
-          theme="footerDrops"
+          theme={{
+            className: 'footerDrops',
+            color: 'white',
+            fontSize: 'medium-low',
+            fontWeight: 'medium',
+          }}
         />
       </div>
       <div>
-        <Button theme="bigWhiteFooter" text="LEGAL" />
+        <Button
+          color="white"
+          fontSize="medium-high"
+          fontWeight="bold"
+          className="footerTitles"
+          text="LEGAL"
+        />
         <StringDropDown
           content={LegalContent}
           visibility
           dropType="footerDrops"
-          theme="footerDrops"
+          theme={{
+            className: 'footerDrops',
+            color: 'white',
+            fontSize: 'medium-low',
+            fontWeight: 'medium',
+          }}
         />
       </div>
     </StyledFooter>

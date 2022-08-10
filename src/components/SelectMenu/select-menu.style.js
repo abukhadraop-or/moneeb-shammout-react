@@ -66,6 +66,12 @@ const StyledSelectMenu = styled.div`
   background-repeat: no-repeat;
   background-position: right 0.1rem center;
 
+  .menuTitle {
+    text-align: center;
+    align-items: center;
+    padding-top: 0.6rem;
+  }
+
   ${media.desktop`
     width:15rem;
   `}

@@ -41,7 +41,10 @@ function DesktopMenu() {
     <StyledDesktopMenu>
       <div>
         <Button
-          theme="smallDesktopWhite"
+          className="navRoutes"
+          color="white"
+          fontSize="medium"
+          fontWeight="medium-high"
           text="Movies"
           onHover={() => onHoverHandler('movies')}
           onBlur={() => onHoverHandler('movies')}
@@ -52,13 +55,21 @@ function DesktopMenu() {
           onHover={() => onHoverHandler('movies')}
           onBlur={() => onHoverHandler('movies')}
           content={moviesContent}
-          theme="navDrops"
+          theme={{
+            className: 'dropDown',
+            color: 'black',
+            fontSize: 'medium',
+            fontWeight: 'medium',
+          }}
           dropType="navDrops"
         />
       </div>
       <div>
         <Button
-          theme="smallDesktopWhite"
+          className="navRoutes"
+          color="white"
+          fontSize="medium"
+          fontWeight="medium-high"
           text="TV Shows"
           onHover={() => onHoverHandler('tv')}
           onBlur={() => onHoverHandler('tv')}
@@ -66,14 +77,22 @@ function DesktopMenu() {
         <DropDownMenu
           visibility={showState.tv}
           content={tvContent}
-          theme="navDrops"
+          theme={{
+            className: 'dropDown',
+            color: 'black',
+            fontSize: 'medium',
+            fontWeight: 'medium',
+          }}
           dropType="navDrops"
         />
       </div>
       &nbsp;&nbsp;
       <div>
         <Button
-          theme="smallDesktopWhite"
+          className="navRoutes"
+          color="white"
+          fontSize="medium"
+          fontWeight="medium-high"
           text="People"
           onHover={() => onHoverHandler('people')}
           onBlur={() => onHoverHandler('people')}
@@ -81,7 +100,12 @@ function DesktopMenu() {
 
         <DropDownMenu
           visibility={showState.people}
-          theme="navDrops"
+          theme={{
+            className: 'dropDown',
+            color: 'black',
+            fontSize: 'medium',
+            fontWeight: 'medium',
+          }}
           content={peopleContent}
           dropType="navDrops"
         />
@@ -89,7 +113,10 @@ function DesktopMenu() {
       &nbsp;&nbsp;
       <div>
         <Button
-          theme="smallDesktopWhite"
+          className="navRoutes"
+          color="white"
+          fontSize="medium"
+          fontWeight="medium-high"
           text="More"
           onHover={() => onHoverHandler('more')}
           onBlur={() => onHoverHandler('more')}
@@ -97,7 +124,12 @@ function DesktopMenu() {
 
         <DropDownMenu
           visibility={showState.more}
-          theme="navDrops"
+          theme={{
+            className: 'dropDown',
+            color: 'black',
+            fontSize: 'medium',
+            fontWeight: 'medium',
+          }}
           content={visibleContent}
           dropType="navDrops"
         />

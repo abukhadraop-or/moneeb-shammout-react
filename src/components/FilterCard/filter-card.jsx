@@ -14,7 +14,7 @@ import StyledFilterCard from './filter-card.style';
  * @return {Element}
  */
 function FilterCard({ children, onClick, title }) {
-  const [expandCard, setExpandCard] = useState(false);
+  const [expandCard, setExpandCard] = useState(title === 'Sort');
 
   /**
    *  Expand or minimize filter card.

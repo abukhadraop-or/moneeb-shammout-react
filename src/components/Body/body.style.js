@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 import { media } from 'styles/media-query';
+import colors from 'styles/colors';
 
 const DesktopFiltersContainer = styled.div`
+  .popularHeader {
+    padding-bottom: 1.5rem;
+  }
+
   ${media.desktop`
     padding-left: 10rem;
     padding-top: 1rem;
@@ -36,12 +41,49 @@ const StyledBody = styled.div`
   padding-top: 1.2rem;
   width: 100%;
 
+  .searchButton {
+    align-items: center;
+    background-color: ${colors.lightBlue};
+    border: solid 1rem;
+    border-color: transparent;
+    border-radius: 3rem;
+    cursor: pointer;
+    height: 2.8rem;
+    justify-content: center;
+    margin: 1rem 0rem 3rem 0rem;
+    width: 95%;
+  }
+
+  .loadMore {
+    align-items: center;
+    background-color: ${colors.lightBlue};
+    border: solid 1rem;
+    border-color: transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    height: 3.2rem;
+    justify-content: center;
+    margin: -2rem 0rem 1rem 0rem;
+    width: 100%;
+
+    ${media.desktop`
+      margin: 1rem 0rem 1rem 2.5rem;
+      width:85%;
+
+      &:hover{
+        color:black;
+     }
+  `}
+  }
+
   ${media.desktop`
     align-content: flex-start;
     align-items: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
     padding-left:6rem;
+    white-space: normal;
+
   `};
 `;
 

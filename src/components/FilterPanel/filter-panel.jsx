@@ -76,7 +76,7 @@ function FilterPanel() {
 
   return (
     <FilterCard title="Filters">
-      <Title title="Show Me" theme="light">
+      <Title title="Show Me" fontSize="medium">
         <Icon id="icon" color="grey" iconName="HiQuestion" />
       </Title>
 
@@ -93,7 +93,7 @@ function FilterPanel() {
         ))}
       </FilterWrapper>
 
-      <Title title="Availabilities" theme="light" />
+      <Title title="Availabilities" fontSize="medium" />
       <br />
       <FilterWrapper>
         {availabilitiesList.map((item) => (
@@ -108,7 +108,7 @@ function FilterPanel() {
           />
         ))}
       </FilterWrapper>
-      <Title title="Release Dates" theme="light" />
+      <Title title="Release Dates" fontSize="medium" />
       <br />
       <CheckBox
         checked
@@ -140,20 +140,25 @@ function FilterPanel() {
       </FilterWrapper>
 
       <FilterWrapper>
-        <Title theme="light" title="Genres" />
+        <Title fontSize="medium" title="Genres" />
         <FlexRowContainer>
           {genresList.map((item) => (
-            <Button text={item} theme="whiteRounded" key={item} />
+            <Button
+              text={item}
+              className="genres"
+              fontWeight="medium"
+              key={item}
+            />
           ))}
         </FlexRowContainer>
       </FilterWrapper>
 
       <FilterWrapper>
-        <Title theme="light" title="Certification" />
+        <Title fontSize="medium" title="Certification" />
       </FilterWrapper>
 
       <FilterWrapper>
-        <Title title="Language" theme="light">
+        <Title title="Language" fontSize="medium">
           <Icon id="icon" color="grey" iconName="HiQuestion" />
         </Title>
         <br />

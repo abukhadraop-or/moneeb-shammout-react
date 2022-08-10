@@ -15,7 +15,7 @@ import { sortMap } from 'constants';
 function SortPanel({ onChange }) {
   return (
     <FilterCard title="Sort">
-      <Title title="Sort Results By" theme="light" />
+      <Title title="Sort Results By" fontSize="medium" />
       <br />
       <SelectMenu options={Object.keys(sortMap)} onChange={onChange} />
       <br />

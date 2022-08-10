@@ -49,6 +49,24 @@ const StyledPhoneMenu = styled.div`
   width: 85%;
   z-index: 100;
 
+  .dropButtons {
+    width: 9rem;
+    height: 2.5rem;
+  }
+
+  .smallFade {
+    width: 9rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    opacity: 0.55;
+    padding-left: 0.5rem;
+    margin-top: -0.5rem;
+  }
+
+  .sideDrops {
+    margin-bottom: 0.3rem;
+  }
+
   ${(props) =>
     `${typeof props.ref}` === 'undefined' ||
     props.ref.current.display === 'none'

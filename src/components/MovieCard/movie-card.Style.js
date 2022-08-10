@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { media } from 'styles/media-query';
+import colors from 'styles/colors';
 
 const DesktopDots = styled.div`
   display: none;
@@ -81,6 +82,16 @@ const MovieDropDownMenu = styled.div`
       right:1rem;
     }
 
+    .movieDrop {
+    display: inline;
+    height: 3rem;
+    justify-content: left;
+    justify-items: left;
+    text-align: left;
+    text-indent: -0.2rem;
+    width: 12rem;
+  }
+
  `}
 `;
 
@@ -100,15 +111,18 @@ const OverFlowContainer = styled.div`
     display: none;
   `}
 `;
+
 const phoneRoundedBorder = {
   'border-bottom-left-radius': '0.4rem',
   'border-top-left-radius': '0.4rem',
 };
+
 const desktopRoundedBorder = {
   'border-bottom-left-radius': '0%',
   'border-top-left-radius': '0.5rem',
   'border-top-right-radius': '0.5rem',
 };
+
 const PosterContainer = styled.div`
   display: flex;
   height: 100%;
@@ -144,6 +158,28 @@ const RightContainer = styled.div`
   justify-content: space-evenly;
   width: 100%;
 
+  .movieName {
+    cursor: pointer;
+
+    :hover {
+      color: ${colors.lightBlue};
+    }
+
+    ${media.desktop`
+    font-weight:700;
+  `}
+  }
+
+  .movieDate {
+    opacity: 0.5;
+
+    ${media.desktop`
+      font-size: 1rem;
+      font-weight:400;
+      color: rgba(0, 0, 0, 6);
+   `}
+  }
+
   ${media.desktop`
     display:flex;
     flex-flow:row;
@@ -154,7 +190,24 @@ const RightContainer = styled.div`
     height:1rem;
     padding:0;
     padding-left:1rem;
+    margin-top:1.2rem;
     width:10rem;
+  `}
+`;
+
+const BlurWrapper = styled.div`
+  display: flex;
+
+  ${media.desktop`
+    display:block;
+
+    ${(props) =>
+      props.blur
+        ? {
+            filter: `blur(0.5rem)`,
+          }
+        : null};
+
   `}
 `;
 
@@ -184,21 +237,17 @@ const StyledMovieCard = styled.div`
       visibility: visible;
     }
     
-    ${(props) =>
-      props.blur
-        ? {
-            '-webkit-filter': `blur(0.7rem)`,
-            filter: `blur(0.7rem)`,
-          }
-        : null};
+   
   `}
 `;
+
 export {
-  StyledMovieCard,
-  RightContainer,
-  PosterContainer,
-  MovieDropDownMenu,
-  DesktopPercentage,
+  BlurWrapper,
   DesktopDots,
+  DesktopPercentage,
+  MovieDropDownMenu,
   OverFlowContainer,
+  PosterContainer,
+  RightContainer,
+  StyledMovieCard,
 };

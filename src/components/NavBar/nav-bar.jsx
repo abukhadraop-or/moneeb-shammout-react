@@ -100,13 +100,35 @@ function NavBar() {
                     'login or create one',
                   ]}
                   dropType="navDrops"
-                  theme="smallBlack"
+                  theme={{
+                    className: 'rightRoutes',
+                    color: 'black',
+                    fontSize: 'medium',
+                    fontWeight: 'medium',
+                  }}
                 />
               )}
             </div>
-            <Button text="EN" theme="language" />
-            <Button text="Login" theme="smallDesktopWhite" />
-            <Button text="Join TMDB" theme="smallDesktopWhite" />
+            <Button
+              text="EN"
+              className="languageButton"
+              color="white"
+              fontWeight="medium"
+            />
+            <Button
+              text="Login"
+              className="rightRoutes"
+              color="white"
+              fontSize="medium"
+              fontWeight="medium-high"
+            />
+            <Button
+              text="Join TMDB"
+              className="rightRoutes"
+              color="white"
+              fontSize="medium"
+              fontWeight="medium-high"
+            />
             <Icon
               iconName={showSearch ? 'AiOutlineClose' : 'HiSearch'}
               color={showSearch ? 'white' : 'blue'}
@@ -115,13 +137,26 @@ function NavBar() {
             />
           </RightIconsWrapper>
         </DesktopNavBar>
+        {showUserUtilities && (
+          <UserUtilities>
+            <Button
+              key="sign's in"
+              text="Login"
+              color="fontGrey"
+              fontWeight="medium-high"
+              className="utilityButton"
+            />
+            <Button
+              key=" sign's out"
+              text="Signup"
+              color="fontGrey"
+              fontWeight="medium-high"
+              className="utilityButton"
+            />
+          </UserUtilities>
+        )}
       </Header>
-      {showUserUtilities && (
-        <UserUtilities>
-          <Button key="sign's in" text="Login" theme="smallDarkGrey" />
-          <Button key=" sign's out" text="Signup" theme="smallDarkGrey" />
-        </UserUtilities>
-      )}
+
       {showSearch && <SearchPanel />}
 
       <PhoneSideMenu showMenu={showMenu} />

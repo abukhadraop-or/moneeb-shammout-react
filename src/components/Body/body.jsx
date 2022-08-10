@@ -66,7 +66,7 @@ function Body() {
   /**
    * Hide or show search button and save value.
    *
-   * @param {String} sortName  Sort type text.
+   * @param {string} sortName  Sort type text.
    */
   const sortFiltersClickHandler = (sortName) => {
     setSortType(sortMap[sortName]);
@@ -85,12 +85,20 @@ function Body() {
   return (
     <StyledBody>
       <DesktopFiltersContainer>
-        <Title title="Popular Movies" theme="popularHeader" />
+        <Title
+          title="Popular Movies"
+          className="popularHeader"
+          fontWeight="medium-high"
+          fontSize="big"
+        />
         <SortPanel onChange={sortFiltersClickHandler} />
         <FilterPanel />
         <FilterCard title="Where To Watch" />
         <Button
-          theme="bigBlue"
+          className="searchButton"
+          fontWeight="medium-high"
+          fontSize="medium-high"
+          color="white"
           text="Search"
           onClick={searchClickHandler}
           disabled={!searchButtonEnabled}
@@ -110,7 +118,14 @@ function Body() {
         ))}
         <br />
         <br />
-        <Button theme="loadMore" text="LoadMore" onClick={loadClickHandler} />
+        <Button
+          className="loadMore"
+          fontSize="nearly-big"
+          fontWeight="medium-high"
+          color="white"
+          text="LoadMore"
+          onClick={loadClickHandler}
+        />
       </DesktopMoviesContainer>
     </StyledBody>
   );

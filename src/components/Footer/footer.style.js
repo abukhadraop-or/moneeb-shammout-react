@@ -33,6 +33,32 @@ const StyledFooter = styled.footer`
   width: 100%;
   background-color: ${colors.darkBlue};
 
+  .joinCommunity {
+    width: 14rem;
+    height: 2.8rem;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 3rem 0;
+    border-radius: 0.2rem;
+    background-color: white;
+    ${media.desktop`
+    margin-left:-4rem;
+    margin-top:.2rem;
+  color: ${colors.lightBlue};
+
+    `}
+  }
+
+  .footerTitles {
+    width: 9rem;
+    height: 2.5rem;
+  }
+
+  .footerDrops {
+    padding-left: 0.5rem;
+    padding-bottom: 0rem;
+  }
+
   ${media.desktop`
     flex-direction: row;
     justify-content: center;

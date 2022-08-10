@@ -6,24 +6,41 @@ import StyledButton from './button.style';
  * Button component.
  *
  * @param {Object} props   Component props.
- * @param {Element} props.children  Button Children.
+ * @param {Array<Element>} props.children  Button Children.
+ * @param {string} props.className  Button class for external styling.
+ * @param {string} props.color  Button color.
  * @param {boolean} props.disabled  Button state enabled or disabled.
+ * @param {string} props.fontSize  Button font size.
+ * @param {string} props.fontWeight  Button font weight.
  * @param {Function} props.onBlur Blur event handler.
  * @param {Function} props.onClick Click event handler.
  * @param {Function} props.onHover Hover event handler.
  * @param {string} props.text    Text inside the button.
- * @param {string} props.theme   Name of the theme.
  *
  * @return {Element}
  */
-function Button({ children, disabled, onBlur, onClick, onHover, text, theme }) {
+function Button({
+  children,
+  className,
+  color,
+  disabled,
+  fontSize,
+  fontWeight,
+  onBlur,
+  onClick,
+  onHover,
+  text,
+}) {
   return (
     <StyledButton
-      theme={theme}
       disabled={disabled ? true : null}
       onClick={onClick}
       onMouseOver={onHover}
       onMouseOut={onBlur}
+      color={color}
+      fontSize={fontSize}
+      fontWeight={fontWeight}
+      className={className}
     >
       {text}
       {children}
@@ -36,36 +53,27 @@ Button.propTypes = {
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
   ]),
+  className: PropTypes.string,
+  color: PropTypes.string,
   disabled: PropTypes.bool,
+  fontSize: PropTypes.string,
+  fontWeight: PropTypes.string,
   onBlur: PropTypes.func,
   onClick: PropTypes.func,
   onHover: PropTypes.func,
   text: PropTypes.string.isRequired,
-  theme: PropTypes.oneOf([
-    'bigBlue',
-    'bigWhite',
-    'bigWhiteBlue',
-    'bigWhiteFooter',
-    'footerDrops',
-    'language',
-    'loadMore',
-    'movieDropDown',
-    'smallBlack',
-    'smallDarkGrey',
-    'smallDesktopWhite',
-    'smallFade',
-    'smallWhite',
-    'whiteRounded',
-  ]),
 };
 
 Button.defaultProps = {
   children: [],
+  className: null,
+  color: 'black',
   disabled: false,
+  fontSize: 'small',
+  fontWeight: 'light',
   onBlur: null,
   onClick: null,
   onHover: null,
-  theme: 'bigWhite',
 };
 
 export default Button;

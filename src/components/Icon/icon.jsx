@@ -39,7 +39,7 @@ const icons = {
  * @param {string} props.color Name of icon color.
  * @param {boolean} props.hoverEffect  Gives icon hover effect.
  * @param {string} props.iconName   Name of the icon.
- * @param {String} props.id  Unique identifier.
+ * @param {string} props.id  Unique identifier.
  * @param {Function} props.onClick  Click handler.
  *
  * @return {Element}

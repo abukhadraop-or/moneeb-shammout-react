@@ -9,7 +9,7 @@ import StyledStringDropDown from './string-drop-down.style';
  * @param {Object} props Component props.
  * @param {Array<string>} props.content  Items to be displayed inside.
  * @param {string} props.dropType  Desktop themes.
- * @param {string} props.theme  Theme type of buttons.
+ * @param {{color:string,className:string,fontSize:string,fontWeight:string}} props.theme  Theme object of button attributes.
  * @param {boolean} props.visibility   Show or hide menu.
  *
  * @return {Element}
@@ -39,7 +39,14 @@ function StringDropDown({ content, dropType, theme, visibility }) {
         onMouseOver={onHoverHandler}
       >
         {content.map((sentence) => (
-          <Button key={sentence} text={sentence} theme={theme} />
+          <Button
+            key={sentence}
+            text={sentence}
+            color={theme.color}
+            fontSize={theme.fontSize}
+            className={theme.className}
+            fontWeight={theme.fontWeight}
+          />
         ))}
       </StyledStringDropDown>
     )
@@ -49,13 +56,13 @@ function StringDropDown({ content, dropType, theme, visibility }) {
 StringDropDown.propTypes = {
   content: PropTypes.arrayOf(PropTypes.string).isRequired,
   dropType: PropTypes.string,
-  theme: PropTypes.string,
+  theme: PropTypes.objectOf(PropTypes.string),
   visibility: PropTypes.bool.isRequired,
 };
 
 StringDropDown.defaultProps = {
   dropType: '',
-  theme: 'smallWhite',
+  theme: {},
 };
 
 export default StringDropDown;

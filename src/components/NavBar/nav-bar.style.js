@@ -9,6 +9,13 @@ const Header = styled.header`
   top: 0;
   width: 100%;
   z-index: 100;
+
+  .utilityButton {
+    height: 3rem;
+    width: 12rem;
+    text-indent: -6rem;
+    display: block;
+  }
 `;
 
 const StyledNavBar = styled.nav`
@@ -18,6 +25,11 @@ const StyledNavBar = styled.nav`
   height: 4rem;
   justify-content: space-between;
   overflow: hidden;
+
+  .rightRoutes {
+    padding-left: 0.5rem;
+    padding-bottom: 0.7rem;
+  }
 
   :first-child {
     padding-left: 1.5rem;
@@ -53,6 +65,20 @@ const RightIconsWrapper = styled.span`
 
 const DesktopNavBar = styled.nav`
   display: none;
+
+  .languageButton {
+    border: 0.1rem solid;
+    border-color: white;
+    border-radius: 0.2rem;
+    line-height: 1rem;
+    padding-top: 0.25rem;
+    height: 1.7rem;
+
+    &:hover {
+      color: ${colors.darkBlue};
+      background-color: white;
+    }
+  }
 
   ${media.desktop`
     align-items: center;

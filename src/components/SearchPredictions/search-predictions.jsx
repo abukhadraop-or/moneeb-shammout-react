@@ -7,8 +7,8 @@ import StyledSSearchPredictions from './search-predictions.style';
  * Trending div in search panel.
  *
  * @param {Object} props Component props.
- * @param {String} props.prediction Prediction text.
- * @param {String} props.bottomBorder Show or hide bottom border.
+ * @param {string} props.prediction Prediction text.
+ * @param {string} props.bottomBorder Show or hide bottom border.
  *
  * @return {Element}
  */

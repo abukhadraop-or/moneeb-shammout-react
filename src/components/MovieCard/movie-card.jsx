@@ -14,6 +14,7 @@ import {
   RightContainer,
   StyledMovieCard,
   MovieDropDownMenu,
+  BlurWrapper,
 } from './movie-card.Style';
 
 /**
@@ -43,14 +44,24 @@ function MovieCard({ date, description, imageURL, percentageRate, title }) {
       <MovieDropDownMenu blur={blur}>
         {blur && (
           <ActionDropDown>
-            <Button text="Login" theme="movieDropDown">
+            <Button
+              text="Login"
+              fontWeight="medium-high"
+              color="fontGrey"
+              className="movieDrop"
+            >
               <Icon
                 iconName="HiChevronRight"
                 color="black"
                 className="movieSignup"
               />
             </Button>
-            <Button text="Signup and join community" theme="movieDropDown">
+            <Button
+              text="Signup and join community"
+              fontWeight="medium-high"
+              color="fontGrey"
+              className="movieDrop"
+            >
               <Icon
                 iconName="HiChevronRight"
                 color="black"
@@ -60,31 +71,38 @@ function MovieCard({ date, description, imageURL, percentageRate, title }) {
           </ActionDropDown>
         )}
       </MovieDropDownMenu>
-      <StyledMovieCard blur={blur}>
-        <PosterContainer>
-          <ToolTip className="toolTip" theme="movies" text={title} />
-          <DesktopDots>
-            <Icon
-              iconName="Hidots"
-              onClick={iconClickHandler}
-              color="transparent"
-              hoverEffect
-            />
-          </DesktopDots>
+      <StyledMovieCard>
+        <BlurWrapper blur={blur}>
+          <PosterContainer>
+            <ToolTip className="toolTip" theme="movies" text={title} />
+            <DesktopDots>
+              <Icon
+                iconName="Hidots"
+                onClick={iconClickHandler}
+                color="transparent"
+                hoverEffect
+              />
+            </DesktopDots>
 
-          <DesktopPercentage percentage={percentageRate}>
-            &nbsp;{`${percentageRate * 10}`}
-            <Icon iconName="percent" color="white" className="icon" />
-          </DesktopPercentage>
-          <Image imagePath={imageURL} className="poster" />
-        </PosterContainer>
-        <RightContainer>
-          <div>
-            <Title title={title} theme="moviesBold" />
-            <Title title={date} theme="moviesLight" />
-          </div>
-          <OverFlowContainer>{description}</OverFlowContainer>
-        </RightContainer>
+            <DesktopPercentage percentage={percentageRate}>
+              &nbsp;{`${percentageRate * 10}`}
+              <Icon iconName="percent" color="white" className="icon" />
+            </DesktopPercentage>
+            <Image imagePath={imageURL} className="poster" />
+          </PosterContainer>
+          <RightContainer>
+            <div>
+              <Title
+                title={title}
+                fontSize="medium"
+                fontWeight="medium-high"
+                className="movieName"
+              />
+              <Title title={date} fontWeight="medium" className="movieDate" />
+            </div>
+            <OverFlowContainer>{description}</OverFlowContainer>
+          </RightContainer>
+        </BlurWrapper>
       </StyledMovieCard>
     </div>
   );

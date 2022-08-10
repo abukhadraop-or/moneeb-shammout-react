@@ -9,8 +9,8 @@ import StyledLogoContainer from './logo-container.style';
  * Logo Container .
  *
  * @param {Object} props   Component props.
- * @param {String} props.logoType Phone or mobile.
- * @param {String} props.theme Theme type.
+ * @param {string} props.logoType Phone or mobile.
+ * @param {string} props.theme Theme type.
  *
  * @return {Element}
  */
