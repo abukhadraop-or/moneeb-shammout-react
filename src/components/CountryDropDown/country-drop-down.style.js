@@ -10,10 +10,6 @@ const StyledCountryDropDown = styled.div`
   .countryButton {
     padding-right: 1rem;
   }
-
-  .countryMenu {
-    box-sizing: border-box;
-  }
 `;
 
 export default StyledCountryDropDown;

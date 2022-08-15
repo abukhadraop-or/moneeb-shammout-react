@@ -24,7 +24,7 @@ import { FilterWrapper, FlexRowContainer } from './filter-panel.style';
  */
 function FilterPanel() {
   const [radioBtnState, setRadioBtnState] = useState({
-    [filtersList[0]]: false,
+    [filtersList[0]]: true,
     [filtersList[1]]: false,
     [filtersList[2]]: false,
   });

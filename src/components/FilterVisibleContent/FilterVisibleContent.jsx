@@ -14,7 +14,7 @@ import StyledFilterVisibleContent from './filter-visible-content.style';
  * @return {Element}
  */
 function FilterDropDown({ showBorder, onClick, title }) {
-  const [arrowDown, setArrowDown] = useState(false);
+  const [arrowDown, setArrowDown] = useState(title === 'Sort');
 
   /**
    * Toggle filter arrows along with an external handler.

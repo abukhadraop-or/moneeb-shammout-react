@@ -5,18 +5,19 @@ import colors from 'styles/colors';
 const LeftSide = styled.div`
   ${media.desktop`
     display: flex;
-    justify-content: space-evenly;
     flex-direction: column;
-    width: 12rem;
-    //TODO:minus margin
+    justify-content: space-evenly;
+
+    // needed minus margin to left only this div
     margin-top:-5rem;
+    width: 12rem;
 
  `}
 `;
 
 const Logo = styled.div`
-  display: none;
   background-color: ${colors.darkBlue};
+  display: none;
 
   ${media.desktop`
     display: flex;
@@ -24,28 +25,26 @@ const Logo = styled.div`
 `;
 
 const StyledFooter = styled.footer`
-  box-sizing: border-box;
+  background-color: ${colors.darkBlue};
   display: flex;
   flex-direction: column;
   height: auto;
-  margin: 0 auto -9.6rem;
-  min-height: 100%;
   padding-left: 1rem;
   width: 100%;
-  background-color: ${colors.darkBlue};
 
   .joinCommunity {
-    width: 14rem;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.2rem;
     height: 2.8rem;
     justify-content: center;
-    align-items: center;
     margin: 2rem 0 3rem 0;
-    border-radius: 0.2rem;
-    background-color: white;
+    width: 14rem;
+
     ${media.desktop`
-    margin-left:-4rem;
-    margin-top:.2rem;
-  color: ${colors.lightBlue};
+      color: ${colors.lightBlue};
+      margin-left:-4rem;
+      margin-top:.2rem;
 
     `}
   }

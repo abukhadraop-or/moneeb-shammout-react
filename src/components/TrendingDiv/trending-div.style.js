@@ -9,7 +9,6 @@ const StyledTrendingDiv = styled.div`
   padding-left: 1rem;
   line-height: 1rem;
   font-style: bold;
-  box-sizing: border-box;
   width: 100%;
   height: 3.2rem;
   display: flex;

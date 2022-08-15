@@ -12,9 +12,9 @@ const themes = {
 };
 
 const StyledIcon = styled.i`
-  font-size: 1.4rem;
-  display: flex;
   color: ${({ theme }) => themes[theme]};
+  display: flex;
+  font-size: 1.4rem;
 
   ${({ theme }) =>
     theme === 'transparent'

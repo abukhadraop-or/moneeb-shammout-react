@@ -12,9 +12,10 @@ const StyledDesktopMenu = styled.div`
   }
 
   .dropDown {
-    width: 100%;
     cursor: pointer;
     text-indent: 1rem;
+    width: 100%;
+
     &:hover {
       background-color: ${colors.gray}08;
     }

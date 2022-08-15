@@ -15,10 +15,11 @@ import StyledLogoContainer from './logo-container.style';
  * @return {Element}
  */
 function LogoContainer({ logoType, theme }) {
-  const logo = logoType === 'phone' ? PhoneLogoPath : urls.desktopLogo;
   return (
     <StyledLogoContainer theme={theme}>
-      <Image imagePath={logo} />
+      <Image
+        imagePath={logoType === 'phone' ? PhoneLogoPath : urls.desktopLogo}
+      />
     </StyledLogoContainer>
   );
 }

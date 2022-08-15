@@ -17,7 +17,6 @@ const StyledDatePicker = styled.div`
     border-radius: 0.4rem;
     border: 0.1rem solid ${colors.gray}33;
     box-shadow: none;
-    box-sizing: border-box;
     color: grey;
     display: flex;
     flex-flow: row nowrap;
@@ -40,11 +39,10 @@ const StyledDatePicker = styled.div`
         width:8rem;
     `}
   }
-  //TODO:margin minus
-  .calender {
-    margin-left: -1.5rem;
 
+  .calender {
     //selecting all the calender days
+
     * {
       padding-right: 0.5rem;
 
@@ -69,10 +67,10 @@ const IconWrapper = styled.div`
   background-color: ${colors.lightGray};
   border-bottom-right-radius: 0.4rem;
   border-top-right-radius: 0.4rem;
-  bottom: 2.1rem;
+  bottom: 2rem;
   font-size: 1.5rem;
-  height: 1.8rem;
-  left: 20rem;
+  height: 2rem;
+  left: 19rem;
   padding-top: 0.3rem;
   position: relative;
   transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;

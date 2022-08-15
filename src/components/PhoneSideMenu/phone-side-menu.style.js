@@ -61,7 +61,6 @@ const StyledPhoneMenu = styled.div`
     font-size: 1rem;
     opacity: 0.55;
     padding-left: 0.5rem;
-    margin-top: -0.5rem;
   }
 
   .sideDrops {

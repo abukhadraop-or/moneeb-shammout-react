@@ -53,7 +53,7 @@ function MovieCard({ date, description, imageURL, percentageRate, title }) {
               <Icon
                 iconName="HiChevronRight"
                 color="black"
-                className="movieSignup"
+                className="loginIcon"
               />
             </Button>
             <Button
@@ -65,7 +65,7 @@ function MovieCard({ date, description, imageURL, percentageRate, title }) {
               <Icon
                 iconName="HiChevronRight"
                 color="black"
-                className="movieSignup"
+                className="signupIcon"
               />
             </Button>
           </ActionDropDown>

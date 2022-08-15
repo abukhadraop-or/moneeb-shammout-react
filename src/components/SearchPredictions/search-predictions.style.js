@@ -4,7 +4,6 @@ import colors from 'styles/colors';
 
 const SearchPrediction = styled.div`
   border-top: 0.1rem solid ${colors.flashyWhite};
-  box-sizing: border-box;
   color: black;
   display: flex;
   font-size: 1rem;

@@ -12,21 +12,21 @@ const Label = styled.label`
 `;
 
 const StyledRadioButton = styled.span`
-  background-color: white;
   border-radius: 100%;
   display: flex;
 
+  background-color: ${({ checked }) =>
+    checked ? `${colors.white}` : `${colors.lightGray}`};
+
   border: ${({ checked }) =>
-    checked ? 'solid 0.4red' : `solid 0.1rem ${colors.gray}0d`};
+    checked ? `solid 0.4rem ` : `solid 0.1rem ${colors.gray}0d`};
 
   border-color: ${({ checked }) =>
     checked ? `${colors.lightBlue}` : ` ${colors.gray}0d`};
 
-  width: ${({ checked }) => (checked ? '0.4rem' : '0.8rem')};
+  width: ${({ checked }) => (checked ? '1.1rem' : '1rem')};
 
-  height: ${({ checked }) => (checked ? '0.4rem' : '0.8rem')};
-
-  margin-left: ${({ checked }) => (checked ? '0.4rem' : '0.5rem')};
+  height: ${({ checked }) => (checked ? '1.1rem' : '1rem')};
 `;
 
 export { StyledRadioButton, Label };

@@ -21,7 +21,6 @@ const Header = styled.header`
 const StyledNavBar = styled.nav`
   align-items: center;
   display: flex;
-  flex-direction: row;
   height: 4rem;
   justify-content: space-between;
   overflow: hidden;
@@ -42,7 +41,6 @@ const StyledNavBar = styled.nav`
 
 const RightIconsWrapper = styled.span`
   display: flex;
-  flex-direction: row;
 
   :last-child {
     padding-right: 1.5rem;
@@ -66,26 +64,28 @@ const RightIconsWrapper = styled.span`
 const DesktopNavBar = styled.nav`
   display: none;
 
-  .languageButton {
-    border: 0.1rem solid;
-    border-color: white;
-    border-radius: 0.2rem;
-    line-height: 1rem;
-    padding-top: 0.25rem;
-    height: 1.7rem;
-
-    &:hover {
-      color: ${colors.darkBlue};
-      background-color: white;
-    }
-  }
-
   ${media.desktop`
     align-items: center;
     display: flex;
     flex-direction: row;
     height: 4rem;
     position: relative;
+    justify-content: space-evenly;
+
+  .languageButton {
+      border: 0.1rem solid;
+      border-color: white;
+      border-radius: 0.2rem;
+      line-height: 1rem;
+      padding-top: 0.25rem;
+      height: 1.7rem;
+
+      &:hover {
+        color: ${colors.darkBlue};
+        background-color: white;
+      }
+  }
+   
 
     .plus{
       font-size:1rem;
@@ -96,16 +96,16 @@ const DesktopNavBar = styled.nav`
       font-size:1.8rem;
     }
 
-    justify-content: space-evenly;
     
   `}
 `;
+
 const LeftWrapper = styled.span`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 1rem;
-  padding-right: 20rem;
+  margin-right: 18rem;
   width: 30rem;
 `;
 

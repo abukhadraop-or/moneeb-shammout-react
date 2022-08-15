@@ -5,7 +5,6 @@ import colors from 'styles/colors';
 const StyledFilterDropDown = styled.div`
   align-items: center;
   border-radius: 0.2rem;
-  box-sizing: border-box;
   display: flex;
   font-size: 1.1rem;
   font-weight: 600;
@@ -21,9 +20,9 @@ const StyledFilterDropDown = styled.div`
   ${({ showBorder }) =>
     showBorder
       ? ` border: solid transparent;
-          border-bottom-color: ${colors.gray}03;
+          border-bottom-color: ${colors.lightGray};
           border-width: 0.1rem;
-          margin-bottom: 1rem;`
+          `
       : ''};
 
   ${media.desktop`

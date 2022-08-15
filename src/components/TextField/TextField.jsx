@@ -21,7 +21,7 @@ const TextField = forwardRef(({ placeHolder, theme }, ref) => (
 // eslint-disable-next-line no-unused-vars
 const textFieldRefPropTypes = {
   placeHolder: PropTypes.string.isRequired,
-  ref: PropTypes.oneOf(PropTypes.shape({ current: null }), PropTypes.func),
+  ref: PropTypes.oneOf([PropTypes.shape({ current: null }), PropTypes.func]),
   theme: PropTypes.string.isRequired,
 };
 
