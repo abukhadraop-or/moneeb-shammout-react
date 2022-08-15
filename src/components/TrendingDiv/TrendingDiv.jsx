@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from 'components/Icon/icon';
+import Icon from 'components/Icon/Icon';
 import StyledSTrendingDiv from './trending-div.style';
 
 /**

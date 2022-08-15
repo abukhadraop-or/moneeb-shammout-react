@@ -14,7 +14,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { CgMathPercent } from 'react-icons/cg';
 import { BiPlusMedical } from 'react-icons/bi';
 import { IoMdCalendar } from 'react-icons/io';
-import StyledIcon from './icon.Style';
+import StyledIcon from './icon.style';
 
 const icons = {
   AiOutlineClose: <AiOutlineClose />,
@@ -34,13 +34,13 @@ const icons = {
 /**
  * Icon component.
  *
- * @param {Object} props   Component props.
+ * @param {Object} props Component props.
  * @param {string} props.className Class name for css.
  * @param {string} props.color Name of icon color.
- * @param {boolean} props.hoverEffect  Gives icon hover effect.
- * @param {string} props.iconName   Name of the icon.
- * @param {string} props.id  Unique identifier.
- * @param {Function} props.onClick  Click handler.
+ * @param {boolean} props.hoverEffect Gives icon hover effect.
+ * @param {string} props.iconName Name of the icon.
+ * @param {string} props.id Unique identifier.
+ * @param {Function} props.onClick Click handler.
  *
  * @return {Element}
  */

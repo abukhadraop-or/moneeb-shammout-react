@@ -1,18 +1,14 @@
 import { React, useState, useEffect } from 'react';
 import fetchMovies from 'service/movies.service';
-import Title from 'components/Title/title';
-import FilterCard from 'components/FilterCard/filter-card';
-import MovieCard from 'components/MovieCard/movie-card';
-import Button from 'components/Button/button';
-import SortPanel from 'components/SortPanel/sort-panel';
-import FilterPanel from 'components/FilterPanel/filter-panel';
+import Title from 'components/Title/Title';
+import FilterCard from 'components/FilterCard/FilterCard';
+import MovieCard from 'components/MovieCard/MovieCard';
+import Button from 'components/Button/Button';
+import SortPanel from 'components/SortPanel/SortPanel';
+import FilterPanel from 'components/FilterPanel/FilterPanel';
 import convertDate from 'utilities/methods';
 import { sortMap, urls } from 'constants';
-import {
-  DesktopFiltersContainer,
-  DesktopMoviesContainer,
-  StyledBody,
-} from './body.style';
+import { FiltersContainer, MoviesContainer, StyledBody } from './body.style';
 
 /**
  * Body component.
@@ -26,14 +22,14 @@ function Body() {
   const [movies, setMovies] = useState([]);
 
   /**
-   * Shortcut for fetch movie service.
+   * Uses fetch movie service to fetch and render movies.
    *
-   * @param {boolean} newPage  Add to the old movies or not.
+   * @param {boolean} newPage Add to the old movies or not.
    */
-  const fetchMoviesShortcut = async (newPage) => {
-    const jsonData = await fetchMovies(page, sortType);
+  const getMovies = async (newPage) => {
+    const response = await (await fetchMovies(page, sortType)).json();
 
-    const newMovies = jsonData.results.map((movie) => ({
+    const newMovies = response.map((movie) => ({
       date: movie.release_date,
       description: movie.overview,
       id: movie.id,
@@ -42,22 +38,17 @@ function Body() {
       title: movie.original_title,
     }));
 
-    if (newPage) {
-      setMovies(newMovies);
-      return;
-    }
-
-    setMovies(movies.concat(newMovies));
+    setMovies(newPage ? newMovies : movies.concat(newMovies));
   };
 
   // Every time movie page change it fetches the new page.
   useEffect(() => {
-    fetchMoviesShortcut(false);
+    getMovies(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
   /**
-   * Triggering useEffect by incrementing page count.
+   * Handles load more click.
    */
   const loadClickHandler = async () => {
     setPage((prevState) => 1 + prevState);
@@ -66,7 +57,7 @@ function Body() {
   /**
    * Hide or show search button and save value.
    *
-   * @param {string} sortName  Sort type text.
+   * @param {string} sortName Sort type text.
    */
   const sortFiltersClickHandler = (sortName) => {
     setSortType(sortMap[sortName]);
@@ -78,13 +69,13 @@ function Body() {
    */
   const searchClickHandler = async () => {
     if (searchButtonEnabled) {
-      await fetchMoviesShortcut(true);
+      await getMovies(true);
     }
   };
 
   return (
     <StyledBody>
-      <DesktopFiltersContainer>
+      <FiltersContainer>
         <Title
           title="Popular Movies"
           className="popularHeader"
@@ -103,9 +94,9 @@ function Body() {
           onClick={searchClickHandler}
           disabled={!searchButtonEnabled}
         />
-      </DesktopFiltersContainer>
+      </FiltersContainer>
 
-      <DesktopMoviesContainer>
+      <MoviesContainer>
         {movies.map((movie) => (
           <MovieCard
             title={movie.title}
@@ -116,8 +107,7 @@ function Body() {
             percentageRate={movie.percentageRate}
           />
         ))}
-        <br />
-        <br />
+
         <Button
           className="loadMore"
           fontSize="nearly-big"
@@ -126,7 +116,7 @@ function Body() {
           text="LoadMore"
           onClick={loadClickHandler}
         />
-      </DesktopMoviesContainer>
+      </MoviesContainer>
     </StyledBody>
   );
 }

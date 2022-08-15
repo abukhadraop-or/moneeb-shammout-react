@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { media } from 'styles/media-query';
+import colors from 'styles/colors';
 
 const SearchPrediction = styled.div`
-  border-top: 0.1rem solid rgb(227, 227, 227);
+  border-top: 0.1rem solid ${colors.flashyWhite};
   box-sizing: border-box;
   color: black;
   display: flex;
@@ -12,10 +13,8 @@ const SearchPrediction = styled.div`
   padding-left: 1rem;
   width: 100%;
 
-  ${(props) =>
-    props.bottomBorder
-      ? { 'border-bottom': `0.1rem solid rgb(227,227,227)` }
-      : ''};
+  ${({ bottomBorder }) =>
+    bottomBorder ? `border-bottom: 0.1rem solid ${colors.flashyWhite};` : ''};
 
   ${media.desktop`
     padding-left:10rem;

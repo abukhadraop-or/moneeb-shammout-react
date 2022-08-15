@@ -1,18 +1,18 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import Icon from 'components/Icon/icon';
-import TextField from 'components/TextField/text-field';
+import Icon from 'components/Icon/Icon';
+import TextField from 'components/TextField/TextField';
 import { StyledSearchBox, TextBoxWrapper } from './search-box.style';
 
 /**
  * TextField component depending on the theme chosen.
  *
  * @param {Object} props Component props.
- * @param {string} leftIcon   Icon name to be placed at left.
+ * @param {string} leftIcon Icon name to be placed at left.
  * @param {string} placeHolder PlaceHolder text.
- * @param {string} rightIcon  Icon name to be placed at right.
+ * @param {string} rightIcon Icon name to be placed at right.
  *
- * @return {Element}  TextField component.
+ * @return {Element} TextField component.
  */
 function SearchBox({ leftIcon, placeHolder, rightIcon }) {
   const searchFieldController = useRef('');

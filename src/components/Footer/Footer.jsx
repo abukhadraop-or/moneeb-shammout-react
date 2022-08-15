@@ -1,14 +1,14 @@
 import React from 'react';
-import Button from 'components/Button/button';
-import StringDropDown from 'components/StringDropDown/string-drop-down';
-import LogoContainer from 'components/Logo/logo-container';
+import Button from 'components/Button/Button';
+import StringDropDown from 'components/StringDropDown/StringDropDown';
+import LogoContainer from 'components/Logo/LogoContainer';
 import {
   basicContent,
   LegalContent,
   communityContent,
   involvedContent,
 } from 'constants';
-import { StyledFooter, DesktopLogo, DesktopLeftSide } from './footer.style';
+import { StyledFooter, Logo, LeftSide } from './footer.style';
 
 /**
  * Footer component.
@@ -18,10 +18,10 @@ import { StyledFooter, DesktopLogo, DesktopLeftSide } from './footer.style';
 function Footer() {
   return (
     <StyledFooter>
-      <DesktopLeftSide>
-        <DesktopLogo>
+      <LeftSide>
+        <Logo>
           <LogoContainer logoType="phone" theme="desktopFooter" />
-        </DesktopLogo>
+        </Logo>
         <Button
           color="boldBlue"
           fontSize="medium-high"
@@ -29,7 +29,7 @@ function Footer() {
           className="joinCommunity"
           text="JOIN THE COMMUNITY"
         />
-      </DesktopLeftSide>
+      </LeftSide>
       <div>
         <Button
           color="white"

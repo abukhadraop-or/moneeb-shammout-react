@@ -6,10 +6,10 @@ import { StyledRadioButton, Label } from './radio-button.style';
  * Radio button component.
  *
  * @param {Object} props Component props.
- * @param {boolean} props.checked   Check state for radio button.
- * @param {string} props.id   Unique identifier.
- * @param {string} props.label   Label for radio button.
- * @param {Function} props.onChange Handle  radio button click change.
+ * @param {boolean} props.checked Check state for radio button.
+ * @param {string} props.id Unique identifier.
+ * @param {string} props.label Label for radio button.
+ * @param {Function} props.onChange Handle radio button click change.
  *
  * @return {Element}
  */
@@ -23,7 +23,6 @@ function RadioButton({ checked, id, label, onChange }) {
     >
       <StyledRadioButton checked={checked} />
       {label}
-      <br />
     </Label>
   );
 }

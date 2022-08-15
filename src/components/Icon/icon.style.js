@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import colors from 'styles/colors';
 
-const theme = {
+const themes = {
   black: colors.black,
   blue: colors.lightBlue,
   grey: colors.grey,
@@ -14,23 +14,19 @@ const theme = {
 const StyledIcon = styled.i`
   font-size: 1.4rem;
   display: flex;
-  color: ${(props) => theme[props.theme]};
+  color: ${({ theme }) => themes[theme]};
 
-  ${(props) =>
-    props.theme === 'transparent'
-      ? {
-          'font-size': '1.5rem',
-          opacity: 0.5,
-        }
-      : {}};
+  ${({ theme }) =>
+    theme === 'transparent'
+      ? ` font-size: 1.5rem;
+          opacity: 0.5;`
+      : ''};
 
   &:hover {
-    ${(props) =>
-      props.hoverEffect
-        ? {
-            color: `${colors.lightBlue}`,
-            opacity: 1,
-          }
+    ${({ hoverEffect }) =>
+      hoverEffect
+        ? ` color: ${colors.lightBlue};
+            opacity: 1;`
         : ''}
   }
 `;

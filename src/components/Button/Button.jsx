@@ -5,17 +5,17 @@ import StyledButton from './button.style';
 /**
  * Button component.
  *
- * @param {Object} props   Component props.
- * @param {Array<Element>} props.children  Button Children.
- * @param {string} props.className  Button class for external styling.
- * @param {string} props.color  Button color.
- * @param {boolean} props.disabled  Button state enabled or disabled.
- * @param {string} props.fontSize  Button font size.
- * @param {string} props.fontWeight  Button font weight.
+ * @param {Object} props Component props.
+ * @param {Array<Element>} props.children Button Children.
+ * @param {string} props.className Button class for external styling.
+ * @param {string} props.color Button color.
+ * @param {boolean} props.disabled Button state enabled or disabled.
+ * @param {string} props.fontSize Button font size.
+ * @param {string} props.fontWeight Button font weight.
  * @param {Function} props.onBlur Blur event handler.
  * @param {Function} props.onClick Click event handler.
  * @param {Function} props.onHover Hover event handler.
- * @param {string} props.text    Text inside the button.
+ * @param {string} props.text Text inside the button.
  *
  * @return {Element}
  */

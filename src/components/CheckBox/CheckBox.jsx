@@ -5,27 +5,24 @@ import { StyledCheckBox, Label } from './check-box.style';
 /**
  * CheckBox component.
  *
- * @param {Object} props   Component props.
- * @param {boolean } props.checked   Initial checkbox state.
- * @param {boolean } props.itemVisibility   Visibility state.
- * @param {string } props.label   Label text.
- * @param {Function } props.onCheck   Handel check event.
+ * @param {Object} props Component props.
+ * @param {boolean } props.checked Initial checkbox state.
+ * @param {boolean } props.itemVisibility Visibility state.
+ * @param {string } props.label Label text.
+ * @param {Function } props.onCheck Handel check event.
  *
  * @return {Element}
  */
 function CheckBox({ checked, itemVisibility, label, onCheck }) {
   const [checkState, setCheckState] = useState(checked);
 
+  /**
+   * Handles checkbox click.
+   */
   const toggleCheckBox = () => {
     setCheckState((prevState) => !prevState);
-
-    if (onCheck && label === 'Search all Countries?') {
-      onCheck(checkState);
-      return;
-    }
-
     if (onCheck) {
-      onCheck();
+      onCheck(label === 'Search all Countries?' ? checkState : undefined);
     }
   };
 

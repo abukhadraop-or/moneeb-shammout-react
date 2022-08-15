@@ -8,6 +8,7 @@ const showKeyFrames = keyframes`
       opacity: 0;
       transform: translateX(-100%);
     }
+
     100% {
       opacity: 1;
       transform: translateX(0%);
@@ -46,7 +47,6 @@ const StyledPhoneMenu = styled.div`
   height: 100%;
   padding: 0.8rem;
   position: fixed;
-  //couldn't do it without 85% and this menu isn't reusable
   width: 85%;
   z-index: 100;
 
@@ -68,11 +68,10 @@ const StyledPhoneMenu = styled.div`
     margin-bottom: 0.3rem;
   }
 
-  ${(props) =>
-    `${typeof props.ref}` === 'undefined' ||
-    props.ref.current.display === 'none'
-      ? () => (props.showMenu ? showAnimation : hideAnimation(false))
-      : () => (props.showMenu ? showAnimation : hideAnimation(true))}
+  ${({ ref, showMenu }) =>
+    `${typeof ref}` === 'undefined' || ref.current.display === 'none'
+      ? () => (showMenu ? showAnimation : hideAnimation(false))
+      : () => (showMenu ? showAnimation : hideAnimation(true))}
 
   ${media.desktop`
     display: none;

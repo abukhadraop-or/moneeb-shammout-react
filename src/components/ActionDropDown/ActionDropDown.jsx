@@ -15,13 +15,6 @@ function ActionDropDown({ children }) {
 }
 
 ActionDropDown.propTypes = {
-  /**
-   * GOT THIS ERROR WHEN TRYING TO USE PropTypes.element 
-   * 
-   * react_devtools_backend.js:4026 Warning: Failed prop type: Invalid prop 
-   *`children` of type `array` supplied to 
-   `ActionDropDown`, expected a single ReactElement.
-   */
   children: PropTypes.arrayOf(PropTypes.element),
 };
 

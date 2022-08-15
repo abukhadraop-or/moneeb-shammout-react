@@ -100,7 +100,7 @@ const DesktopNavBar = styled.nav`
     
   `}
 `;
-const DesktopLeftWrapper = styled.span`
+const LeftWrapper = styled.span`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -109,10 +109,4 @@ const DesktopLeftWrapper = styled.span`
   width: 30rem;
 `;
 
-export {
-  Header,
-  StyledNavBar,
-  RightIconsWrapper,
-  DesktopNavBar,
-  DesktopLeftWrapper,
-};
+export { Header, StyledNavBar, RightIconsWrapper, DesktopNavBar, LeftWrapper };

@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Icon from 'components/Icon/icon';
+import Icon from 'components/Icon/Icon';
 import StyledFilterVisibleContent from './filter-visible-content.style';
 
 /**
  * Filter visible component.
  *
- * @param {Object} props   Component props.
- * @param {boolean} props.showBorder   Shows bottom border.
- * @param {Function} onClick  External on click handler.
- * @param {string} title  Title text.
+ * @param {Object} props Component props.
+ * @param {boolean} props.showBorder Shows bottom border.
+ * @param {Function} onClick External on click handler.
+ * @param {string} title Title text.
  *
  * @return {Element}
  */

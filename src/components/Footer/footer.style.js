@@ -2,18 +2,19 @@ import styled from 'styled-components';
 import { media } from 'styles/media-query';
 import colors from 'styles/colors';
 
-const DesktopLeftSide = styled.div`
+const LeftSide = styled.div`
   ${media.desktop`
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
     width: 12rem;
+    //TODO:minus margin
     margin-top:-5rem;
 
  `}
 `;
 
-const DesktopLogo = styled.div`
+const Logo = styled.div`
   display: none;
   background-color: ${colors.darkBlue};
 
@@ -67,4 +68,4 @@ const StyledFooter = styled.footer`
   `}
 `;
 
-export { StyledFooter, DesktopLogo, DesktopLeftSide };
+export { StyledFooter, Logo, LeftSide };

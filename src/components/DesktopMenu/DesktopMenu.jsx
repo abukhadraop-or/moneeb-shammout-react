@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Button from 'components/Button/button';
-import DropDownMenu from 'components/StringDropDown/string-drop-down';
+import Button from 'components/Button/Button';
+import DropDownMenu from 'components/StringDropDown/StringDropDown';
 import {
   moviesContent,
   tvContent,

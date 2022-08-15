@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { media } from 'styles/media-query';
+import colors from 'styles/colors';
 
 const StyledFilterDropDown = styled.div`
   align-items: center;
@@ -14,17 +15,15 @@ const StyledFilterDropDown = styled.div`
   width: 100%;
 
   :active {
-    background-color: #add8e6;
+    background-color: ${colors.weakBlue};
   }
 
-  ${(props) =>
-    props.showBorder
-      ? {
-          border: 'solid transparent',
-          'border-bottom-color': 'rgba(0,0,0,0.1)',
-          'border-width': '0.1rem',
-          'margin-bottom': '1rem',
-        }
+  ${({ showBorder }) =>
+    showBorder
+      ? ` border: solid transparent;
+          border-bottom-color: ${colors.gray}03;
+          border-width: 0.1rem;
+          margin-bottom: 1rem;`
       : ''};
 
   ${media.desktop`

@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import LogoContainer from 'components/Logo/logo-container';
-import Icon from 'components/Icon/icon';
-import PhoneSideMenu from 'components/PhoneSideMenu/phon-side-menu';
-import Button from 'components/Button/button';
-import SearchPanel from 'components/SearchPanel/search-panel';
-import DesktopMenu from 'components/DesktopMenu/desktop-menu';
-import DropDownMenu from 'components/StringDropDown/string-drop-down';
-import UserUtilities from 'components/ActionDropDown/action-drop-down';
+import LogoContainer from 'components/Logo/LogoContainer';
+import Icon from 'components/Icon/Icon';
+import PhoneSideMenu from 'components/PhoneSideMenu/PhoneSideMenu';
+import Button from 'components/Button/Button';
+import SearchPanel from 'components/SearchPanel/SearchPanel';
+import DesktopMenu from 'components/DesktopMenu/DesktopMenu';
+import DropDownMenu from 'components/StringDropDown/StringDropDown';
+import UserUtilities from 'components/ActionDropDown/ActionDropDown';
 import {
   Header,
   StyledNavBar,
   RightIconsWrapper,
-  DesktopLeftWrapper,
+  LeftWrapper,
   DesktopNavBar,
 } from './nav-bar.style';
 
@@ -78,10 +78,10 @@ function NavBar() {
 
         <DesktopNavBar>
           {/* left wrapper */}
-          <DesktopLeftWrapper>
+          <LeftWrapper>
             <LogoContainer logoType="desktop" theme="desktopNav" />
             <DesktopMenu />
-          </DesktopLeftWrapper>
+          </LeftWrapper>
 
           {/* right wrapper */}
           <RightIconsWrapper>

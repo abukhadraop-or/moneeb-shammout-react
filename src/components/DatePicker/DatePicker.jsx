@@ -2,7 +2,7 @@ import { React, useState } from 'react';
 import PropTypes from 'prop-types';
 import DatePickerPackage from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import Icon from 'components/Icon/icon';
+import Icon from 'components/Icon/Icon';
 import { StyledDatePicker, Label, IconWrapper } from './date-picker.style';
 
 /**
@@ -12,7 +12,7 @@ import { StyledDatePicker, Label, IconWrapper } from './date-picker.style';
  * @param {Date} props.initialDate Initial date displayed.
  * @param {string} props.label Label text.
  *
- * @return {Element}  DatePicker component.
+ * @return {Element} DatePicker component.
  */
 function DatePicker({ initialDate, label }) {
   const [date, setDate] = useState(initialDate);

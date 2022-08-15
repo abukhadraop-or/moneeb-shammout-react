@@ -5,9 +5,9 @@ import colors from 'styles/colors';
 const StyledActionDropDown = styled.div`
   background-color: ${colors.white};
   border-radius: 0.3rem;
-  border: solid 0.01rem rgba(33, 37, 41, 0.15);
+  border: solid 0.01rem ${colors.borderGrey}26;
   bottom: 43.5rem;
-  height: 5.5rem;
+  height: 5.7rem;
   left: 14.3rem;
   overflow: hidden;
   position: fixed;
@@ -16,7 +16,7 @@ const StyledActionDropDown = styled.div`
 
   > {
     :first-child {
-      border-bottom: solid 0.001rem rgba(33, 37, 41, 0.15);
+      border-bottom: solid 0.001rem ${colors.borderGrey}26;
     }
 
     &:first-child:hover {
@@ -33,9 +33,9 @@ const StyledActionDropDown = styled.div`
   ${media.desktop`
     background-color: white;
     border-radius: 0.5rem;
-    border: 0.1rem solid #e3e3e3;
+    border: 0.1rem solid ${colors.flashyWhite};
     bottom:3rem;
-    box-shadow: 0 0.1rem 0.5rem rgb(0 0 0 / 10%);
+    box-shadow: 0 0.1rem 0.5rem ${colors.boxShadow};
     color:black;
     cursor: pointer;
     height:6rem;

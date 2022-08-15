@@ -7,11 +7,11 @@ const StyledButton = styled.button`
   border: none;
   font-weight: ${(props) => fontWeight[props.fontWeight]};
 
-  color: ${(props) =>
-    props.disabled ? `rgba(0,0,0,0.5)` : colors[props.color]};
+  color: ${({ disabled, color }) =>
+    disabled ? `${colors.gray}80` : colors[color]};
 
-  background-color: ${(props) =>
-    props.disabled !== null ? 'rgba(0,0,0,0.1) !important' : 'transparent'};
+  background-color: ${({ disabled }) =>
+    disabled !== null ? `${colors.gray}1a !important` : 'transparent'};
 
   font-size: ${(props) => fontSize[props.fontSize]};
 `;

@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import Title from 'components/Title/title';
-import FilterCard from 'components/FilterCard/filter-card';
-import Icon from 'components/Icon/icon';
-import RadioButton from 'components/RadioButton/radio-button';
-import CheckBox from 'components/CheckBox/check-box';
-import CountryDropDown from 'components/CountryDropDown/country-drop-down';
-import DatePicker from 'components/DatePicker/date-picker';
-import Button from 'components/Button/button';
-import SelectMenu from 'components/SelectMenu/select-menu';
-import Slider from 'components/Slider/slider';
+import Title from 'components/Title/Title';
+import FilterCard from 'components/FilterCard/FilterCard';
+import Icon from 'components/Icon/Icon';
+import RadioButton from 'components/RadioButton/RadioButton';
+import CheckBox from 'components/CheckBox/CheckBox';
+import CountryDropDown from 'components/CountryDropDown/CountryDropDown';
+import DatePicker from 'components/DatePicker/DatePicker';
+import Button from 'components/Button/Button';
+import SelectMenu from 'components/SelectMenu/SelectMenu';
 import {
   availabilitiesList,
   filtersList,
@@ -80,7 +79,6 @@ function FilterPanel() {
         <Icon id="icon" color="grey" iconName="HiQuestion" />
       </Title>
 
-      <br />
       <FilterWrapper>
         {filtersList.map((label) => (
           <RadioButton
@@ -94,7 +92,7 @@ function FilterPanel() {
       </FilterWrapper>
 
       <Title title="Availabilities" fontSize="medium" />
-      <br />
+
       <FilterWrapper>
         {availabilitiesList.map((item) => (
           <CheckBox
@@ -109,7 +107,7 @@ function FilterPanel() {
         ))}
       </FilterWrapper>
       <Title title="Release Dates" fontSize="medium" />
-      <br />
+
       <CheckBox
         checked
         label={releaseList[0]}
@@ -161,11 +159,8 @@ function FilterPanel() {
         <Title title="Language" fontSize="medium">
           <Icon id="icon" color="grey" iconName="HiQuestion" />
         </Title>
-        <br />
+
         <SelectMenu options={languagesList} onChange={null} />
-      </FilterWrapper>
-      <FilterWrapper>
-        <Slider className="slider" onChange={() => {}} index={4} tag={4} />
       </FilterWrapper>
     </FilterCard>
   );

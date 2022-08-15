@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Button from 'components/Button/button';
+import Button from 'components/Button/Button';
 import StyledStringDropDown from './string-drop-down.style';
 
 /**
@@ -14,7 +14,12 @@ import StyledStringDropDown from './string-drop-down.style';
  *
  * @return {Element}
  */
-function StringDropDown({ content, dropType, theme, visibility }) {
+function StringDropDown({
+  content,
+  dropType,
+  theme: { color, className, fontSize, fontWeight },
+  visibility,
+}) {
   const [visible, setVisible] = useState(false);
 
   /**
@@ -42,10 +47,10 @@ function StringDropDown({ content, dropType, theme, visibility }) {
           <Button
             key={sentence}
             text={sentence}
-            color={theme.color}
-            fontSize={theme.fontSize}
-            className={theme.className}
-            fontWeight={theme.fontWeight}
+            color={color}
+            fontSize={fontSize}
+            className={className}
+            fontWeight={fontWeight}
           />
         ))}
       </StyledStringDropDown>

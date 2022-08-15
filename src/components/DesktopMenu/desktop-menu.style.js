@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { media } from 'styles/media-query';
+import colors from 'styles/colors';
 
 const StyledDesktopMenu = styled.div`
   display: none;
@@ -15,7 +16,7 @@ const StyledDesktopMenu = styled.div`
     cursor: pointer;
     text-indent: 1rem;
     &:hover {
-      background-color: rgba(0, 0, 0, 0.03);
+      background-color: ${colors.gray}08;
     }
   }
 

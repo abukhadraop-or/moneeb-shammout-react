@@ -18,7 +18,15 @@ const StyledCheckBox = styled.span`
   top: 0;
   width: 1rem;
 
-  // For displaying the check mark
+  background-color: ${({ checked }) =>
+    checked ? `${colors.lightBlue}` : `${colors.white}`};
+
+  border-radius: ${({ checked }) => (checked ? '0.3rem' : '30%')};
+
+  border: ${({ checked }) =>
+    checked ? null : `solid 0.001rem ${colors.lightBlue}`};
+
+  // For displaying the check mark.
   ::after {
     -ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
@@ -34,18 +42,6 @@ const StyledCheckBox = styled.span`
     top: 0.2rem;
     width: 0.1rem;
   }
-
-  ${(props) =>
-    props.checked
-      ? {
-          'background-color': `${colors.lightBlue}`,
-          'border-radius': '0.3rem',
-        }
-      : {
-          'background-color': `${colors.white}`,
-          border: `solid 0.001rem ${colors.lightBlue}`,
-          'border-radius': '30%',
-        }};
 `;
 
 export { StyledCheckBox, Label };

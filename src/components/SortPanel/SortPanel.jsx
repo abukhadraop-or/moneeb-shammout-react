@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SelectMenu from 'components/SelectMenu/select-menu';
-import Title from 'components/Title/title';
-import FilterCard from 'components/FilterCard/filter-card';
+import SelectMenu from 'components/SelectMenu/SelectMenu';
+import Title from 'components/Title/Title';
+import FilterCard from 'components/FilterCard/FilterCard';
 import { sortMap } from 'constants';
+import SelectWrapper from './sort-panel.style';
 
 /**
  * Body sort part.
@@ -16,9 +17,9 @@ function SortPanel({ onChange }) {
   return (
     <FilterCard title="Sort">
       <Title title="Sort Results By" fontSize="medium" />
-      <br />
-      <SelectMenu options={Object.keys(sortMap)} onChange={onChange} />
-      <br />
+      <SelectWrapper>
+        <SelectMenu options={Object.keys(sortMap)} onChange={onChange} />
+      </SelectWrapper>
     </FilterCard>
   );
 }

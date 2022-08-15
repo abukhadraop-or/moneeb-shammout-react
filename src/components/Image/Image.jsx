@@ -5,9 +5,9 @@ import StyledImage from './image.style';
 /**
  * Image component.
  *
- * @param {Object} props   Component props.
- * @param {string} props.className   Element class for css.
- * @param {string} props.imagePath   Absolute path of the Image.
+ * @param {Object} props Component props.
+ * @param {string} props.className Element class for css.
+ * @param {string} props.imagePath Absolute path of the Image.
  *
  * @return {Element}
  */

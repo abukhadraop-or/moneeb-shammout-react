@@ -8,7 +8,6 @@ const StyledCountryDropDown = styled.div`
   width: 100%;
 
   .countryButton {
-    background-color: #e4e7eb;
     padding-right: 1rem;
   }
 

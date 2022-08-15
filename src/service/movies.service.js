@@ -1,18 +1,18 @@
-import { urls } from 'constants';
 /**
  * Fetch movies API.
  *
  * @param {number} pageNumber Page number.
  * @param {string} sortType Sort by query.
  *
- * @return {json} Get request result.
+ * @return {Promise<Response>} Get request result.
  */
 const fetchMovies = async (pageNumber, sortType) => {
   try {
-    const response = await fetch(
-      `${urls.moviesAPI}&sort_by=${sortType}&page=${pageNumber}`
-    );
-    return await response.json();
+    const response = await fetch(`/movies/${pageNumber}&${sortType}`, {
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      method: 'GET',
+    });
+    return response;
   } catch (error) {
     return error;
   }

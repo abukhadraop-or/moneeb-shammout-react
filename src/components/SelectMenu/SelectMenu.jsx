@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Title from 'components/Title/title';
+import Title from 'components/Title/Title';
 import { StyledSelectMenu, Option, OptionContainer } from './select-menu.style';
 
 /**
@@ -26,7 +26,7 @@ function SelectMenu({ onChange, options }) {
   /**
    * Handles select menu option click.
    *
-   * @param {Object} event  The  Event object.
+   * @param {Object} event The Event object.
    */
   const optionClickHandler = (event) => {
     const optionId = event.currentTarget.id;
@@ -35,11 +35,11 @@ function SelectMenu({ onChange, options }) {
       return;
     }
 
-    setSelectTitle(optionId);
-
     if (onChange) {
       onChange(optionId);
     }
+
+    setSelectTitle(optionId);
   };
 
   return (

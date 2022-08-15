@@ -20,10 +20,10 @@ const sortMap = {
   'Popularity descending': 'popularity.desc',
   // eslint-disable-next-line sort-keys
   'Popularity Ascending': 'popularity.asc',
-  'Rating Ascending': 'rating.asc',
-  'Rating descending': 'rating.desc',
-  'Release Date Ascending': 'primary_release_date.asc',
-  'Release Date descending': 'primary_release_date.desc',
+  'Rating Ascending': 'vote_average.asc',
+  'Rating descending': 'vote_average.desc',
+  'Release Date Ascending': 'release_date.asc',
+  'Release Date descending': 'release_date.desc',
   'title A-Z': 'title.asc',
   'title Z-A': 'title.desc',
 };
@@ -254,6 +254,7 @@ const urls = {
     'https://api.themoviedb.org/3/discover/movie/?api_key=1ed03abf259db3275f034b5a5abe9f9e&language=en-US',
   moviesImage: 'https://image.tmdb.org/t/p/w500',
 };
+
 export {
   predictionsList,
   basicContent,

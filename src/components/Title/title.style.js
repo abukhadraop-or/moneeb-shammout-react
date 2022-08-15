@@ -4,9 +4,9 @@ import { fontWeight, fontSize } from 'styles/fonts';
 
 const StyledTitle = styled.h2`
   display: flex;
-  font-weight: ${(props) => fontWeight[props.fontWeight]};
-  color: ${(props) => colors[props.color]};
-  font-size: ${(props) => fontSize[props.fontSize]};
+  font-weight: ${({ fontWeight: weight }) => fontWeight[weight]};
+  color: ${({ color }) => colors[color]};
+  font-size: ${({ fontSize: size }) => fontSize[size]};
 `;
 
 export default StyledTitle;

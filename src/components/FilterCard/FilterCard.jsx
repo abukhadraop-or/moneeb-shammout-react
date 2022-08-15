@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import FilterVisibleContent from 'components/FilterVisibleContent/filter-visible-content';
+import FilterVisibleContent from 'components/FilterVisibleContent/FilterVisibleContent';
 import StyledFilterCard from './filter-card.style';
 
 /**
  * FilterCard component.
  *
- * @param {Object} props   Component props.
- * @param {Array<Element>} props.children  Children elements.
- * @param {Function} props.onClick  Handel click event.
- * @param {string} props.title  Title text.
+ * @param {Object} props Component props.
+ * @param {Array<Element>} props.children Children elements.
+ * @param {Function} props.onClick Handel click event.
+ * @param {string} props.title Title text.
  *
  * @return {Element}
  */
@@ -17,7 +17,7 @@ function FilterCard({ children, onClick, title }) {
   const [expandCard, setExpandCard] = useState(title === 'Sort');
 
   /**
-   *  Expand or minimize filter card.
+   * Expand or minimize filter card.
    */
   const filterClickHandler = () => {
     setExpandCard((prevSate) => !prevSate);
@@ -36,9 +36,6 @@ function FilterCard({ children, onClick, title }) {
 }
 
 FilterCard.propTypes = {
-  // couldn't use element alone or array of element since
-  // I have a boolean expression in children array
-
   children: PropTypes.arrayOf(PropTypes.shape),
   onClick: PropTypes.func,
   title: PropTypes.string.isRequired,

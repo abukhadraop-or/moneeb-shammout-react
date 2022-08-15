@@ -8,24 +8,23 @@ const LogoContainer = styled.div`
 
   ${media.desktop`
     display: flex;
-    ${(props) =>
-      props.theme === 'desktopFooter'
-        ? {
-            display: 'flex',
-            height: '12rem',
-            width: '10rem',
-          }
-        : null};
-        
-    ${(props) =>
-      props.theme === 'desktopNav'
-        ? {
-            display: 'block',
-            height: '2rem',
-            'margin-left': '1rem',
-            width: '10rem',
-          }
-        : null};
+
+    ${({ theme }) => {
+      if (theme === 'desktopFooter') {
+        return `display: flex;
+                height: 12rem;
+                width: 10rem;`;
+      }
+
+      if (theme === 'desktopNav') {
+        return `display: block;
+                height: 2rem;
+                margin-left: 1rem;
+                width: 10rem;`;
+      }
+      return null;
+    }}
+  
   `}
 `;
 

@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 const StyledImage = styled.div`
-  border: inherit;
   display: inherit;
-  height: 100%;
+  height: auto;
   width: 100%;
 `;
 

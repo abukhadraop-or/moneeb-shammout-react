@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
 *{
   font-family: 'Source Sans Pro';
   margin: 0;
+  /* box-sizing:border-box; */
 }
 
   body {

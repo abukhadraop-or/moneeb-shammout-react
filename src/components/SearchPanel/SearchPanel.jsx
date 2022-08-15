@@ -1,7 +1,7 @@
 import React from 'react';
-import SearchBox from 'components/SearchBox/search-box';
-import TrendingDiv from 'components/TrendingDiv/trending-div';
-import SearchPredictions from 'components/SearchPredictions/search-predictions';
+import SearchBox from 'components/SearchBox/SearchBox';
+import TrendingDiv from 'components/TrendingDiv/TrendingDiv';
+import SearchPredictions from 'components/SearchPredictions/SearchPredictions';
 import { predictionsList } from 'constants';
 import StyledSearchPanel from './search-panel.style';
 
@@ -11,6 +11,7 @@ import StyledSearchPanel from './search-panel.style';
  * @return {Element}
  */
 function SearchPanel() {
+  const lastItem = predictionsList[predictionsList.length - 1];
   return (
     <StyledSearchPanel>
       <SearchBox
@@ -21,7 +22,7 @@ function SearchPanel() {
       <TrendingDiv />
 
       {predictionsList.map((pred) =>
-        predictionsList.length - 1 === predictionsList.indexOf(pred) ? (
+        lastItem === pred ? (
           <SearchPredictions key={pred} prediction={pred} bottomBorder />
         ) : (
           <SearchPredictions key={pred} prediction={pred} />

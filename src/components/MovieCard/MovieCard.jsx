@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Title from 'components/Title/title';
-import Image from 'components/Image/image';
-import Icon from 'components/Icon/icon';
-import Button from 'components/Button/button';
-import ActionDropDown from 'components/ActionDropDown/action-drop-down';
-import ToolTip from 'components/ToolTip/tool-tip';
+import Title from 'components/Title/Title';
+import Image from 'components/Image/Image';
+import Icon from 'components/Icon/Icon';
+import Button from 'components/Button/Button';
+import ActionDropDown from 'components/ActionDropDown/ActionDropDown';
+import ToolTip from 'components/ToolTip/ToolTip';
 import {
-  DesktopDots,
-  DesktopPercentage,
+  DotsContainer,
+  PercentageContainer,
   OverFlowContainer,
   PosterContainer,
   RightContainer,
@@ -75,19 +75,19 @@ function MovieCard({ date, description, imageURL, percentageRate, title }) {
         <BlurWrapper blur={blur}>
           <PosterContainer>
             <ToolTip className="toolTip" theme="movies" text={title} />
-            <DesktopDots>
+            <DotsContainer>
               <Icon
                 iconName="Hidots"
                 onClick={iconClickHandler}
                 color="transparent"
                 hoverEffect
               />
-            </DesktopDots>
+            </DotsContainer>
 
-            <DesktopPercentage percentage={percentageRate}>
+            <PercentageContainer percentage={percentageRate}>
               &nbsp;{`${percentageRate * 10}`}
               <Icon iconName="percent" color="white" className="icon" />
-            </DesktopPercentage>
+            </PercentageContainer>
             <Image imagePath={imageURL} className="poster" />
           </PosterContainer>
           <RightContainer>

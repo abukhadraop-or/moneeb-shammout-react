@@ -1,8 +1,8 @@
 import React from 'react';
-import NavBar from 'components/NavBar/nav-bar';
-import Body from 'components/Body/body';
-import Footer from 'components/Footer/footer';
-import GlobalStyle from './styles/global.style';
+import NavBar from 'components/NavBar/NavBar';
+import Body from 'components/Body/Body';
+import Footer from 'components/Footer/Footer';
+import GlobalStyle from './styles/global';
 
 /**
  * Root component.

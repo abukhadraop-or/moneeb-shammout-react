@@ -10,7 +10,7 @@ const convertDate = (dateString) => {
   const month = date.toLocaleString([], {
     month: 'short',
   });
-  const day = date.getDay();
+  const day = date.getDate();
   const newDay = day < 10 ? `0${day}` : day;
   return `${month} ${newDay}, ${date.getFullYear()}`;
 };

@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 import { media } from 'styles/media-query';
 
-const TextBoxWrapper = styled.div`
-  width: 81rem;
-  height: 1rem;
-`;
-
 const StyledSearchBox = styled.div`
   align-items: center;
   color: grey;
@@ -18,6 +13,11 @@ const StyledSearchBox = styled.div`
   ${media.desktop`
     padding-left:0.5rem;
   `}
+`;
+
+const TextBoxWrapper = styled.div`
+  width: 81rem;
+  height: 1rem;
 `;
 
 export { StyledSearchBox, TextBoxWrapper };
