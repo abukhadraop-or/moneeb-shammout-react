@@ -3,23 +3,24 @@ import { media } from 'styles/media-query';
 import colors from 'styles/colors';
 
 const StyledSearchPanel = styled.div`
-  display: block;
-  z-index: 1;
-  font-size: 1rem;
-  width: 100%;
-  color: grey;
-  position: fixed;
   background-color: ${colors.white};
   bottom: 21.6rem;
-  padding-bottom: 0;
+  color: grey;
+  display: block;
+  font-size: 1rem;
   margin-bottom: 2.5rem;
+  padding-bottom: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 
   ${media.desktop`
-    width: 100%;
+    align-items:center;
     bottom: 31rem;
     justify-content:center;
     justify-items:center;
-    align-items:center;
+    width: 100%;
   `}
 `;
+
 export default StyledSearchPanel;

@@ -25,11 +25,6 @@ const StyledNavBar = styled.nav`
   justify-content: space-between;
   overflow: hidden;
 
-  .rightRoutes {
-    padding-left: 0.5rem;
-    padding-bottom: 0.7rem;
-  }
-
   :first-child {
     padding-left: 1.5rem;
   }
@@ -37,6 +32,11 @@ const StyledNavBar = styled.nav`
   ${media.desktop`
     display: none;
   `}
+
+  .rightRoutes {
+    padding-left: 0.5rem;
+    padding-bottom: 0.7rem;
+  }
 `;
 
 const RightIconsWrapper = styled.span`

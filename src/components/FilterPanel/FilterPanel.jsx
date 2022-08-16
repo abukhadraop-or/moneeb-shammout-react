@@ -35,7 +35,7 @@ function FilterPanel() {
   /**
    * Check or uncheck radio button.
    *
-   * @param {string}  id Radio button identifier.
+   * @param {string} id Radio button identifier.
    */
   const filtersChangeHandler = (id) => {
     setRadioBtnState((prevState) => {

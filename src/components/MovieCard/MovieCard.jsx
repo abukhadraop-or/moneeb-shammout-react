@@ -15,7 +15,7 @@ import {
   StyledMovieCard,
   MovieDropDownMenu,
   BlurWrapper,
-} from './movie-card.Style';
+} from './movie-card.style';
 
 /**
  * Movie Card.

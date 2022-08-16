@@ -6,12 +6,12 @@ import StyledTitle from './title.style';
  * Title component.
  *
  * @param {Object} props Component props.
- * @param {Element} props.children  Children components.
- * @param {string} props.className  Title class for external styling.
- * @param {string} props.color  Title color.
- * @param {string} props.fontSize  Title font size.
- * @param {string} props.fontWeight  Title font weight.
- * @param {string} props.title  Title text.
+ * @param {Element} props.children Children components.
+ * @param {string} props.className Title class for external styling.
+ * @param {string} props.color Title color.
+ * @param {string} props.fontSize Title font size.
+ * @param {string} props.fontWeight Title font weight.
+ * @param {string} props.title Title text.
  *
  * @return {Element}
  */

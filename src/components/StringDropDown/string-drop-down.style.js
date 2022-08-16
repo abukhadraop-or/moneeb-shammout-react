@@ -10,7 +10,7 @@ const StyledStringDropDown = styled.div`
   padding-bottom: 1rem;
 
   ${media.desktop`
-  cursor: pointer;
+    cursor: pointer;
 
     ${({ dropType }) => {
       if (dropType === 'navDrops') {

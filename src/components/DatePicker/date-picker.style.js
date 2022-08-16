@@ -7,6 +7,11 @@ const StyledDatePicker = styled.div`
   height: 3rem;
   outline: none;
 
+  ${media.desktop`
+    width:12rem;
+
+    `}
+
   .popper {
     z-index: 1;
   }
@@ -51,11 +56,6 @@ const StyledDatePicker = styled.div`
       }
     }
   }
-
-  ${media.desktop`
-    width:12rem;
-
-    `}
 `;
 
 const Label = styled.div`

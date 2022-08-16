@@ -1,7 +1,7 @@
 /**
  * Converts date from YYYY-MM-DD to mm-dd-YYYY.
  *
- * @param {string} dateString  Date to be converted.
+ * @param {string} dateString Date to be converted.
  *
  * @return {string} New formatted date.
  */

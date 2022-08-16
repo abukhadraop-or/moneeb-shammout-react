@@ -5,7 +5,7 @@ import StyledActionDropDown from './action-drop-down.style';
 /**
  * Action drop down menu.
  *
- * @param {Object} props   Component props.
+ * @param {Object} props Component props.
  * @param {Array<Element>} props.children Children components.
  *
  * @return {Element}

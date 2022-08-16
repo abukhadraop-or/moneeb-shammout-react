@@ -4,7 +4,7 @@
  * @param {number} pageNumber Page number.
  * @param {string} sortType Sort by query.
  *
- * @return {Promise<Response>} Get request result.
+ * @return {Promise<Response>}
  */
 const fetchMovies = async (pageNumber, sortType) => {
   try {

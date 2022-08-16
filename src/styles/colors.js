@@ -9,6 +9,7 @@ const colors = {
   fontGrey: '#00000099',
   gray: '#000000',
   grey: '#808080',
+  lightBlack: '#081C22',
   lightBlue: '#06b4e2',
   lightGray: '#e4e7eb',
   lightGrey: '#acacac',

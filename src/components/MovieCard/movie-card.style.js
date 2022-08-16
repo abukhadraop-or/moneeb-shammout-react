@@ -59,10 +59,6 @@ const StyledMovieCard = styled.div`
     :hover {
       cursor: pointer;
     }
-
-    
-    
-   
   `}
 `;
 
@@ -134,7 +130,7 @@ const PercentageContainer = styled.div`
 
   ${media.desktop`
     align-content:center;
-    background-color:black;
+    background-color:${colors.lightBlack};
     border-radius: 50%;
     border:solid 0.2rem;
     color: white;
@@ -151,15 +147,15 @@ const PercentageContainer = styled.div`
 
     ${({ percentage }) => {
       if (percentage >= 7) {
-        return 'border-color: green green green black';
+        return 'border-color: green green green transparent';
       }
 
       if (percentage >= 5) {
-        return 'border-color: yellow yellow yellow black';
+        return 'border-color: yellow yellow yellow transparent';
       }
 
       if (percentage <= 5) {
-        return 'border-color: red black black black';
+        return 'border-color: red transparent transparent transparent';
       }
 
       return null;
@@ -193,17 +189,14 @@ const OverFlowContainer = styled.div`
 const RightContainer = styled.div`
   display: flex;
   padding: 0rem 0rem 0rem 1rem;
-  align-items: flex-start;
   flex-direction: column;
   justify-content: space-evenly;
   width: 100%;
 
   ${media.desktop`
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:left;
     line-height:1rem;
-    padding:1rem 1.2rem;
+    white-space:discard;
+    padding:2rem 1.2rem;
     width:10rem;    
   `}
 
@@ -219,7 +212,9 @@ const RightContainer = styled.div`
       -webkit-line-clamp: 3;
       display: -webkit-box;
       font-weight:700;
-      overflow:hidden;      
+      overflow:hidden;
+      margin:0;
+      margin-bottom:0.2rem;
   `}
   }
 
@@ -230,6 +225,8 @@ const RightContainer = styled.div`
       font-size: 1rem;
       font-weight:400;
       color: black;
+      margin:0;
+      padding:0;
    `}
   }
 `;
@@ -237,9 +234,9 @@ const RightContainer = styled.div`
 export {
   BlurWrapper,
   DotsContainer,
-  PercentageContainer,
   MovieDropDownMenu,
   OverFlowContainer,
+  PercentageContainer,
   PosterContainer,
   RightContainer,
   StyledMovieCard,

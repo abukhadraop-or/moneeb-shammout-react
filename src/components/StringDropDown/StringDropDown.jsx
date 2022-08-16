@@ -9,7 +9,7 @@ import StyledStringDropDown from './string-drop-down.style';
  * @param {Object} props Component props.
  * @param {Array<string>} props.content  Items to be displayed inside.
  * @param {string} props.dropType  Desktop themes.
- * @param {{color:string,className:string,fontSize:string,fontWeight:string}} props.theme  Theme object of button attributes.
+ * @param {{color:string,className:string,fontSize:string,fontWeight:string}} props.theme Theme object of button attributes.
  * @param {boolean} props.visibility   Show or hide menu.
  *
  * @return {Element}

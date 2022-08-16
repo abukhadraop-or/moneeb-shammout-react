@@ -7,7 +7,7 @@ import StyledTextField from './text-field.style';
  *
  * @param {Object} props Component props.
  * @param {string} props.placeHolder PlaceHolder text.
- * @param {string} props.theme  Theme type for css.
+ * @param {string} props.theme Theme type for css.
  * @param {Object}  ref Forwarding ref to HOC.
  *
  * @type {React.ForwardRefRenderFunction<HTMLInputElement, textFieldRefPropTypes>}

@@ -15,15 +15,15 @@ const StyledSelectMenu = styled.div`
   margin: 0rem 1rem;
   padding-left: 0.2rem;
 
-  .menuTitle {
-    text-align: center;
-    align-items: center;
-    padding-top: 0.6rem;
-  }
-
   ${media.desktop`
     width:15rem;
   `}
+
+  .menuTitle {
+    align-items: center;
+    padding-top: 0.6rem;
+    text-align: center;
+  }
 `;
 
 const OptionContainer = styled.div`
@@ -35,9 +35,9 @@ const OptionContainer = styled.div`
   max-height: 10rem;
   overflow-x: hidden;
   overflow-y: scroll;
+  position: sticky;
   white-space: nowrap;
   width: 100%;
-  position: sticky;
   z-index: 99;
 
   ${media.desktop`
@@ -66,7 +66,7 @@ const Option = styled.div`
       selected === content
         ? ` background-color: ${colors.lightBlue};
             color: ${colors.white};`
-        : null};
+        : ''};
   }
 `;
 

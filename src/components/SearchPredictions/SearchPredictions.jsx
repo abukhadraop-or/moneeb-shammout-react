@@ -4,7 +4,7 @@ import Icon from 'components/Icon/Icon';
 import StyledSSearchPredictions from './search-predictions.style';
 
 /**
- * Trending div in search panel.
+ * Search prediction component in search panel.
  *
  * @param {Object} props Component props.
  * @param {string} props.prediction Prediction text.

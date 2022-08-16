@@ -29,7 +29,7 @@ function PhoneSideMenu({ showMenu }) {
   /**
    * Show or hide drop downs using setShowState.
    *
-   * @param {string} menuName  Menu unique identifier.
+   * @param {string} menuName Menu unique identifier.
    */
   const dropDownHandler = (menuName) => {
     setShowState((prevState) => {

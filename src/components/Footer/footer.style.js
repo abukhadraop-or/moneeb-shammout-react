@@ -8,7 +8,7 @@ const LeftSide = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
 
-    // needed minus margin to left only this div
+    // needed minus margin to lift only this div
     margin-top:-5rem;
     width: 12rem;
 
@@ -31,6 +31,13 @@ const StyledFooter = styled.footer`
   height: auto;
   padding-left: 1rem;
   width: 100%;
+
+  ${media.desktop`
+     flex-direction: row;
+     justify-content: center;
+     padding:5rem 0rem 3.5rem 6rem;  
+  
+  `}
 
   .joinCommunity {
     align-items: center;
@@ -58,13 +65,6 @@ const StyledFooter = styled.footer`
     padding-left: 0.5rem;
     padding-bottom: 0rem;
   }
-
-  ${media.desktop`
-    flex-direction: row;
-    justify-content: center;
-    padding:5rem 0rem 3.5rem 6rem;  
-  
-  `}
 `;
 
 export { StyledFooter, Logo, LeftSide };

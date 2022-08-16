@@ -9,7 +9,7 @@ import SelectWrapper from './sort-panel.style';
 /**
  * Body sort part.
  *
- * @param {Function} onChange  Sort change handler passed from Body.
+ * @param {Function} onChange Sort change handler passed from Body.
  *
  * @return {Element}
  */
