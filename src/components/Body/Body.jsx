@@ -28,14 +28,13 @@ function Body() {
    */
   const getMovies = async (newPage) => {
     const response = await (await fetchMovies(page, sortType)).json();
-
     const newMovies = response.map((movie) => ({
       date: movie.release_date,
       description: movie.overview,
       id: movie.id,
       imageURL: `${urls.moviesImage}${movie.poster_path}`,
       percentageRate: movie.vote_average,
-      title: movie.original_title,
+      title: movie.title,
     }));
 
     setMovies(newPage ? newMovies : movies.concat(newMovies));
