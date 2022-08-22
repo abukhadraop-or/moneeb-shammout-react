@@ -29,11 +29,11 @@ function Body() {
   const getMovies = async (newPage) => {
     const response = await (await fetchMovies(page, sortType)).json();
     const newMovies = response.map((movie) => ({
-      date: movie.release_date,
+      date: movie.releaseDate,
       description: movie.overview,
       id: movie.id,
-      imageURL: `${urls.moviesImage}${movie.poster_path}`,
-      percentageRate: movie.vote_average,
+      imageURL: `${urls.moviesImage}${movie.posterPath}`,
+      percentageRate: movie.voteAverage,
       title: movie.title,
     }));
 

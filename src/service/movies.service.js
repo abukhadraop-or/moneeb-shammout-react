@@ -9,7 +9,7 @@
 const fetchMovies = async (pageNumber, sortType) => {
   try {
     const response = await fetch(
-      `http://localhost:3000/movies/${pageNumber}&${sortType}`,
+      `http://localhost:3000/movies?page=${pageNumber}&sortBy=${sortType}`,
       {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         method: 'GET',
