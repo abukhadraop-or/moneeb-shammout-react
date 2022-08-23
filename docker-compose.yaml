@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+  node_backend:
+    container_name: moneeb_react
+    image: moneeb_react
+    build:
+      context: .
+    ports:
+      - '4000:4000'

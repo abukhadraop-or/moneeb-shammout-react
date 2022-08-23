@@ -27,8 +27,14 @@ function Body() {
    * @param {boolean} newPage Add to the old movies or not.
    */
   const getMovies = async (newPage) => {
-    const response = await (await fetchMovies(page, sortType)).json();
-    const newMovies = response.map((movie) => ({
+    const response = await fetchMovies(page, sortType);
+
+    if (response.status >= 400) {
+      return;
+    }
+
+    const jsonData = await response.json();
+    const newMovies = jsonData.map((movie) => ({
       date: movie.releaseDate,
       description: movie.overview,
       id: movie.id,
