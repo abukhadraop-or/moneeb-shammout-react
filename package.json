@@ -23,7 +23,8 @@
   },
   "scripts": {
     "start": "PORT=4000 react-scripts start",
-    "build": "react-scripts build",
+    "start:production": "serve -s build -l 4000",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --debug '**/*.{js,jsx}'",

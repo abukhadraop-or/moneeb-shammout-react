@@ -1,9 +1,8 @@
-version: '3.9'
+version: '3.8'
 services:
-  node_backend:
+  node_frontend:
     container_name: moneeb_react
-    image: moneeb_react
-    build:
-      context: .
+    image: moneebshammout/moneeb_react:1.0.2
     ports:
-      - '4000:4000'
+      - '4000:80'
+    restart: on-failure
