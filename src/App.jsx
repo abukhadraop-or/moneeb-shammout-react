@@ -1,14 +1,15 @@
 import React from 'react';
-import NavBar from 'Components/NavBar/NavBar';
-import Body from 'Components/Body/Body';
-import Footer from 'Components/Footer/Footer';
-import GlobalStyle from './App.style';
+import NavBar from 'components/NavBar';
+import Body from 'components/Body';
+import Footer from 'components/Footer';
+import GlobalStyle from './styles/global';
 
 /**
- *  Creates root component.
+ * Root component.
  *
- * @return {Element}  react APP
- */ function App() {
+ * @return {Element}
+ */
+function App() {
   return (
     <>
       <GlobalStyle />
@@ -18,4 +19,5 @@ import GlobalStyle from './App.style';
     </>
   );
 }
+
 export default App;
