@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Button from 'components/Button/Button';
-import StyledStringDropDown from './string-drop-down.style';
+import Button from 'components/Button';
+import { StyledStringDropDown, NavButton } from './string-drop-down.style';
 
 /**
  * String drop down component depending on the theme chosen.
@@ -9,7 +9,8 @@ import StyledStringDropDown from './string-drop-down.style';
  * @param {Object} props Component props.
  * @param {Array<string>} props.content  Items to be displayed inside.
  * @param {string} props.dropType  Desktop themes.
- * @param {{color:string,className:string,fontSize:string,fontWeight:string}} props.theme Theme object of button attributes.
+ * @param {string} props.className Class name for css.
+ * @param {{color:string,fontSize:string,fontWeight:string}} props.theme Theme object of button attributes.
  * @param {boolean} props.visibility   Show or hide menu.
  *
  * @return {Element}
@@ -17,8 +18,9 @@ import StyledStringDropDown from './string-drop-down.style';
 function StringDropDown({
   content,
   dropType,
-  theme: { color, className, fontSize, fontWeight },
+  theme: { color, fontSize, fontWeight },
   visibility,
+  className,
 }) {
   const [visible, setVisible] = useState(false);
 
@@ -42,23 +44,34 @@ function StringDropDown({
         dropType={dropType}
         onMouseLeave={onBlurHandler}
         onMouseOver={onHoverHandler}
+        className={className}
       >
-        {content.map((sentence) => (
-          <Button
-            key={sentence}
-            text={sentence}
-            color={color}
-            fontSize={fontSize}
-            className={className}
-            fontWeight={fontWeight}
-          />
-        ))}
+        {content.map((sentence) =>
+          dropType === 'navDrops' ? (
+            <NavButton
+              key={sentence}
+              text={sentence}
+              color={color}
+              fontSize={fontSize}
+              fontWeight={fontWeight}
+            />
+          ) : (
+            <Button
+              key={sentence}
+              text={sentence}
+              color={color}
+              fontSize={fontSize}
+              fontWeight={fontWeight}
+            />
+          )
+        )}
       </StyledStringDropDown>
     )
   );
 }
 
 StringDropDown.propTypes = {
+  className: PropTypes.string,
   content: PropTypes.arrayOf(PropTypes.string).isRequired,
   dropType: PropTypes.string,
   theme: PropTypes.objectOf(PropTypes.string),
@@ -66,6 +79,7 @@ StringDropDown.propTypes = {
 };
 
 StringDropDown.defaultProps = {
+  className: null,
   dropType: '',
   theme: {},
 };

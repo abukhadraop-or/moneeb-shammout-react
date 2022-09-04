@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import Button from 'components/Button/Button';
-import DropDownMenu from 'components/StringDropDown/StringDropDown';
+import DropDownMenu from 'components/StringDropDown';
 import {
   moviesContent,
   tvContent,
   visibleContent,
   peopleContent,
 } from 'constants';
-import StyledDesktopMenu from './desktop-menu.style';
+import { StyledDesktopMenu, RoutButton } from './desktop-menu.style';
 
 /**
  * Navbar drop downs for desktop only.
@@ -40,8 +39,7 @@ function DesktopMenu() {
   return (
     <StyledDesktopMenu>
       <div>
-        <Button
-          className="navRoutes"
+        <RoutButton
           color="white"
           fontSize="medium"
           fontWeight="medium-high"
@@ -56,7 +54,6 @@ function DesktopMenu() {
           onBlur={() => onHoverHandler('movies')}
           content={moviesContent}
           theme={{
-            className: 'dropDown',
             color: 'black',
             fontSize: 'medium',
             fontWeight: 'medium',
@@ -65,8 +62,7 @@ function DesktopMenu() {
         />
       </div>
       <div>
-        <Button
-          className="navRoutes"
+        <RoutButton
           color="white"
           fontSize="medium"
           fontWeight="medium-high"
@@ -78,7 +74,6 @@ function DesktopMenu() {
           visibility={showState.tv}
           content={tvContent}
           theme={{
-            className: 'dropDown',
             color: 'black',
             fontSize: 'medium',
             fontWeight: 'medium',
@@ -86,10 +81,8 @@ function DesktopMenu() {
           dropType="navDrops"
         />
       </div>
-      &nbsp;&nbsp;
       <div>
-        <Button
-          className="navRoutes"
+        <RoutButton
           color="white"
           fontSize="medium"
           fontWeight="medium-high"
@@ -101,7 +94,6 @@ function DesktopMenu() {
         <DropDownMenu
           visibility={showState.people}
           theme={{
-            className: 'dropDown',
             color: 'black',
             fontSize: 'medium',
             fontWeight: 'medium',
@@ -110,10 +102,8 @@ function DesktopMenu() {
           dropType="navDrops"
         />
       </div>
-      &nbsp;&nbsp;
       <div>
-        <Button
-          className="navRoutes"
+        <RoutButton
           color="white"
           fontSize="medium"
           fontWeight="medium-high"
@@ -125,7 +115,6 @@ function DesktopMenu() {
         <DropDownMenu
           visibility={showState.more}
           theme={{
-            className: 'dropDown',
             color: 'black',
             fontSize: 'medium',
             fontWeight: 'medium',

@@ -4,13 +4,13 @@ import colors from 'styles/colors';
 
 const StyledSearchPanel = styled.div`
   background-color: ${colors.white};
-  bottom: 21.6rem;
   color: grey;
   display: block;
   font-size: 1rem;
   margin-bottom: 2.5rem;
   padding-bottom: 0;
-  position: fixed;
+  position: absolute;
+  top: 4rem;
   width: 100%;
   z-index: 1;
 

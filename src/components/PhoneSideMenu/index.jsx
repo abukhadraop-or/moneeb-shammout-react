@@ -1,14 +1,17 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import Button from 'components/Button/Button';
-import DropDownMenu from 'components/StringDropDown/StringDropDown';
 import {
   moviesContent,
+  peopleContent,
   tvContent,
   visibleContent,
-  peopleContent,
 } from 'constants';
-import StyledPhoneMenu from './phone-side-menu.style';
+import {
+  DropButton,
+  SideDrop,
+  SmallFadeDrop,
+  StyledPhoneMenu,
+} from './phone-side-menu.style';
 
 /**
  * Phone Side Menu component.
@@ -40,65 +43,58 @@ function PhoneSideMenu({ showMenu }) {
 
   return (
     <StyledPhoneMenu showMenu={showMenu} ref={phoneMenu} id="phoneSideMenu">
-      <Button
+      <DropButton
         color="white"
         fontSize="nearly-big"
         fontWeight="medium-high"
-        className="dropButtons"
         onClick={() => dropDownHandler('movies')}
         text="Movies"
       />
-      <DropDownMenu
+      <SideDrop
         visibility={showState.movies}
         content={moviesContent}
         theme={{
-          className: 'sideDrops',
           color: 'white',
           fontSize: 'medium',
           fontWeight: 'medium',
         }}
       />
-      <Button
+      <DropButton
         color="white"
         fontSize="nearly-big"
         fontWeight="medium-high"
-        className="dropButtons"
         onClick={() => dropDownHandler('tv')}
         text="TV Shows"
       />
-      <DropDownMenu
+      <SideDrop
         visibility={showState.tv}
         content={tvContent}
         theme={{
-          className: 'sideDrops',
           color: 'white',
           fontSize: 'medium',
           fontWeight: 'medium',
         }}
       />
-      <Button
+      <DropButton
         color="white"
         fontSize="nearly-big"
         fontWeight="medium-high"
-        className="dropButtons"
         onClick={() => dropDownHandler('people')}
         text="People"
       />
-      <DropDownMenu
+      <SideDrop
         visibility={showState.people}
         content={peopleContent}
         theme={{
-          className: 'sideDrops',
           color: 'white',
           fontSize: 'medium',
           fontWeight: 'medium',
         }}
       />
-      <DropDownMenu
+      <SmallFadeDrop
         visibility
         content={visibleContent}
         theme={{
-          className: 'smallFade',
           color: 'white',
           fontSize: 'medium',
           fontWeight: 'medium-high',

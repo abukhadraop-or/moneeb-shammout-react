@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StyledButton from './button.style';
+import { StyledButton } from './button.style';
 
 /**
  * Button component.
  *
  * @param {Object} props Component props.
  * @param {Array<Element>} props.children Button Children.
- * @param {string} props.className Button class for external styling.
  * @param {string} props.color Button color.
  * @param {boolean} props.disabled Button state enabled or disabled.
  * @param {string} props.fontSize Button font size.

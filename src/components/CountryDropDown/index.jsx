@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactFlagsSelect from 'react-flags-select';
-import StyledCountryDropDown from './country-drop-down.style';
+import { StyledCountryDropDown } from './country-drop-down.style';
 
 /**
  * Uses react flags select package.

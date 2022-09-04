@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import FilterVisibleContent from 'components/FilterVisibleContent/FilterVisibleContent';
+import FilterVisibleContent from 'components/FilterVisibleContent';
 import StyledFilterCard from './filter-card.style';
 
 /**

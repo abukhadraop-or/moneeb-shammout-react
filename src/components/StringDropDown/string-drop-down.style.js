@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { media } from 'styles/media-query';
 import colors from 'styles/colors';
+import Button from 'components/Button';
 
-const StyledStringDropDown = styled.div`
+export const StyledStringDropDown = styled.div`
   display: flex;
   flex-direction: column;
   background-color: transparent;
@@ -14,14 +15,15 @@ const StyledStringDropDown = styled.div`
 
     ${({ dropType }) => {
       if (dropType === 'navDrops') {
-        return `align-items: center;
+        return `
+                align-items: center;
                 background-color: white;
+                border-radius: 0.2rem;
                 border: 0.1rem solid ${colors.flashyWhite};
-                border-radius: 0.5rem;
                 box-shadow: 0 0.1rem 0.5rem ${colors.boxShadow};
-                justify-content: center;
                 position: absolute;
-                width: 10rem;`;
+
+                `;
       }
 
       if (dropType === 'footerDrops') {
@@ -33,4 +35,13 @@ const StyledStringDropDown = styled.div`
     }}        
   `}
 `;
-export default StyledStringDropDown;
+
+export const NavButton = styled(Button)`
+  padding: 0.5rem 4rem 0.3rem 0.2rem;
+  text-indent: 1rem;
+  cursor: pointer;
+  width: 100%;
+  &:hover {
+    background-color: ${colors.gray}08;
+  }
+`;

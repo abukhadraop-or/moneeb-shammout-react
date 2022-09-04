@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from 'components/Icon/Icon';
+import Icon from 'components/Icon';
 import StyledSTrendingDiv from './trending-div.style';
 
 /**
@@ -11,7 +11,6 @@ function TrendingDiv() {
   return (
     <StyledSTrendingDiv>
       <Icon iconName="HiOutlineTrendingUp" color="black" />
-      &nbsp;
       <span>Trending</span>
     </StyledSTrendingDiv>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StyledActionDropDown from './action-drop-down.style';
+import { StyledActionDropDown } from './action-drop-down.style';
 
 /**
  * Action drop down menu.

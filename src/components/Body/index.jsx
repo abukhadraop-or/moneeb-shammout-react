@@ -1,14 +1,20 @@
 import { React, useState, useEffect } from 'react';
-import fetchMovies from 'service/movies.service';
-import Title from 'components/Title/Title';
-import FilterCard from 'components/FilterCard/FilterCard';
-import MovieCard from 'components/MovieCard/MovieCard';
-import Button from 'components/Button/Button';
-import SortPanel from 'components/SortPanel/SortPanel';
-import FilterPanel from 'components/FilterPanel/FilterPanel';
-import convertDate from 'utilities/methods';
+import HTTP from 'service/movies.service';
+import Title from 'components/Title';
+import FilterCard from 'components/FilterCard';
+import MovieCard from 'components/MovieCard';
+import SortPanel from 'components/SortPanel';
+import FilterPanel from 'components/FilterPanel';
+import convertDate from 'utilities/date-methods';
 import { sortMap, urls } from 'constants';
-import { FiltersContainer, MoviesContainer, StyledBody } from './body.style';
+
+import {
+  FiltersContainer,
+  MoviesContainer,
+  StyledBody,
+  SearchButton,
+  LoadMoreButton,
+} from './body.style';
 
 /**
  * Body component.
@@ -20,16 +26,17 @@ function Body() {
   const [sortType, setSortType] = useState('popularity.desc');
   const [page, setPage] = useState(1);
   const [movies, setMovies] = useState([]);
-
+  const [showLoadMore, setShowLoadMore] = useState(true);
   /**
    * Uses fetch movie service to fetch and render movies.
    *
    * @param {boolean} newPage Add to the old movies or not.
    */
   const getMovies = async (newPage) => {
-    const response = await fetchMovies(page, sortType);
+    const response = await HTTP.fetchMovies(page, sortType);
 
     if (response.status >= 400) {
+      setShowLoadMore(false);
       return;
     }
 
@@ -81,17 +88,12 @@ function Body() {
   return (
     <StyledBody>
       <FiltersContainer>
-        <Title
-          title="Popular Movies"
-          className="popularHeader"
-          fontWeight="medium-high"
-          fontSize="big"
-        />
+        <Title title="Popular Movies" fontWeight="medium-high" fontSize="big" />
         <SortPanel onChange={sortFiltersClickHandler} />
         <FilterPanel />
         <FilterCard title="Where To Watch" />
-        <Button
-          className="searchButton"
+
+        <SearchButton
           fontWeight="medium-high"
           fontSize="medium-high"
           color="white"
@@ -113,14 +115,15 @@ function Body() {
           />
         ))}
 
-        <Button
-          className="loadMore"
-          fontSize="nearly-big"
-          fontWeight="medium-high"
-          color="white"
-          text="LoadMore"
-          onClick={loadClickHandler}
-        />
+        {showLoadMore && (
+          <LoadMoreButton
+            fontSize="nearly-big"
+            fontWeight="medium-high"
+            color="white"
+            text="LoadMore"
+            onClick={loadClickHandler}
+          />
+        )}
       </MoviesContainer>
     </StyledBody>
   );

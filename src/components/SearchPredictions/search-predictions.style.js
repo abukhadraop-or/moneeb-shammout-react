@@ -9,6 +9,7 @@ const SearchPrediction = styled.div`
   font-size: 1rem;
   font-weight: 400;
   height: 2rem;
+  gap: 0.5rem;
   padding-left: 1rem;
   width: 100%;
 

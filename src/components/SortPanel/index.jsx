@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SelectMenu from 'components/SelectMenu/SelectMenu';
-import Title from 'components/Title/Title';
-import FilterCard from 'components/FilterCard/FilterCard';
+import SelectMenu from 'components/SelectMenu';
+import Title from 'components/Title';
+import FilterCard from 'components/FilterCard';
 import { sortMap } from 'constants';
 import SelectWrapper from './sort-panel.style';
 

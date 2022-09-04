@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
-import LogoContainer from 'components/Logo/LogoContainer';
-import Icon from 'components/Icon/Icon';
-import PhoneSideMenu from 'components/PhoneSideMenu/PhoneSideMenu';
-import Button from 'components/Button/Button';
-import SearchPanel from 'components/SearchPanel/SearchPanel';
-import DesktopMenu from 'components/DesktopMenu/DesktopMenu';
-import DropDownMenu from 'components/StringDropDown/StringDropDown';
-import UserUtilities from 'components/ActionDropDown/ActionDropDown';
+import LogoContainer from 'components/Logo';
+import Icon from 'components/Icon';
+import PhoneSideMenu from 'components/PhoneSideMenu';
+import Button from 'components/Button';
+import SearchPanel from 'components/SearchPanel';
+import DesktopMenu from 'components/DesktopMenu';
+import UserUtilities from 'components/ActionDropDown';
 import {
-  Header,
-  StyledNavBar,
-  RightIconsWrapper,
-  LeftWrapper,
   DesktopNavBar,
+  Header,
+  LanguageButton,
+  LeftWrapper,
+  PlusIcon,
+  RightIconsWrapper,
+  RightRoutesDrop,
+  SearchIcon,
+  StyledNavBar,
+  UtilityButton,
 } from './nav-bar.style';
 
 /**
@@ -67,7 +71,6 @@ function NavBar() {
               onClick={toggleUserUtilities}
               onBlur={toggleUserUtilities}
             />
-            &nbsp; &nbsp;
             <Icon
               iconName={showSearch ? 'AiOutlineClose' : 'HiSearch'}
               color={showSearch ? 'white' : 'blue'}
@@ -86,14 +89,13 @@ function NavBar() {
           {/* right wrapper */}
           <RightIconsWrapper>
             <div>
-              <Icon
+              <PlusIcon
                 iconName="BiPlus"
                 color="white"
                 onClick={plusClickHandler}
-                className="plus"
               />
               {showPlusDrop && (
-                <DropDownMenu
+                <RightRoutesDrop
                   visibility
                   content={[
                     'Cant find  a movie or tv show',
@@ -101,7 +103,6 @@ function NavBar() {
                   ]}
                   dropType="navDrops"
                   theme={{
-                    className: 'rightRoutes',
                     color: 'black',
                     fontSize: 'medium',
                     fontWeight: 'medium',
@@ -109,49 +110,39 @@ function NavBar() {
                 />
               )}
             </div>
-            <Button
-              text="EN"
-              className="languageButton"
-              color="white"
-              fontWeight="medium"
-            />
+            <LanguageButton text="EN" color="white" fontWeight="medium" />
             <Button
               text="Login"
-              className="rightRoutes"
               color="white"
               fontSize="medium"
               fontWeight="medium-high"
             />
             <Button
               text="Join TMDB"
-              className="rightRoutes"
               color="white"
               fontSize="medium"
               fontWeight="medium-high"
             />
-            <Icon
+            <SearchIcon
               iconName={showSearch ? 'AiOutlineClose' : 'HiSearch'}
               color={showSearch ? 'white' : 'blue'}
               onClick={searchIconClickHandler}
-              className="search"
             />
           </RightIconsWrapper>
         </DesktopNavBar>
         {showUserUtilities && (
           <UserUtilities>
-            <Button
+            <UtilityButton
               key="sign's in"
               text="Login"
               color="fontGrey"
               fontWeight="medium-high"
-              className="utilityButton"
             />
-            <Button
+            <UtilityButton
               key=" sign's out"
               text="Signup"
               color="fontGrey"
               fontWeight="medium-high"
-              className="utilityButton"
             />
           </UserUtilities>
         )}

@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Title from 'components/Title/Title';
-import { StyledSelectMenu, Option, OptionContainer } from './select-menu.style';
+import {
+  StyledSelectMenu,
+  Option,
+  OptionContainer,
+  MenuTitle,
+} from './select-menu.style';
 
 /**
  * Select menu component.
@@ -44,13 +48,8 @@ function SelectMenu({ onChange, options }) {
 
   return (
     <StyledSelectMenu onClick={selectClickHandler}>
-      <Title
-        title={selectTitle}
-        fontWeight="medium"
-        fontSize="medium"
-        className="menuTitle"
-      />
-      <OptionContainer className="options-container">
+      <MenuTitle title={selectTitle} fontWeight="medium" fontSize="medium" />
+      <OptionContainer>
         {showMenu &&
           options.map((option) => (
             <Option

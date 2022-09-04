@@ -10,6 +10,7 @@ const StyledTrendingDiv = styled.div`
   font-style: bold;
   font-weight: 700;
   height: 3.2rem;
+  gap: 0.5rem;
   line-height: 1rem;
   padding-left: 1rem;
   padding-top: 1rem;

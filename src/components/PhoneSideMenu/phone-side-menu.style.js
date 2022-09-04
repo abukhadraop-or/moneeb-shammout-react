@@ -1,6 +1,8 @@
 import styled, { keyframes, css } from 'styled-components';
 import { media } from 'styles/media-query';
 import colors from 'styles/colors';
+import Button from 'components/Button';
+import StringDropDown from 'components/StringDropDown';
 
 const showKeyFrames = keyframes`
   
@@ -50,23 +52,6 @@ const StyledPhoneMenu = styled.div`
   width: 85%;
   z-index: 100;
 
-  .dropButtons {
-    width: 9rem;
-    height: 2.5rem;
-  }
-
-  .smallFade {
-    width: 9rem;
-    height: 2.5rem;
-    font-size: 1rem;
-    opacity: 0.55;
-    padding-left: 0.5rem;
-  }
-
-  .sideDrops {
-    margin-bottom: 0.3rem;
-  }
-
   ${({ ref, showMenu }) =>
     `${typeof ref}` === 'undefined' || ref.current.display === 'none'
       ? () => (showMenu ? showAnimation : hideAnimation(false))
@@ -77,4 +62,24 @@ const StyledPhoneMenu = styled.div`
  `}
 `;
 
-export default StyledPhoneMenu;
+const DropButton = styled(Button)`
+  width: 9rem;
+  height: 2.5rem;
+`;
+
+const SideDrop = styled(StringDropDown)`
+  button {
+    margin-bottom: 0.3rem;
+  }
+`;
+
+const SmallFadeDrop = styled(StringDropDown)`
+  button {
+    width: 9rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    opacity: 0.55;
+    padding-left: 0.5rem;
+  }
+`;
+export { SmallFadeDrop, StyledPhoneMenu, DropButton, SideDrop };

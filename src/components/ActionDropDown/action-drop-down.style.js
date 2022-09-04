@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { media } from 'styles/media-query';
 import colors from 'styles/colors';
 
-const StyledActionDropDown = styled.div`
+export const StyledActionDropDown = styled.div`
   background-color: ${colors.white};
   border-radius: 0.3rem;
   border: solid 0.01rem ${colors.borderGrey}26;
@@ -45,5 +45,3 @@ const StyledActionDropDown = styled.div`
     
   `}
 `;
-
-export default StyledActionDropDown;

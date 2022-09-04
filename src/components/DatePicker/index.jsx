@@ -2,7 +2,7 @@ import { React, useState } from 'react';
 import PropTypes from 'prop-types';
 import DatePickerPackage from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import Icon from 'components/Icon/Icon';
+import Icon from 'components/Icon';
 import { StyledDatePicker, Label, IconWrapper } from './date-picker.style';
 
 /**

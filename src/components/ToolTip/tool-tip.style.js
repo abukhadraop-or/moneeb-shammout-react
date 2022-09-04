@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import colors from 'styles/colors';
 
 const StyledToolTip = styled.span`
-  visibility: hidden;
-
   ${({ theme }) =>
     theme === 'movies'
       ? ` background-color: ${colors.black};

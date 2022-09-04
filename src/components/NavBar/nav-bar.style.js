@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import { media } from 'styles/media-query';
 import colors from 'styles/colors';
+import Icon from 'components/Icon';
+import DropDownMenu from 'components/StringDropDown';
+import Button from 'components/Button';
 
 const Header = styled.header`
   background-color: ${colors.darkBlue};
@@ -9,13 +12,13 @@ const Header = styled.header`
   top: 0;
   width: 100%;
   z-index: 100;
+`;
 
-  .utilityButton {
-    height: 3rem;
-    width: 12rem;
-    text-indent: -6rem;
-    display: block;
-  }
+const UtilityButton = styled(Button)`
+  height: 3rem;
+  width: 12rem;
+  text-indent: -6rem;
+  display: block;
 `;
 
 const StyledNavBar = styled.nav`
@@ -32,8 +35,10 @@ const StyledNavBar = styled.nav`
   ${media.desktop`
     display: none;
   `}
+`;
 
-  .rightRoutes {
+const RightRoutesDrop = styled(DropDownMenu)`
+  * {
     padding-left: 0.5rem;
     padding-bottom: 0.7rem;
   }
@@ -41,6 +46,7 @@ const StyledNavBar = styled.nav`
 
 const RightIconsWrapper = styled.span`
   display: flex;
+  gap: 0.5rem;
 
   :last-child {
     padding-right: 1.5rem;
@@ -59,6 +65,9 @@ const RightIconsWrapper = styled.span`
     }
     
  `}
+  button,i {
+    cursor: Pointer;
+  }
 `;
 
 const DesktopNavBar = styled.nav`
@@ -71,33 +80,30 @@ const DesktopNavBar = styled.nav`
     height: 4rem;
     position: relative;
     justify-content: space-evenly;
-
-  .languageButton {
-      border: 0.1rem solid;
-      border-color: white;
-      border-radius: 0.2rem;
-      line-height: 1rem;
-      padding-top: 0.25rem;
-      height: 1.7rem;
-
-      &:hover {
-        color: ${colors.darkBlue};
-        background-color: white;
-      }
-  }
-   
-
-    .plus{
-      font-size:1rem;
-      margin-top:0.4rem;
-    }
-
-    .search{
-      font-size:1.8rem;
-    }
-
     
   `}
+`;
+
+const LanguageButton = styled(Button)`
+  border: 0.1rem solid;
+  border-color: white;
+  border-radius: 0.2rem;
+  line-height: 1rem;
+  padding-top: 0.25rem;
+  height: 1.7rem;
+
+  &:hover {
+    color: ${colors.darkBlue};
+    background-color: white;
+  }
+`;
+
+const PlusIcon = styled(Icon)`
+  font-size: 1rem;
+  margin-top: 0.4rem;
+`;
+const SearchIcon = styled(Icon)`
+  font-size: 1.8rem;
 `;
 
 const LeftWrapper = styled.span`
@@ -109,4 +115,15 @@ const LeftWrapper = styled.span`
   width: 30rem;
 `;
 
-export { Header, StyledNavBar, RightIconsWrapper, DesktopNavBar, LeftWrapper };
+export {
+  DesktopNavBar,
+  Header,
+  LanguageButton,
+  LeftWrapper,
+  PlusIcon,
+  RightIconsWrapper,
+  RightRoutesDrop,
+  SearchIcon,
+  StyledNavBar,
+  UtilityButton,
+};

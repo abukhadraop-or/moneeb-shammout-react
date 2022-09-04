@@ -7,6 +7,7 @@ const StyledTitle = styled.h2`
   font-weight: ${({ fontWeight: weight }) => fontWeight[weight]};
   color: ${({ color }) => colors[color]};
   font-size: ${({ fontSize: size }) => fontSize[size]};
+  gap: 0.5rem;
 `;
 
 export default StyledTitle;

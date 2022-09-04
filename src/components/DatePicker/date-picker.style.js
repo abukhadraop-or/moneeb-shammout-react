@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { media } from 'styles/media-query';
 import colors from 'styles/colors';
 
-const StyledDatePicker = styled.div`
+export const StyledDatePicker = styled.div`
   width: 20rem;
   height: 3rem;
   outline: none;
@@ -58,12 +58,12 @@ const StyledDatePicker = styled.div`
   }
 `;
 
-const Label = styled.div`
+export const Label = styled.div`
   position: absolute;
   color: grey;
 `;
 
-const IconWrapper = styled.div`
+export const IconWrapper = styled.div`
   background-color: ${colors.lightGray};
   border-bottom-right-radius: 0.4rem;
   border-top-right-radius: 0.4rem;
@@ -86,5 +86,3 @@ const IconWrapper = styled.div`
     left:12rem;
   `}
 `;
-
-export { StyledDatePicker, Label, IconWrapper };

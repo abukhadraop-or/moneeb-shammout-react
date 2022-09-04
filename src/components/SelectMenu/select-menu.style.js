@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { media } from 'styles/media-query';
 import colors from 'styles/colors';
+import Title from 'components/Title';
 
 const StyledSelectMenu = styled.div`
   background-color: ${colors.mediumGrey};
@@ -18,12 +19,12 @@ const StyledSelectMenu = styled.div`
   ${media.desktop`
     width:15rem;
   `}
+`;
 
-  .menuTitle {
-    align-items: center;
-    padding-top: 0.6rem;
-    text-align: center;
-  }
+const MenuTitle = styled(Title)`
+  align-items: center;
+  padding-top: 0.6rem;
+  text-align: center;
 `;
 
 const OptionContainer = styled.div`
@@ -70,4 +71,4 @@ const Option = styled.div`
   }
 `;
 
-export { StyledSelectMenu, Option, OptionContainer };
+export { StyledSelectMenu, MenuTitle, Option, OptionContainer };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Icon from 'components/Icon/Icon';
+import Icon from 'components/Icon';
 import StyledFilterVisibleContent from './filter-visible-content.style';
 
 /**

@@ -24,7 +24,6 @@ function Title({ children, className, color, fontSize, fontWeight, title }) {
       className={className}
     >
       {title}
-      &nbsp;
       {children ?? ''}
     </StyledTitle>
   );

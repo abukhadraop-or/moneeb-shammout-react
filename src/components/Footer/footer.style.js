@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { media } from 'styles/media-query';
 import colors from 'styles/colors';
+import Button from 'components/Button';
 
 const LeftSide = styled.div`
   ${media.desktop`
@@ -38,33 +39,29 @@ const StyledFooter = styled.footer`
      padding:5rem 0rem 3.5rem 6rem;  
   
   `}
+`;
 
-  .joinCommunity {
-    align-items: center;
-    background-color: white;
-    border-radius: 0.2rem;
-    height: 2.8rem;
-    justify-content: center;
-    margin: 2rem 0 3rem 0;
-    width: 14rem;
+const CommunityButton = styled(Button)`
+  align-items: center;
+  background-color: white;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  height: 2.8rem;
+  justify-content: center;
+  margin: 2rem 0 3rem 0;
+  width: 14rem;
 
-    ${media.desktop`
+  ${media.desktop`
       color: ${colors.lightBlue};
       margin-left:-4rem;
       margin-top:.2rem;
 
     `}
-  }
-
-  .footerTitles {
-    width: 9rem;
-    height: 2.5rem;
-  }
-
-  .footerDrops {
-    padding-left: 0.5rem;
-    padding-bottom: 0rem;
-  }
 `;
 
-export { StyledFooter, Logo, LeftSide };
+const TitleButton = styled(Button)`
+  width: 9rem;
+  height: 2.5rem;
+`;
+
+export { StyledFooter, Logo, LeftSide, TitleButton, CommunityButton };

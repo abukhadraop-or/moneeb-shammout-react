@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import colors from 'styles/colors';
 
-const Label = styled.label`
+export const Label = styled.label`
   cursor: pointer;
   display: block;
   font-size: 1rem;
@@ -11,7 +11,7 @@ const Label = styled.label`
   position: relative;
 `;
 
-const StyledCheckBox = styled.span`
+export const StyledCheckBox = styled.span`
   height: 1rem;
   left: 1.5rem;
   position: absolute;
@@ -43,5 +43,3 @@ const StyledCheckBox = styled.span`
     width: 0.1rem;
   }
 `;
-
-export { StyledCheckBox, Label };

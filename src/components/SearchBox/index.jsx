@@ -1,20 +1,21 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import Icon from 'components/Icon/Icon';
-import TextField from 'components/TextField/TextField';
+import Icon from 'components/Icon';
+import TextField from 'components/TextField';
 import { StyledSearchBox, TextBoxWrapper } from './search-box.style';
 
 /**
  * TextField component depending on the theme chosen.
  *
  * @param {Object} props Component props.
- * @param {string} leftIcon Icon name to be placed at left.
- * @param {string} placeHolder PlaceHolder text.
- * @param {string} rightIcon Icon name to be placed at right.
+ * @param {string} props.leftIcon Icon name to be placed at left.
+ * @param {function} props.onChange Text field change handler.
+ * @param {string} props.placeHolder PlaceHolder text.
+ * @param {string} props.rightIcon Icon name to be placed at right.
  *
  * @return {Element} TextField component.
  */
-function SearchBox({ leftIcon, placeHolder, rightIcon }) {
+function SearchBox({ leftIcon, onChange, placeHolder, rightIcon }) {
   const searchFieldController = useRef('');
 
   /**
@@ -33,6 +34,7 @@ function SearchBox({ leftIcon, placeHolder, rightIcon }) {
             placeHolder={placeHolder}
             ref={searchFieldController}
             theme="search"
+            onChange={onChange}
           />
         </TextBoxWrapper>
         <Icon
@@ -47,8 +49,13 @@ function SearchBox({ leftIcon, placeHolder, rightIcon }) {
 
 SearchBox.propTypes = {
   leftIcon: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
   placeHolder: PropTypes.string.isRequired,
   rightIcon: PropTypes.string.isRequired,
+};
+
+SearchBox.defaultProps = {
+  onChange: null,
 };
 
 export default SearchBox;

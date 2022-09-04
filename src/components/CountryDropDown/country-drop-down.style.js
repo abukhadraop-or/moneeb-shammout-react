@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledCountryDropDown = styled.div`
+export const StyledCountryDropDown = styled.div`
   display: block;
   height: auto;
   margin-left: 1rem;
@@ -11,5 +11,3 @@ const StyledCountryDropDown = styled.div`
     padding-right: 1rem;
   }
 `;
-
-export default StyledCountryDropDown;

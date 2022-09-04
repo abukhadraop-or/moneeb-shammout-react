@@ -1,20 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Title from 'components/Title/Title';
-import Image from 'components/Image/Image';
-import Icon from 'components/Icon/Icon';
-import Button from 'components/Button/Button';
-import ActionDropDown from 'components/ActionDropDown/ActionDropDown';
-import ToolTip from 'components/ToolTip/ToolTip';
+import Icon from 'components/Icon';
+import ActionDropDown from 'components/ActionDropDown';
+import ToolTip from 'components/ToolTip';
 import {
-  DotsContainer,
-  PercentageContainer,
-  OverFlowContainer,
-  PosterContainer,
-  RightContainer,
-  StyledMovieCard,
-  MovieDropDownMenu,
   BlurWrapper,
+  DotsContainer,
+  DropButton,
+  LoginIcon,
+  MovieDate,
+  MovieDropDownMenu,
+  MovieName,
+  OverFlowContainer,
+  PercentageContainer,
+  PercentageIcon,
+  PosterContainer,
+  PosterImage,
+  RightContainer,
+  SignupIcon,
+  StyledMovieCard,
 } from './movie-card.style';
 
 /**
@@ -31,6 +35,7 @@ import {
  */
 function MovieCard({ date, description, imageURL, percentageRate, title }) {
   const [blur, setBlur] = useState(false);
+  const [showTip, setShowTip] = useState(false);
 
   /**
    * Blur background when clicking icon in top-right corner.
@@ -39,42 +44,53 @@ function MovieCard({ date, description, imageURL, percentageRate, title }) {
     setBlur((prevState) => !prevState);
   };
 
+  /**
+   * Toggles movie tool tip.
+   */
+  const toggleToolTip = () => {
+    setShowTip((prevState) => !prevState);
+  };
+
+  /**
+   * Undo blur if it loses focus.
+   */
+  const onCardLoseFocus = () => {
+    if (blur) {
+      setBlur(false);
+    }
+  };
+
+  useEffect(() =>
+    document.addEventListener('mousedown', () => {
+      onCardLoseFocus();
+    })
+  );
   return (
     <div>
       <MovieDropDownMenu blur={blur}>
         {blur && (
           <ActionDropDown>
-            <Button
-              text="Login"
-              fontWeight="medium-high"
-              color="fontGrey"
-              className="movieDrop"
-            >
-              <Icon
-                iconName="HiChevronRight"
-                color="black"
-                className="loginIcon"
-              />
-            </Button>
-            <Button
+            <DropButton text="Login" fontWeight="medium-high" color="fontGrey">
+              <LoginIcon iconName="HiChevronRight" color="black" />
+            </DropButton>
+            <DropButton
               text="Signup and join community"
               fontWeight="medium-high"
               color="fontGrey"
-              className="movieDrop"
             >
-              <Icon
-                iconName="HiChevronRight"
-                color="black"
-                className="signupIcon"
-              />
-            </Button>
+              <SignupIcon iconName="HiChevronRight" color="black" />
+            </DropButton>
           </ActionDropDown>
         )}
       </MovieDropDownMenu>
-      <StyledMovieCard>
+      <StyledMovieCard
+        onMouseOver={toggleToolTip}
+        onMouseOut={toggleToolTip}
+        onfocusout={onCardLoseFocus}
+      >
         <BlurWrapper blur={blur}>
           <PosterContainer>
-            <ToolTip className="toolTip" theme="movies" text={title} />
+            {showTip && <ToolTip theme="movies" text={title} />}
             <DotsContainer>
               <Icon
                 iconName="Hidots"
@@ -85,20 +101,19 @@ function MovieCard({ date, description, imageURL, percentageRate, title }) {
             </DotsContainer>
 
             <PercentageContainer percentage={percentageRate}>
-              &nbsp;{`${percentageRate * 10}`}
-              <Icon iconName="percent" color="white" className="icon" />
+              {`${percentageRate * 10}`}
+              <PercentageIcon iconName="percent" color="white" />
             </PercentageContainer>
-            <Image imagePath={imageURL} className="poster" />
+            <PosterImage imagePath={imageURL} />
           </PosterContainer>
           <RightContainer>
             <div>
-              <Title
+              <MovieName
                 title={title}
                 fontSize="medium"
                 fontWeight="medium-high"
-                className="movieName"
               />
-              <Title title={date} fontWeight="medium" className="movieDate" />
+              <MovieDate title={date} fontWeight="medium" />
             </div>
             <OverFlowContainer>{description}</OverFlowContainer>
           </RightContainer>

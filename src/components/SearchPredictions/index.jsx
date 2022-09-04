@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from 'components/Icon/Icon';
+import Icon from 'components/Icon';
 import StyledSSearchPredictions from './search-predictions.style';
 
 /**
@@ -16,7 +16,6 @@ function SearchPrediction({ prediction, bottomBorder }) {
   return (
     <StyledSSearchPredictions bottomBorder={bottomBorder}>
       <Icon iconName="HiSearch" color="grey" />
-      &nbsp;
       <span>{prediction}</span>
     </StyledSSearchPredictions>
   );

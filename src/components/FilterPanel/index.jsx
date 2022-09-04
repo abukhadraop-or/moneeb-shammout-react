@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import Title from 'components/Title/Title';
-import FilterCard from 'components/FilterCard/FilterCard';
-import Icon from 'components/Icon/Icon';
-import RadioButton from 'components/RadioButton/RadioButton';
-import CheckBox from 'components/CheckBox/CheckBox';
-import CountryDropDown from 'components/CountryDropDown/CountryDropDown';
-import DatePicker from 'components/DatePicker/DatePicker';
-import Button from 'components/Button/Button';
-import SelectMenu from 'components/SelectMenu/SelectMenu';
+import Title from 'components/Title';
+import FilterCard from 'components/FilterCard';
+import Icon from 'components/Icon';
+import RadioButton from 'components/RadioButton';
+import CheckBox from 'components/CheckBox';
+import CountryDropDown from 'components/CountryDropDown';
+import DatePicker from 'components/DatePicker';
+import SelectMenu from 'components/SelectMenu';
 import {
   availabilitiesList,
   filtersList,
@@ -15,7 +14,11 @@ import {
   genresList,
   languagesList,
 } from 'constants';
-import { FilterWrapper, FlexRowContainer } from './filter-panel.style';
+import {
+  FilterWrapper,
+  FlexRowContainer,
+  GenreButton,
+} from './filter-panel.style';
 
 /**
  * Body filter part.
@@ -141,12 +144,7 @@ function FilterPanel() {
         <Title fontSize="medium" title="Genres" />
         <FlexRowContainer>
           {genresList.map((item) => (
-            <Button
-              text={item}
-              className="genres"
-              fontWeight="medium"
-              key={item}
-            />
+            <GenreButton text={item} fontWeight="medium" key={item} />
           ))}
         </FlexRowContainer>
       </FilterWrapper>

@@ -1,14 +1,19 @@
 import React from 'react';
-import Button from 'components/Button/Button';
-import StringDropDown from 'components/StringDropDown/StringDropDown';
-import LogoContainer from 'components/Logo/LogoContainer';
+import StringDropDown from 'components/StringDropDown';
+import LogoContainer from 'components/Logo';
 import {
   basicContent,
   LegalContent,
   communityContent,
   involvedContent,
 } from 'constants';
-import { StyledFooter, Logo, LeftSide } from './footer.style';
+import {
+  StyledFooter,
+  Logo,
+  LeftSide,
+  CommunityButton,
+  TitleButton,
+} from './footer.style';
 
 /**
  * Footer component.
@@ -22,20 +27,18 @@ function Footer() {
         <Logo>
           <LogoContainer logoType="phone" theme="desktopFooter" />
         </Logo>
-        <Button
+        <CommunityButton
           color="boldBlue"
           fontSize="medium-high"
           fontWeight="bold"
-          className="joinCommunity"
           text="JOIN THE COMMUNITY"
         />
       </LeftSide>
       <div>
-        <Button
+        <TitleButton
           color="white"
           fontSize="medium-high"
           fontWeight="bold"
-          className="footerTitles"
           text="THE BASICS"
         />
         <StringDropDown
@@ -43,7 +46,6 @@ function Footer() {
           visibility
           dropType="footerDrops"
           theme={{
-            className: 'footerDrops',
             color: 'white',
             fontSize: 'medium-low',
             fontWeight: 'medium',
@@ -51,11 +53,10 @@ function Footer() {
         />
       </div>
       <div>
-        <Button
+        <TitleButton
           color="white"
           fontSize="medium-high"
           fontWeight="bold"
-          className="footerTitles"
           text="GET INVOLVED"
         />
         <StringDropDown
@@ -63,7 +64,6 @@ function Footer() {
           visibility
           dropType="footerDrops"
           theme={{
-            className: 'footerDrops',
             color: 'white',
             fontSize: 'medium-low',
             fontWeight: 'medium',
@@ -71,11 +71,10 @@ function Footer() {
         />
       </div>
       <div>
-        <Button
+        <TitleButton
           color="white"
           fontSize="medium-high"
           fontWeight="bold"
-          className="footerTitles"
           text="COMMUNITY"
         />
         <StringDropDown
@@ -83,7 +82,6 @@ function Footer() {
           visibility
           dropType="footerDrops"
           theme={{
-            className: 'footerDrops',
             color: 'white',
             fontSize: 'medium-low',
             fontWeight: 'medium',
@@ -91,11 +89,10 @@ function Footer() {
         />
       </div>
       <div>
-        <Button
+        <TitleButton
           color="white"
           fontSize="medium-high"
           fontWeight="bold"
-          className="footerTitles"
           text="LEGAL"
         />
         <StringDropDown
@@ -103,7 +100,6 @@ function Footer() {
           visibility
           dropType="footerDrops"
           theme={{
-            className: 'footerDrops',
             color: 'white',
             fontSize: 'medium-low',
             fontWeight: 'medium',
